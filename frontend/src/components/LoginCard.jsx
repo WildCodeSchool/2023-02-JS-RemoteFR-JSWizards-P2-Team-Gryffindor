@@ -1,3 +1,5 @@
+// import { NavLink } from "react-router-dom";
+
 export default function LoginCard() {
   return (
     <div className="text-dark bg-[#ececec]/30 backdrop-blur-sm rounded-3xl w-[300px] px-12 py-8">
@@ -39,7 +41,7 @@ export default function LoginCard() {
           </div>
           <button
             type="button"
-            className="text-secondary py-2 px-5 w-full bg-primary hover:bg-secondary hover:text-primary rounded border border-gray-300"
+            className="text-secondary py-2 px-5 w-full bg-primary hover:bg-secondary hover:text-primary rounded border border-gray-200 duration-300 ease-in-out"
           >
             Sign in
           </button>
@@ -59,6 +61,14 @@ export default function LoginCard() {
             <img src="./public/icon/google.svg" alt="Google login button" />
           </button>
         </div>
+        <p className="flex justify-center text-xs">
+          Don't have an account yet?
+        </p>
+        {/* <NavLink to="/register"> */}
+        <p className="flex justify-center text-xs font-semibold">
+          Register here!
+        </p>
+        {/* </NavLink> */}
       </div>
     </div>
   );
