@@ -44,6 +44,21 @@ export default function LoginCard() {
             Sign in
           </button>
         </form>
+
+        <p className="relative flex justify-center text-xs">
+          <span className="line-login-before" />
+          Or continue with
+          <span className="line-login-after" />
+        </p>
+
+        <div className="flex justify-center">
+          <button
+            type="button"
+            className="flex items-center justify-center rounded-3xl px-5 py-2.5 w-20 bg-white ring-1 ring-transparent hover:ring-secondary duration-300 ease-in-out"
+          >
+            <img src="./public/icon/google.svg" alt="Google login button" />
+          </button>
+        </div>
       </div>
     </div>
   );
