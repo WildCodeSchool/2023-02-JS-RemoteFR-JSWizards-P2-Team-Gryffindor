@@ -1,5 +1,7 @@
 export default function LoginCard() {
-    return (
-
-    )
+  return (
+    <div>
+      <p>Test</p>
+    </div>
+  );
 }
