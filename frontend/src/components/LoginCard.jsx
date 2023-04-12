@@ -37,6 +37,12 @@ export default function LoginCard() {
               <a href="/ChangePassword">Forgot password?</a>
             </label>
           </div>
+          <button
+            type="button"
+            className="text-secondary py-2 px-5 w-full bg-primary hover:bg-secondary hover:text-primary rounded border border-gray-300"
+          >
+            Sign in
+          </button>
         </form>
       </div>
     </div>
