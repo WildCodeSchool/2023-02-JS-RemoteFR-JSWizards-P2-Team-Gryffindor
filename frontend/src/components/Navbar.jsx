@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 export default function Navbar() {
   return (
     <>
@@ -21,7 +20,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      <button className="md:hidden">
+      <button type="button" className="md:hidden">
         <img
           src="./public/icon/mobile-menu.svg"
           alt="mobile-menu"
@@ -30,7 +29,7 @@ export default function Navbar() {
         />
       </button>
 
-      <button>
+      <button type="button">
         <img
           className="max-w-md"
           src="./public/icon/logged.svg"
