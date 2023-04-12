@@ -1,7 +1,9 @@
+import LoginCard from "../components/LoginCard";
+
 export default function Home() {
   return (
     <header className="App-header">
-      <p>Hello Vite + React !</p>
+      <LoginCard />
     </header>
   );
 }
