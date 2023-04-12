@@ -11,7 +11,7 @@ export default function Navbar() {
           height="40"
         />
       </div>
-      <div className="flex gap-[clamp(0.5rem,2vw,2rem)] bg-dark">
+      <div className="flex gap-[clamp(0.5rem,2vw,2rem)]">
         <ul className="hidden md:flex items-center gap-[clamp(0.5rem,2vw,2rem)] text-primary text-base">
           <li>Home</li>
           <li>Play</li>
