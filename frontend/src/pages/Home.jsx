@@ -1,9 +1,7 @@
-import LoginCard from "../components/LoginCard";
-
 export default function Home() {
   return (
-    <header className="App-header">
-      <LoginCard />
-    </header>
+    <section>
+      <h2 className="text-xl">Home</h2>
+    </section>
   );
 }
