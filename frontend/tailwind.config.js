@@ -24,7 +24,7 @@ module.exports = {
         hufLight: "#726255",
         hufDark: "#372E29",
         darkmode: "#363F45",
-        dark: "282E32",
+        dark: "#282E32",
         light: "#F5F5F5",
       },
 
