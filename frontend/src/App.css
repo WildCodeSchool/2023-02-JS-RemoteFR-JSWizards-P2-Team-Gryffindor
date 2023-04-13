@@ -10,7 +10,7 @@
   }
 
   .houses-intro:hover > .house {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   .houses-intro:hover > .house:hover {
