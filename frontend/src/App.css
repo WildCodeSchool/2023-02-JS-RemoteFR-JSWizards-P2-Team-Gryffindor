@@ -27,9 +27,6 @@
   .house p {
     position: absolute;
     bottom: -100%;
-    left: 0;
-    right: 0;
-    margin: auto;
     text-align: center;
     color: rgb(255, 255, 253);
     background-color: rgba(0, 0, 0, 0.5);
