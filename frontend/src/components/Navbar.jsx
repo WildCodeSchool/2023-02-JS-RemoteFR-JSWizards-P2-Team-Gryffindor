@@ -57,32 +57,33 @@ export default function Navbar() {
             </NavLink>
           </li>
         </ul>
-      </div>
-
-      {/* Mobile menu */}
-      <button type="button" className="md:hidden">
-        <img
-          src="./public/icon/mobile-menu.svg"
-          alt="mobile-menu"
-          width="38"
-          height="30"
-        />
-      </button>
-
-      <button type="button">
-        <NavLink
-          to="/login"
-          className={({ isActive }) => `navlink ${isActive ? "is-active" : ""}`}
-        >
+        {/* Mobile menu */}
+        <button type="button" className="md:hidden">
           <img
-            className="max-w-md"
-            src="./public/icon/logged.svg"
-            alt="connect"
-            width="20"
-            height="20"
+            src="./public/icon/mobile-menu.svg"
+            alt="mobile-menu"
+            width="38"
+            height="30"
           />
-        </NavLink>
-      </button>
+        </button>
+
+        <button type="button">
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              `navlink ${isActive ? "is-active" : ""}`
+            }
+          >
+            <img
+              className="max-w-md"
+              src="./public/icon/logged.svg"
+              alt="connect"
+              width="20"
+              height="20"
+            />
+          </NavLink>
+        </button>
+      </div>
     </>
   );
 }
