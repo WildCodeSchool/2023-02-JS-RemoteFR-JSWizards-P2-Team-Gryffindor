@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .houses-intro {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .houses-intro:hover > .house {
+    opacity: 0.5;
+  }
+
+  .houses-intro:hover > .house:hover {
+    opacity: 1;
+  }
+
+  .house {
+    width: 15%;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+  }
+
+  .house p {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    color: rgb(255, 255, 253);
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    padding: 1rem;
+    transition: bottom 1s ease-out;
+  }
+
+  .house:hover p {
+    bottom: 0;
+  }
+}
