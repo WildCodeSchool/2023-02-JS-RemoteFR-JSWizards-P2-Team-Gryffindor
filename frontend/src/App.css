@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 @layer utilities {
+  /* Code for Footer */
   .github {
     width: 40px;
     height: 40px;
@@ -46,7 +47,7 @@
     gap: 2rem;
   }
 
-  input[type="checkbox"] {
+  input[type="radio"] {
     display: none;
   }
 
@@ -55,12 +56,12 @@
     transition: opacity 0.5s ease;
   }
 
-  input[type="checkbox"]:checked + label img {
+  input[type="radio"]:checked + label img {
     opacity: 1;
   }
 
   .houses-intro:hover > .house {
-    opacity: 0.8;
+    opacity: 0.5;
   }
 
   .houses-intro:hover > .house:hover {
@@ -68,7 +69,8 @@
   }
 
   .house {
-    width: 15%;
+    position: relative;
+    overflow: hidden;
   }
 
   .house-choice {
@@ -84,10 +86,9 @@
   }
 
   .character {
-    font-size: small;
+    font-size: theme("fontSize.xs");
     font-style: italic;
     position: relative;
-    background-color: white;
     overflow: hidden;
   }
 
@@ -96,16 +97,16 @@
     bottom: -100%;
     text-align: center;
     color: rgb(255, 255, 253);
-    background-color: rgba(0, 0, 0, 0.5);
-    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 1rem;
-    transition: bottom 1s ease-out;
+    transition: bottom 0.5s ease-in-out;
   }
 
   .house:hover p {
     bottom: 0;
    }
 
+  /* Code for LoginCard */
   .line-login-before::before,
     .line-login-after::after {
     content: "";
