@@ -1,10 +1,7 @@
 export default function Home() {
   return (
-    <header className="App-header">
-      <p>Hello Vite + React !</p>
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-    </header>
+    <section>
+      <h2 className="text-xl">Home</h2>
+    </section>
   );
 }

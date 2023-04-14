@@ -1,4 +1,4 @@
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function RegisterCard() {
   return (
@@ -71,9 +71,9 @@ export default function RegisterCard() {
           </button>
         </div>
         <p className="flex justify-center text-xs">Already have an account?</p>
-        {/* <NavLink to="/login">
+        <NavLink to="/login">
           <p className="flex justify-center text-xs font-semibold">Sign in!</p>
-        </NavLink> */}
+        </NavLink>
       </div>
     </div>
   );
