@@ -1,4 +1,4 @@
-import DisplayHouses from "@components/DisplayHouses";
+import DisplayHouses from "../components/DisplayHouses";
 
 export default function Home() {
   return (
