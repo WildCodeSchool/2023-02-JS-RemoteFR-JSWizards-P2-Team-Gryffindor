@@ -1,7 +1,9 @@
+import HousesCards from "../components/HousesCards";
+
 export default function Play() {
   return (
     <section>
-      <h2 className="text-xl">Play</h2>
+      <HousesCards />
     </section>
   );
 }
