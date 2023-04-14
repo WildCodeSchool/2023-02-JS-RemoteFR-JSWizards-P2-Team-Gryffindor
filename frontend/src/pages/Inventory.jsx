@@ -1,6 +1,5 @@
-/* eslint-disable import/no-unresolved */
-import SearchBar from "@components/SearchBar";
-import FilterBtn from "@components/FilterBtn";
+import SearchBar from "../components/SearchBar";
+import FilterBtn from "../components/FilterBtn";
 
 export default function Inventory() {
   return (
