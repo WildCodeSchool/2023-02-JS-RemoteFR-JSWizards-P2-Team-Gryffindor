@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#fff4e2",
-        hover: "#F96140",
+        secondary: "#FFD075",
         gryPrimary: "#AE0001",
         grySecondary: "#740001",
         gryLight: "#EEBA30",
@@ -24,7 +24,7 @@ module.exports = {
         hufLight: "#726255",
         hufDark: "#372E29",
         darkmode: "#363F45",
-        dark: "282E32",
+        dark: "#282E32",
         light: "#F5F5F5",
       },
 
