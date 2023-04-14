@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <div className="flex gap-16 justify-center items-center px-8 bg-dark py-6">
+      <footer className="flex gap-16 justify-center items-center px-8 bg-dark py-6">
         <div>
           <ul className="flex flex-col space-y-4 justify-between">
             <li className="github">
@@ -70,7 +70,7 @@ export default function Footer() {
             </button>
           </form>
         </div>
-      </div>
+      </footer>
       <div className="flex justify-center bg-darkmode py-1.5 text-xs">
         <p>© Gryffindor P2 | WCS 02-23</p>
       </div>

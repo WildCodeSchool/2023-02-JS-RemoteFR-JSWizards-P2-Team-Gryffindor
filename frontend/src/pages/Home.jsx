@@ -1,6 +1,5 @@
-/* eslint-disable import/no-unresolved */
-import Hero from "@components/Hero";
-import DisplayHouses from "@components/DisplayHouses";
+import Hero from "../components/Hero";
+import DisplayHouses from "../components/DisplayHouses";
 
 export default function Home() {
   return (
