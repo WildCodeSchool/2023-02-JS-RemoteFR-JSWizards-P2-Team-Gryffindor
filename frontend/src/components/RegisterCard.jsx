@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function RegisterCard() {
   return (
-    <div className="text-dark bg-[#ececec]/30 backdrop-blur-sm rounded-3xl w-[300px] px-12 py-8">
+    <div className="text-dark bg-[#ececec]/30 rounded-3xl w-[300px] px-12 py-8">
       <div className="flex-col space-y-2">
         <h2 className="flex justify-center text-xl">Register</h2>
 
@@ -22,30 +22,34 @@ export default function RegisterCard() {
             <label htmlFor="password" className="text-base text-dark">
               Password
             </label>
-            <div className="flex items-center">
+            <div className="relative flex items-center">
               <input
                 type="Password"
                 placeholder="Password"
-                className="placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 pl-3 pr-9 duration-300 ease-in-out"
+                className="placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 pl-3 pr-8 duration-300 ease-in-out"
                 id="password"
               />
-              <img
-                className="absolute right-16"
-                src="./public/icon/pass-show.svg"
-                alt="show password icon"
-              />{" "}
+              <span className="flex absolute right-3">
+                <img
+                  className=""
+                  src="./public/icon/pass-show.svg"
+                  alt="show password icon"
+                />{" "}
+              </span>
             </div>
-            <div className="flex items-center ">
+            <div className="relative flex items-center pt-2">
               <input
                 type="password"
                 placeholder="Confirm password"
-                className="placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 pl-3 pr-9 duration-300 ease-in-out"
+                className="placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 pl-3 pr-8 duration-300 ease-in-out"
               />
-              <img
-                className="absolute right-16"
-                src="./public/assets/icon/pass-show.svg"
-                alt="show password icon"
-              />{" "}
+              <span className="flex absolute right-3">
+                <img
+                  className=""
+                  src="./public/icon/pass-show.svg"
+                  alt="show password icon"
+                />{" "}
+              </span>
             </div>
           </div>
           <button
