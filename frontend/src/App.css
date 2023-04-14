@@ -5,6 +5,41 @@
 @tailwind utilities;
 
 @layer utilities {
+  .github {
+    width: 40px;
+    height: 40px;
+  }
+
+  .github:hover {
+    transform: scale(1.1);
+  }
+
+  .youtube {
+    width: 40px;
+    height: 28.1px;
+  }
+
+  .youtube:hover {
+    transform: scale(1.1);
+  }
+
+  .instagram {
+    width: 40px;
+    height: 40px;
+  }
+
+  .instagram:hover {
+    transform: scale(1.1);
+  }
+
+  .twitter {
+    width: 40px;
+    height: 32.5px;
+  }
+
+  .twitter:hover {
+    transform: scale(1.1);}
+
   .houses-intro {
     display: flex;
     justify-content: center;
