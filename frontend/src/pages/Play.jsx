@@ -1,5 +1,4 @@
-/* eslint-disable import/no-unresolved */
-import HousesCards from "@components/HousesCards";
+import HousesCards from "../components/HousesCards";
 
 export default function Play() {
   return (
