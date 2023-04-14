@@ -11,6 +11,19 @@
     gap: 2rem;
   }
 
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label img {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+
+  input[type="checkbox"]:checked + label img {
+    opacity: 1;
+  }
+
   .houses-intro:hover > .house {
     opacity: 0.8;
   }
@@ -21,6 +34,23 @@
 
   .house {
     width: 15%;
+  }
+
+  .house-choice {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .select-house {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .character {
+    font-size: small;
+    font-style: italic;
     position: relative;
     background-color: white;
     overflow: hidden;
