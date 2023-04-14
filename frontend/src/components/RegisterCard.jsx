@@ -34,7 +34,7 @@ export default function RegisterCard() {
                   className=""
                   src="./public/icon/pass-show.svg"
                   alt="show password icon"
-                />{" "}
+                />
               </span>
             </div>
             <div className="relative flex items-center pt-2">
@@ -48,7 +48,7 @@ export default function RegisterCard() {
                   className=""
                   src="./public/icon/pass-show.svg"
                   alt="show password icon"
-                />{" "}
+                />
               </span>
             </div>
           </div>
