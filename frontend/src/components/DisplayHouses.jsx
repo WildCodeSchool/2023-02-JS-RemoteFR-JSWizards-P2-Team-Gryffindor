@@ -1,12 +1,9 @@
 function DisplayHouses() {
   return (
-    <div className="houses-intro">
+    <div className="houses-intro md:max-w-[1290px]">
       <div className="house">
         {" "}
-        <img
-          src="https://media.discordapp.net/attachments/1093197130493067354/1095714398221369395/Gryffindor_house_crest__Fanart_now_available_on_Threadless.png?width=446&height=670"
-          alt="Gryffindor"
-        />
+        <img src="./public/image/Gryffindor.png" alt="Gryffindor" />
         <p>
           {" "}
           <span className="description">
@@ -19,10 +16,7 @@ function DisplayHouses() {
       </div>
       <div className="house">
         {" "}
-        <img
-          src="https://media.discordapp.net/attachments/1093197130493067354/1095714398812782652/Hufflepuff_house_crest__Fanart_now_available_on_Threadless.png?width=446&height=670"
-          alt="Hufflepuff"
-        />
+        <img src="./public/image/Hufflepuff.png" alt="Hufflepuff" />
         <p>
           {" "}
           <span className="description">
@@ -35,10 +29,7 @@ function DisplayHouses() {
       </div>
       <div className="house">
         {" "}
-        <img
-          src="https://media.discordapp.net/attachments/1093197130493067354/1095714399521603604/Ravenclaw_house_crest__Fanart_now_available_on_Threadless.png?width=446&height=670"
-          alt="Ravenclaw"
-        />
+        <img src="./public/image/Ravenclaw.png" alt="Ravenclaw" />
         <p>
           {" "}
           <span className="description">
@@ -51,10 +42,7 @@ function DisplayHouses() {
       </div>
       <div className="house">
         {" "}
-        <img
-          src="https://media.discordapp.net/attachments/1093197130493067354/1095714400322719814/Slytherin_house_crest__Fanart_now_available_on_Threadless.png?width=446&height=670"
-          alt="Slytherin"
-        />
+        <img src="./public/image/Slytherin.png" alt="Slytherin" />
         <p>
           {" "}
           <span className="description">
