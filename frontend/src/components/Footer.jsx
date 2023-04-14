@@ -1,125 +1,75 @@
-function Footer() {
+export default function Footer() {
   return (
-    <div>
-      <div className="footer">
-        <div>
-          <div className="footer">
-            <div className="socials">
-              <ul className="social-icons">
-                <li>
-                  <a
-                    href="https://www.facebook.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src="./assets/facebook-secondary.svg"
-                      alt="facebook logo icon"
-                      width="32"
-                      height="32"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.twitter.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src="./assets/twitter-secondary.svg"
-                      alt="twitter logo icon"
-                      width="32"
-                      height="32"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src="./assets/instagram-secondary.svg"
-                      alt="instagram logo icon"
-                      width="32"
-                      height="32"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src="./assets/youtube-secondary.svg"
-                      alt="youtube logo icon"
-                      width="32"
-                      height="32"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="contact">
-              <form
-                id="contact_form"
-                action="#"
-                method="POST"
-                encType="multipart/form-data"
-              >
-                <div className="row">
-                  <input
-                    id="username"
-                    className="input"
-                    name="name"
-                    type="text"
-                    placeholder="Username"
-                    size="30"
-                  />
-                  <span id="name_validation" className="error_message" />
-                </div>
-                <div className="row">
-                  <br />
-                  <input
-                    id="email"
-                    className="input"
-                    name="email"
-                    type="text"
-                    placeholder="courriel@exemple.com"
-                    size="30"
-                  />
-                  <br />
-                  <span id="email_validation" className="error_message" />
-                </div>
-                <div className="row">
-                  <br />
-                  <textarea
-                    id="message"
-                    className="input"
-                    name="message"
-                    placeholder="Type your text here"
-                    rows="7"
-                    cols="30"
-                  />
-                  <br />
-                  <span id="message_validation" className="error_message" />
-                </div>
-
-                <input id="submit_button" type="submit" value="Submit" />
-              </form>
-            </div>
+    <>
+    <div className="flex gap-16 justify-center items-center px-8 bg-dark py-6">
+      <div>
+        <ul className="flex flex-col space-y-4 justify-between">
+          <li className="github">
+            <a href="https://www.github.com">
+              <img src="./src/assets/icons/github.svg" alt="github logo icon"/>
+            </a>
+          </li>
+          <li className="twitter">
+            <a
+              href="https://www.twitter.com"
+            >
+              <img
+                src="./src/assets/icons/twitter.svg"
+                alt="twitter logo icon"
+              />
+            </a>
+          </li>
+          <li className="instagram">
+            <a
+              href="https://www.instagram.com"
+            >
+              <img
+                src="./src/assets/icons/instagram.svg"
+                alt="instagram logo icon"
+              />
+            </a>
+          </li>
+          <li className="youtube">
+            <a
+              href="https://www.youtube.com"
+            >
+              <img
+                src="./src/assets/icons/youtube.svg"
+                alt="youtube logo icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <form className="flex flex-col space-y-6 items-end">
+          <div className="items-start bg-darkmode rounded outline-none w-[500px]">
+            <input className="items-start px-5 py-1.5 bg-darkmode rounded outline-none w-full"
+              type="text"
+              placeholder="username"
+              id="text"
+            />
           </div>
-          <div className="copyright">
-            <p>Copyright 2023 © - All Rights Reserved</p>
+          <div className="items-start bg-darkmode rounded outline-none w-[500px]">
+            <input className="items-start px-5 py-1.5 bg-darkmode rounded outline-none w-full"
+              type="email"
+              placeholder="email@example.com"
+              id="email"
+            />
           </div>
-        </div>
+          <div className="w-[500px]">
+            <textarea className="items-start px-5 py-1.5 bg-darkmode rounded outline-none w-full"
+              placeholder="Type your text here"
+            >
+            </textarea>
+          </div>
+          <button className="bg-darkmode rounded px-5 py-1.5 text-primary" type="submit">Send</button>
+        </form>
       </div>
     </div>
+    <div className="flex justify-center bg-darkmode py-1.5 text-xs">
+      <p>© Gryffindor P2 | WCS 02-23</p>
+    </div>
+    </>
   );
 }
-
-export default Footer;
