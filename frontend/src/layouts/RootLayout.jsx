@@ -1,5 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Footer from "@components/Footer";
+import Navbar from "@components/Navbar";
 
 export default function RootLayout() {
   return (
@@ -10,9 +12,12 @@ export default function RootLayout() {
         </nav>
       </header>
 
-      <main className="px-4 py-6 md:px-6">
+      <main className="px-6 py-6 md:px-8 md:py-8">
         <Outlet />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
