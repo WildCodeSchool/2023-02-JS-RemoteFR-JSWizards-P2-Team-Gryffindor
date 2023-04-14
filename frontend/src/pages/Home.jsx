@@ -1,9 +1,10 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
-import SearchBar from "@components/SearchBar";
+import DisplayHouses from "@components/DisplayHouses";
 
 export default function Home() {
   return (
-    <SearchBar/>
+    <section>
+      <h2 className="text-xl">Home</h2>
+      <DisplayHouses />
+    </section>
   );
 }
