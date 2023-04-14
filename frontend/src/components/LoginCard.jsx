@@ -37,7 +37,7 @@ export default function LoginCard() {
                 />{" "}
               </span>
             </div>
-            <label htmlFor="a" className="text-xs">
+            <label htmlFor="Passchange" className="text-xs">
               <a href="/ChangePassword">Forgot password?</a>
             </label>
           </div>
