@@ -1,4 +1,4 @@
-export default function Filterbtn() {
+export default function FilterBtn() {
   return (
     <div className="bg-grey col-12 mt-3 align-middle justify-content-center flex">
       <button
