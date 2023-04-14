@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,5 +39,29 @@
 
   .house:hover p {
     bottom: 0;
+   }
+
+  .line-login-before::before,
+    .line-login-after::after {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 40px;
+    background-color: lightgray;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .line-login-before::before {
+    left: 0px;
+  }
+
+  .line-login-after::after {
+    right: 0px;
+  }
+
+  .is-active {
+    color: theme("colors.secondary");
   }
 }
