@@ -1,9 +1,12 @@
-import HousesCards from "@components/HousesCards";
+import DisplayHouses from "@components/DisplayHouses";
 
 export default function Home() {
   return (
     <section>
-      <HousesCards />
+
+      <h2 className="text-xl">Home</h2>
+      <DisplayHouses />
+
     </section>
   );
 }

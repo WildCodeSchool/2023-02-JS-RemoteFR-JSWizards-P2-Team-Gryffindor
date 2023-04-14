@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#fff4e2",
-        hover: "#F96140",
+        secondary: "#FFD075",
         gryPrimary: "#AE0001",
         grySecondary: "#740001",
         gryLight: "#EEBA30",
