@@ -1,4 +1,4 @@
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function LoginCard() {
   return (
@@ -64,11 +64,11 @@ export default function LoginCard() {
         <p className="flex justify-center text-xs">
           Don't have an account yet?
         </p>
-        {/* <NavLink to="/register"> */}
-        <p className="flex justify-center text-xs font-semibold">
-          Register here!
-        </p>
-        {/* </NavLink> */}
+        <NavLink to="/register">
+          <p className="flex justify-center text-xs font-semibold">
+            Register here!
+          </p>
+        </NavLink>
       </div>
     </div>
   );
