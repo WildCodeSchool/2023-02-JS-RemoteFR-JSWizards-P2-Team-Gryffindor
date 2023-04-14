@@ -8,6 +8,7 @@ import {
 // Pages
 import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
+
 import Play from "./pages/Play";
 import Inventory from "./pages/Inventory";
 import Account from "./pages/Account";
