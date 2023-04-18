@@ -1,9 +1,9 @@
-export default function CardRav() {
+export default function CardSly() {
   return (
     <div className="relative rounded-xl">
       <img
         className="relative object-cover object-center w-[184px] h-[265px] rounded-xl shadow-sm"
-        src="./public/image/CardRav.png"
+        src="./public/image/CardSly.png"
         alt=""
       />
       <img
@@ -13,7 +13,7 @@ export default function CardRav() {
       />
       <img
         className="absolute bottom-2 right-1 w-10 h-10"
-        src="./public/icon/rav-logo.svg"
+        src="./public/icon/sly-logo.svg"
         alt=""
       />
       <p className="absolute bottom-3 left-3">Harry Potter</p>

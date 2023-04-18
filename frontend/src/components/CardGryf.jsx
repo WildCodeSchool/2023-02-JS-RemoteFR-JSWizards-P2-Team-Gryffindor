@@ -3,7 +3,7 @@ export default function CardGryf() {
     <div className="relative rounded-xl">
       <img
         className="relative object-cover object-center w-[184px] h-[265px] rounded-xl shadow-sm"
-        src="./public/image/GryfCard.png"
+        src="./public/image/CardGryf.png"
         alt=""
       />
       <img
