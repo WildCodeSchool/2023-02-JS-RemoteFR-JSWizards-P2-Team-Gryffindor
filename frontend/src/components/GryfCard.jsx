@@ -1,17 +1,22 @@
 export default function GryfCard() {
   return (
-    <div className="relative bg-lightmode dark:bg-dark rounded-xl drop-shadow w-[180px]">
+    <div className="relative rounded-xl">
       <img
-        className="object-cover object-center w-full max-h-[120px] rounded-t-xl"
-        src=""
+        className="relative object-cover object-center w-[184px] h-[265px] rounded-xl shadow-sm"
+        src="./public/image/GryfCard.png"
         alt=""
       />
-      <div className="space-y-2 px-3 pt-1.5 pb-4">
-        <div>
-          <p className="text-dark dark:text-neutral text-base">name</p>
-          <p className="text-xs text-dark25 dark:text-neutral/50">test</p>
-        </div>
-      </div>
+      <img
+        className="absolute top-3 left-3 object-cover w-[160px] h-[210px] rounded-t-md"
+        src="./public/image/Harry.jpg"
+        alt=""
+      />
+      <img
+        className="absolute bottom-2 right-1 w-10 h-10"
+        src="./public/icon/gryf-logo.svg"
+        alt=""
+      />
+      <p className="absolute bottom-3 left-3">Harry Potter</p>
     </div>
   );
 }
