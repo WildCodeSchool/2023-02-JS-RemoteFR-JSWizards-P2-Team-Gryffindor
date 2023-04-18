@@ -4,7 +4,7 @@ export default function CardSly() {
       <img
         className="relative object-cover object-center w-[184px] h-[265px] rounded-xl shadow-sm"
         src="./public/image/CardSly.png"
-        alt=""
+        alt="Slytherin Card background"
       />
       <img
         className="absolute top-3 left-3 object-cover w-[160px] h-[210px] rounded-t-md"
@@ -14,7 +14,7 @@ export default function CardSly() {
       <img
         className="absolute bottom-2 right-1 w-10 h-10"
         src="./public/icon/sly-logo.svg"
-        alt=""
+        alt="Slytherin logo"
       />
       <p className="absolute bottom-3 left-3">Harry Potter</p>
     </div>
