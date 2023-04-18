@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import LottieAnim from "../assets/lotties/404-animation.json";
 
 export default function NotFound() {
   return (
-    <section>
+    <section className="min-h-[calc(100vh-125px)] flex flex-col justify-center items-center space-y-4 text-base text-center">
       <div>
-        <h2 className="text-xl">Oops page not found!</h2>
-        <p className=" mb-4">The page you are looking for is missing</p>
+        <Lottie
+          loop
+          autoplay
+          animationData={LottieAnim}
+          className="absolute md:bottom-5 md:left-2/4 w-[500px] hidden md:block"
+        />
       </div>
-      <Link
-        to="/"
-        className="text-primary py-2 px-5 bg-dark hover:bg-accent rounded-3xl"
-      >
-        Go back to Home
-      </Link>
     </section>
   );
 }
