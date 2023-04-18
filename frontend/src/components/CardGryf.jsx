@@ -1,4 +1,4 @@
-export default function GryfCard() {
+export default function CardGryf() {
   return (
     <div className="relative rounded-xl">
       <img

@@ -1,4 +1,4 @@
-export default function RavCard() {
+export default function CardRav() {
   return (
     <div className="relative rounded-xl">
       <img
