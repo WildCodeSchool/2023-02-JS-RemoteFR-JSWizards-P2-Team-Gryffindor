@@ -9,7 +9,7 @@ export default function CardSly() {
       <img
         className="absolute top-3 left-3 object-cover w-[160px] h-[210px] rounded-t-md"
         src="./public/image/Harry.jpg"
-        alt=""
+        alt="Harry potter"
       />
       <img
         className="absolute bottom-2 right-1 w-10 h-10"
