@@ -1,4 +1,6 @@
-function CreateCard(props) {
+import PropTypes from "prop-types";
+
+function CreateCard({ name }) {
   return (
     <div className="relative rounded-xl">
       <img
@@ -16,9 +18,12 @@ function CreateCard(props) {
         src="./public/icon/gryf-logo.svg"
         alt="Gryffindor logo"
       />
-      <p className="absolute bottom-3 left-3">{props.name}</p>
+      <p className="absolute bottom-3 left-3">{name}</p>
     </div>
   );
 }
 
+CreateCard.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 export default CreateCard;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function SearchBar({ handleSearch }) {
   return (
     <div className="flex items-center relative">
@@ -15,5 +17,9 @@ function SearchBar({ handleSearch }) {
     </div>
   );
 }
+
+SearchBar.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
+};
 
 export default SearchBar;
