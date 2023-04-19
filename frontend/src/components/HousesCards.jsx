@@ -1,15 +1,44 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+const cards = [
+  {
+    name: "Harry Potter",
+    house: "Gryffindor",
+  },
+  {
+    name: "Cedric Diggory",
+    house: "Hufflepuff",
+  },
+  {
+    name: "Luna Lovegood",
+    house: "Ravenclaw",
+  },
+  {
+    name: "Draco Malfoy",
+    house: "Slytherin",
+  },
+  {
+    name: "Ginny Weasley",
+    house: "Gryffindor",
+  },
+];
+
 export default function HouseCards() {
   const [selectedHouse, setSelectedHouse] = useState(null);
 
-  const handleNext = () => {
-    if (selectedHouse) {
-      history.push("/character");
-    }
-    // Ajoute le code pour passer à l'étape suivante
-  };
+  let filteredCards;
+  if (selectedHouse) {
+    filteredCards = cards.filter(function (card) {
+      if (card.house === selectedHouse) {
+        return true; 
+      } else {
+        return false; 
+      }
+    });
+  } else {
+    filteredCards = cards;
+  }
 
   return (
     <div>
@@ -77,8 +106,9 @@ export default function HouseCards() {
         </div>
       </div>
       {selectedHouse && (
-        <Link to="/character">
+        <Link to="/Character">
           <button
+            type="button"
             className="mt-2 bg-dark p-2.5 rounded-3xl"
             disabled={!selectedHouse}
           >
@@ -86,6 +116,17 @@ export default function HouseCards() {
           </button>
         </Link>
       )}
+      <div className="card-container">
+        {filteredCards.map((card, index) => (
+          <div className="card" key={index}>
+            <div className="card-info">
+              <h3>{card.name}</h3>
+              <p>House: {card.house}</p>
+              <p>Species: {card.species}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
