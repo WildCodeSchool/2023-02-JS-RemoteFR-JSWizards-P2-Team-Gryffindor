@@ -2,7 +2,7 @@ function Versus() {
   return (
     <div className="versus-container">
       <div className="cards-container">
-        <div className="container">
+        <div className="card-container">
           <div className="img-potions">
             <div className="potions">
               <p>Potion 1</p>
@@ -30,7 +30,7 @@ function Versus() {
           </div>
         </div>
 
-        <div className="container">
+        <div className="card-container">
           <div className="img-potions potions-2">
             <div className=" potions">
               <p>Potion 1</p>
