@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 // Pages
+import Versus from "@pages/Versus";
 import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
 import Play from "./pages/Play";
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="play" element={<Play />} />
+      <Route path="versus" element={<Versus />} />
       <Route path="inventory" element={<Inventory />} />
       <Route path="account" element={<Account />} />
       <Route path="login" element={<Login />} />
