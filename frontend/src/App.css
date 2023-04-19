@@ -39,14 +39,15 @@
   }
 
   .twitter:hover {
-    transform: scale(1.1);}
+    transform: scale(1.1);
+  }
 
   .houses-intro {
     display: flex;
     justify-content: center;
     gap: 2rem;
   }
-
+  /* Code for HousesCards*/
   input[type="radio"] {
     display: none;
   }
@@ -104,11 +105,11 @@
 
   .house:hover p {
     bottom: 0;
-   }
+  }
 
-  /* Code for LoginCard */
+  /* Code for LoginCard & RegisterCard */
   .line-login-before::before,
-    .line-login-after::after {
+  .line-login-after::after {
     content: "";
     display: inline-block;
     height: 1px;
@@ -129,5 +130,13 @@
 
   .is-active {
     color: theme("colors.secondary");
+  }
+
+  /* Code for CardLibrary */
+  .gallery {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    justify-items: center;
   }
 }
