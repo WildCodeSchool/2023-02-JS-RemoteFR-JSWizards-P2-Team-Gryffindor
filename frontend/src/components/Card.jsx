@@ -23,7 +23,7 @@ function Card({ name, image, house }) {
       break;
     default:
       backgroundSrc = "./public/image/CardDefault.png";
-      logoSrc = "./public/icon/hogwarts-logo.svg";
+      logoSrc = "";
       break;
   }
 
