@@ -1,29 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const cards = [
-  {
-    name: "Harry Potter",
-    house: "Gryffindor",
-  },
-  {
-    name: "Cedric Diggory",
-    house: "Hufflepuff",
-  },
-  {
-    name: "Luna Lovegood",
-    house: "Ravenclaw",
-  },
-  {
-    name: "Draco Malfoy",
-    house: "Slytherin",
-  },
-  {
-    name: "Ginny Weasley",
-    house: "Gryffindor",
-  },
-];
-
 export default function HouseCards() {
   const [selectedHouse, setSelectedHouse] = useState(null);
 
