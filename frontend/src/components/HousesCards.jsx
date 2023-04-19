@@ -27,18 +27,9 @@ const cards = [
 export default function HouseCards() {
   const [selectedHouse, setSelectedHouse] = useState(null);
 
-  let filteredCards;
-  if (selectedHouse) {
-    filteredCards = cards.filter(function (card) {
-      if (card.house === selectedHouse) {
-        return true; 
-      } else {
-        return false; 
-      }
-    });
-  } else {
-    filteredCards = cards;
-  }
+  const filteredCards = selectedHouse
+    ? cards.filter((card) => card.house === selectedHouse)
+    : cards;
 
   return (
     <div>
@@ -117,8 +108,8 @@ export default function HouseCards() {
         </Link>
       )}
       <div className="card-container">
-        {filteredCards.map((card, index) => (
-          <div className="card" key={index}>
+        {filteredCards.map((card) => (
+          <div className="card">
             <div className="card-info">
               <h3>{card.name}</h3>
               <p>House: {card.house}</p>
