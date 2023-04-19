@@ -25,7 +25,9 @@ export default function Inventory() {
           <FilterBtn />
         </div>
       </div>
-      <CardLibrary cards={cards} />
+      <div>
+        <CardLibrary cards={cards} />
+      </div>
     </section>
   );
 }
