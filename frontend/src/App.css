@@ -39,7 +39,8 @@
   }
 
   .twitter:hover {
-    transform: scale(1.1);}
+    transform: scale(1.1);
+  }
 
   .houses-intro {
     display: flex;
@@ -104,11 +105,11 @@
 
   .house:hover p {
     bottom: 0;
-   }
+  }
 
   /* Code for LoginCard */
   .line-login-before::before,
-    .line-login-after::after {
+  .line-login-after::after {
     content: "";
     display: inline-block;
     height: 1px;
@@ -129,5 +130,50 @@
 
   .is-active {
     color: theme("colors.secondary");
+  }
+
+  /* Code for FightStart */
+
+  .fight-container {
+    height: 100vh;
+    width: 180vh;
+    background-image: url("./assets/fight.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .cards-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    background-color: #740001;
+    border-radius: 10px;
+    border: #d3a625 solid 1px;
+    height: 20rem;
+    width: 60%;
+  }
+
+  .card img {
+    height: 12rem;
+    width: 150%;
+    border-radius: 10px;
+  }
+
+  .card h3 {
+    color: #d3a625;
+  }
+
+  .characteristics {
+    margin-top: 1rem;
+    margin-left: 1rem;
   }
 }
