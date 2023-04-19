@@ -1,6 +1,6 @@
 import SearchBar from "../components/SearchBar";
 import FilterBtn from "../components/FilterBtn";
-import CardGryf from "../components/CardGryf";
+import CardGryf from "../components/Card";
 import CardRav from "../components/CardRav";
 import CardHuff from "../components/CardHuff";
 import CardSly from "../components/CardSly";
