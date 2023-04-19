@@ -39,7 +39,8 @@
   }
 
   .twitter:hover {
-    transform: scale(1.1);}
+    transform: scale(1.1);
+  }
 
   .houses-intro {
     display: flex;
@@ -104,11 +105,11 @@
 
   .house:hover p {
     bottom: 0;
-   }
+  }
 
   /* Code for LoginCard */
   .line-login-before::before,
-    .line-login-after::after {
+  .line-login-after::after {
     content: "";
     display: inline-block;
     height: 1px;
