@@ -1,5 +1,9 @@
 import SearchBar from "../components/SearchBar";
 import FilterBtn from "../components/FilterBtn";
+import CardGryf from "../components/CardGryf";
+import CardRav from "../components/CardRav";
+import CardHuff from "../components/CardHuff";
+import CardSly from "../components/CardSly";
 
 export default function Inventory() {
   return (
@@ -10,6 +14,12 @@ export default function Inventory() {
           <SearchBar />
           <FilterBtn />
         </div>
+      </div>
+      <div>
+        <CardGryf />
+        <CardRav />
+        <CardHuff />
+        <CardSly />
       </div>
     </section>
   );
