@@ -1,36 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const cards = [
-  {
-    name: "Harry Potter",
-    house: "Gryffindor",
-  },
-  {
-    name: "Cedric Diggory",
-    house: "Hufflepuff",
-  },
-  {
-    name: "Luna Lovegood",
-    house: "Ravenclaw",
-  },
-  {
-    name: "Draco Malfoy",
-    house: "Slytherin",
-  },
-  {
-    name: "Ginny Weasley",
-    house: "Gryffindor",
-  },
-];
+const api = "https://hp-api.onrender.com/api/characters";
 
 export default function HouseCards() {
-  const [selectedHouse, setSelectedHouse] = useState(null);
+  const [selectedHouse, setSelectedHouse] = useState(
+    localStorage.getItem("selectedHouse") || null
+  );
 
-  const filteredCards = selectedHouse
-    ? cards.filter((card) => card.house === selectedHouse)
-    : cards;
+  useEffect(() => {
+    fetch(api)
+      .then((response) => response.json())
+      .then((data) => setCards(data));
+  }, []);
 
+  useEffect(() => {
+    localStorage.setItem("selectedHouse", selectedHouse);
+  }, [selectedHouse]);
+  
   return (
     <div>
       <div className="flex gap-4 house-intro">
@@ -107,17 +94,6 @@ export default function HouseCards() {
           </button>
         </Link>
       )}
-      <div className="hidden">
-        {filteredCards.map((card) => (
-          <div className="card">
-            <div className="card-info">
-              <h3>{card.name}</h3>
-              <p>House: {card.house}</p>
-              <p>Species: {card.species}</p>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
