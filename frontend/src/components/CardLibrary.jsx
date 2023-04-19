@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-import CardGryf from "./CardGryf";
+import Card from "./Card";
 
 function CardLibrary({ cards }) {
   return (
     <div className="gallery">
       {cards.map((card) => (
-        <CardGryf
+        <Card
           key={card.id}
           name={card.name}
           image={card.image}
