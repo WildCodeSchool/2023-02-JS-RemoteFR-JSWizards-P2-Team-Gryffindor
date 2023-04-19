@@ -135,8 +135,8 @@
   /* Code for CardLibrary */
   .gallery {
     display: grid;
+    grid-template-columns: repeat(10, 1fr);
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
     justify-items: center;
   }
 }
