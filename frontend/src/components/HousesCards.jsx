@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const api = "https://hp-api.onrender.com/api/characters";
-
 export default function HouseCards() {
   const [selectedHouse, setSelectedHouse] = useState(
     localStorage.getItem("selectedHouse") || null
   );
 
   useEffect(() => {
-    fetch(api)
-      .then((response) => response.json())
-      .then((data) => setCards(data));
-  }, []);
-
-  useEffect(() => {
     localStorage.setItem("selectedHouse", selectedHouse);
   }, [selectedHouse]);
-  
+
   return (
     <div>
       <div className="flex gap-4 house-intro">
@@ -84,7 +76,7 @@ export default function HouseCards() {
         </div>
       </div>
       {selectedHouse && (
-        <Link to="/Character">
+        <Link to="#">
           <button
             type="button"
             className="mt-2 bg-dark p-2.5 rounded-3xl"

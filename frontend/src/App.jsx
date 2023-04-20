@@ -10,7 +10,6 @@ import {
 import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
 import Play from "./pages/Play";
-import Character from "./pages/CharacterChose";
 import Inventory from "./pages/Inventory";
 import Account from "./pages/Account";
 import Login from "./pages/Login";
@@ -22,7 +21,6 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="play" element={<Play />} />
-      <Route path="character" element={<Character />} />
       <Route path="inventory" element={<Inventory />} />
       <Route path="account" element={<Account />} />
       <Route path="login" element={<Login />} />
