@@ -39,7 +39,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <form className="flex flex-col space-y-6 items-end">
+          <form className="flex flex-col space-y-6 items-center">
             <div className="items-start bg-darkmode rounded outline-none w-[500px]">
               <input
                 className="items-start px-5 py-1.5 bg-darkmode rounded outline-none w-full"
