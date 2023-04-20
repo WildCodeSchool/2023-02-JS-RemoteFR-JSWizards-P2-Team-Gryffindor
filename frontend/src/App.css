@@ -135,10 +135,11 @@
 
   /* Code for CardLibrary */
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
-    justify-items: center;
+    justify-content: space-around;
+    padding: 0 10rem;
   }
 
   /* Code for FightStart */
