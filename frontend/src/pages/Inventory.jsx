@@ -1,75 +1,44 @@
-import CreateCard from "@components/CreateCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
 import FilterBtn from "../components/FilterBtn";
-
-/* tableau pour tester mon filtre par name */
-const characters = [
-  {
-    name: "Harry Potter",
-    id: 1,
-    house: "Gryffindor",
-    ancestry: "half-blood",
-    image: "https://ik.imagekit.io/hpapi/harry.jpg",
-  },
-  {
-    name: "Lily Potter",
-    id: 2,
-    house: "Slytherin",
-    ancestry: "half-blood",
-    image: "https://ik.imagekit.io/hpapi/harry.jpg",
-  },
-  {
-    name: "James Potter",
-    id: 3,
-    house: "Ravenclaw",
-    ancestry: "pure-blood",
-    image: "https://ik.imagekit.io/hpapi/harry.jpg",
-  },
-  {
-    name: "Albus Severus Potter",
-    id: 4,
-    house: "Hufflepuff",
-    ancestry: "muggleborn",
-    image: "https://ik.imagekit.io/hpapi/harry.jpg",
-  },
-  {
-    name: "Hafsa Potter",
-    id: 5,
-    house: "Gryffindor",
-    ancestry: "muggleborn",
-    image: "https://ik.imagekit.io/hpapi/harry.jpg",
-  },
-];
+import CardLibrary from "../components/CardLibrary";
 
 export default function Inventory() {
-  const [inventory, setInventory] = useState(characters);
+  const [cards, setCards] = useState([]);
+  const [allCards, setAllCards] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://hp-api.onrender.com/api/characters"
+      );
+      const data = await response.json();
+      setCards(data);
+      setAllCards(data);
+    } catch (error) {
+      console.error("Error fetching data from API:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const handleSearch = (e) => {
     const search = e.target.value.toLowerCase();
-    const nameSearch = characters.filter((character) => {
-      return character.name.toLowerCase().includes(search);
+    const filterCards = allCards.filter((card) => {
+      const lowerCaseName = card.name.toLowerCase();
+      const lowerCaseHouse = card.house ? card.house.toLowerCase() : "";
+      const lowerCaseAncestry = card.ancestry
+        ? card.ancestry.toLowerCase()
+        : "";
+      return (
+        lowerCaseName.includes(search) ||
+        lowerCaseHouse.includes(search) ||
+        lowerCaseAncestry.includes(search)
+      );
     });
-    const houseSearch = characters.filter((character) => {
-      return character.house.toLowerCase().includes(search);
-    });
-    const ancestrySearch = characters.filter((character) => {
-      return character.ancestry.toLowerCase().includes(search);
-    });
-    nameSearch.filter((character) =>
-      character.name.toLowerCase().includes(search)
-        ? setInventory(nameSearch)
-        : setInventory(characters)
-    );
-    ancestrySearch.filter((character) =>
-      character.ancestry.toLowerCase().includes(search)
-        ? setInventory(ancestrySearch)
-        : setInventory(characters)
-    );
-    houseSearch.filter((character) =>
-      character.house.toLowerCase().includes(search)
-        ? setInventory(houseSearch)
-        : setInventory(characters)
-    );
+    setCards(filterCards);
   };
 
   return (
@@ -82,10 +51,7 @@ export default function Inventory() {
         </div>
       </div>
       <div>
-        {inventory.map((character) => (
-          <CreateCard key={character.id} name={character.name} />
-        ))}
-        
+        <CardLibrary cards={cards} />
       </div>
     </section>
   );
