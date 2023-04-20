@@ -6,10 +6,16 @@ import CardLibrary from "../components/CardLibrary";
 export default function Inventory() {
   const [cards, setCards] = useState([]);
 
-  const fetchData = () => {
-    return fetch("https://hp-api.onrender.com/api/characters")
-      .then((response) => response.json())
-      .then((data) => setCards(data));
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://hp-api.onrender.com/api/characters"
+      );
+      const data = await response.json();
+      setCards(data);
+    } catch (error) {
+      console.error("Error fetching data from API:", error);
+    }
   };
 
   useEffect(() => {
