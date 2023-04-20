@@ -7,8 +7,9 @@ import {
 } from "react-router-dom";
 
 // Pages
-import FightStart from "@pages/FightStart";
 import RootLayout from "./layouts/RootLayout";
+import FightStart from "./pages/FightStart";
+import Versus from "./pages/Versus";
 import Home from "./pages/Home";
 import Play from "./pages/Play";
 import Inventory from "./pages/Inventory";
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="play" element={<Play />} />
       <Route path="fightstart" element={<FightStart />} />
+      <Route path="versus" element={<Versus />} />
       <Route path="inventory" element={<Inventory />} />
       <Route path="account" element={<Account />} />
       <Route path="login" element={<Login />} />
