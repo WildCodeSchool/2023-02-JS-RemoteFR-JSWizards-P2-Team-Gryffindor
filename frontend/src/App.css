@@ -48,6 +48,7 @@
     gap: 2rem;
   }
 
+  /* Code for HousesCards*/
   input[type="radio"] {
     display: none;
   }
@@ -107,7 +108,7 @@
     bottom: 0;
   }
 
-  /* Code for LoginCard */
+  /* Code for LoginCard & RegisterCard */
   .line-login-before::before,
   .line-login-after::after {
     content: "";
@@ -132,6 +133,15 @@
     color: theme("colors.secondary");
   }
 
+  /* Code for CardLibrary */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+    justify-items: center;
+  }
+
+
   /* Code for FightStart */
 
   .fight-container {
@@ -143,6 +153,7 @@
     display: flex;
     justify-content: space-around;
    }
+
   /* Code for versus */
   .versus-container {
     width: 100%;

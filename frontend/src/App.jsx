@@ -17,6 +17,7 @@ import Account from "./pages/Account";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
+import Versus from "./pages/Versus";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
