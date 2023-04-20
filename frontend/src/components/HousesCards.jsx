@@ -76,7 +76,7 @@ export default function HouseCards() {
         </div>
       </div>
       {selectedHouse && (
-        <Link to="#">
+        <Link to="/inventory">
           <button
             type="button"
             className="mt-2 bg-dark p-2.5 rounded-3xl"
