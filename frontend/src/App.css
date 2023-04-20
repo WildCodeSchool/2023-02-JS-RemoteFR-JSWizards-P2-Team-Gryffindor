@@ -1,56 +1,287 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@layer utilities {
+  /* Code for Footer */
+  .github {
+    width: 40px;
+    height: 40px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .github:hover {
+    transform: scale(1.1);
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-button {
-  font-size: calc(10px + 2vmin);
+  .youtube {
+    width: 40px;
+    height: 28.1px;
+  }
+
+  .youtube:hover {
+    transform: scale(1.1);
+  }
+
+  .instagram {
+    width: 40px;
+    height: 40px;
+  }
+
+  .instagram:hover {
+    transform: scale(1.1);
+  }
+
+  .twitter {
+    width: 40px;
+    height: 32.5px;
+  }
+
+  .twitter:hover {
+    transform: scale(1.1);
+  }
+
+  .houses-intro {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  /* Code for HousesCards*/
+  input[type="radio"] {
+    display: none;
+  }
+
+  label img {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+
+  input[type="radio"]:checked + label img {
+    opacity: 1;
+  }
+
+  .houses-intro:hover > .house {
+    opacity: 0.5;
+  }
+
+  .houses-intro:hover > .house:hover {
+    opacity: 1;
+  }
+
+  .house {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .house-choice {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .select-house {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .character {
+    font-size: theme("fontSize.xs");
+    font-style: italic;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .house p {
+    position: absolute;
+    bottom: -100%;
+    text-align: center;
+    color: rgb(255, 255, 253);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    transition: bottom 0.5s ease-in-out;
+  }
+
+  .house:hover p {
+    bottom: 0;
+  }
+
+  /* Code for LoginCard & RegisterCard */
+  .line-login-before::before,
+  .line-login-after::after {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 40px;
+    background-color: lightgray;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .line-login-before::before {
+    left: 0px;
+  }
+
+  .line-login-after::after {
+    right: 0px;
+  }
+
+  .is-active {
+    color: theme("colors.secondary");
+  }
+
+  /* Code for CardLibrary */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  /* Code for FightStart */
+
+  .fight-container {
+    height: 100vh;
+    width: 180vh;
+    background-image: url("./assets/fight.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  /* Code for versus */
+  .versus-container {
+    width: 100%;
+    height: 75vh;
+    background-image: url("./assets/wood.jpg");
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .cards-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .card-container {
+    margin-left: 2rem;
+    width: 35%;
+    height: 75%;
+  }
+
+  .img-potions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+  }
+
+  .potions p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    text-align: center;
+    color: #d3a625;
+    margin-top: 2rem;
+    height: 2.5rem;
+    width: 5rem;
+    border-radius: 20px;
+  }
+
+  .potions-2 {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .potions p:hover {
+    box-shadow: 0px 0px 12px #d3a625;
+  }
+
+  .card {
+    background-color: #740001;
+    border-radius: 10px;
+    border: #d3a625 solid 1px;
+    height: 20rem;
+    width: 60%;
+  }
+
+  .card img {
+    height: 12rem;
+    width: 150%;
+    border-radius: 10px;
+  }
+
+  .card h3 {
+    color: #d3a625;
+  }
+
+  .spells {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-left: 8rem;
+  }
+
+  .spells p:hover {
+    box-shadow: 0px 0px 12px #e9b527;
+  }
+
+  .spells-2 {
+    margin-right: 16rem;
+  }
+
+  .spells p {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    text-align: center;
+    color: #d3a625;
+    height: 2.5rem;
+    width: 5rem;
+    border-radius: 20px;
+  }
+
+  .characteristics {
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
+  .abandon-btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .abandon-btn button {
+    height: 2.5rem;
+    width: 6rem;
+    background-color: #d3a625;
+    color: black;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+  }
+
+  .abandon-btn button:hover {
+    box-shadow: 0px 0px 16px #000000;
+  }
 }
