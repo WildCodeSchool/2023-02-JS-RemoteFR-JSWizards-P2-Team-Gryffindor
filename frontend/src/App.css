@@ -141,6 +141,19 @@
     justify-items: center;
   }
 
+
+  /* Code for FightStart */
+
+  .fight-container {
+    height: 100vh;
+    width: 180vh;
+    background-image: url("./assets/fight.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+   }
+
   /* Code for versus */
   .versus-container {
     width: 100%;
@@ -153,7 +166,12 @@
 
   .cards-container {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
