@@ -8,7 +8,7 @@ export default function FakeGameHistory() {
     "Luna Lovegood",
     "Horace Slughorn",
   ];
-  const fakeResult = ["won", "lost", "abandonned"];
+  const fakeResult = ["Won", "Lost", "Abandonned"];
   const [games, setGames] = useState([]);
   useEffect(() => {
     const newGames = [];
