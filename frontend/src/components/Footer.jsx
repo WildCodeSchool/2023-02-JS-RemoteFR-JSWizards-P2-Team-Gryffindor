@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <footer className="flex gap-16 justify-center items-center px-8 bg-dark py-6">
+      <footer className="flex gap-16 justify-center items-start px-8 bg-dark py-6">
         <div>
           <ul className="flex flex-col space-y-4 justify-between">
             <li className="github">
