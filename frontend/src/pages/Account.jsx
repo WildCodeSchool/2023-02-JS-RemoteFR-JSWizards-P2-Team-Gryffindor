@@ -3,10 +3,12 @@ import GameHistoryReact from "../components/GameHistoryReact";
 
 export default function Account() {
   return (
-    <section>
-      <h2 className="text-xl">Account</h2>
+    <section className="space-y-4">
+      <h2 className="text-xl">My account</h2>
+      <div className="bg-dark rounded">
       <AccountBanner />
       <GameHistoryReact />
+      </div>
     </section>
   );
 }
