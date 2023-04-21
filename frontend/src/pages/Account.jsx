@@ -4,7 +4,7 @@ import GameHistoryReact from "../components/GameHistoryReact";
 
 export default function Account() {
   return (
-    <section>
+    <section className="space-y-4">
       <h2 className="text-xl">My account</h2>
       <div className="bg-dark rounded p-4 space-y-8 justify-center">
         <div className="flex justify-between">
