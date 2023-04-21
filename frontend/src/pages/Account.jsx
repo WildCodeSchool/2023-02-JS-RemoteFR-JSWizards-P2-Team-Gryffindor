@@ -6,8 +6,8 @@ export default function Account() {
     <section className="space-y-4">
       <h2 className="text-xl">My account</h2>
       <div className="bg-dark rounded">
-      <AccountBanner />
-      <GameHistoryReact />
+        <AccountBanner />
+        <GameHistoryReact />
       </div>
     </section>
   );
