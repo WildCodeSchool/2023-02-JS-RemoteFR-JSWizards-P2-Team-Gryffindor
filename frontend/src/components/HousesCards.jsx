@@ -11,7 +11,7 @@ export default function HouseCards() {
   }, [selectedHouse]);
 
   return (
-    <div>
+    <div className="space-y-4">
       <div className="flex gap-4 house-intro">
         <div className="house">
           {" "}
@@ -75,17 +75,19 @@ export default function HouseCards() {
           </label>
         </div>
       </div>
-      {selectedHouse && (
-        <Link to="/inventory">
-          <button
-            type="button"
-            className="mt-2 bg-dark p-2.5 rounded-3xl"
-            disabled={!selectedHouse}
-          >
-            Continue
-          </button>
-        </Link>
-      )}
+      <div className="flex justify-end">
+        {selectedHouse && (
+          <Link to="/inventory">
+            <button
+              type="button"
+              className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+              disabled={!selectedHouse}
+            >
+              Continue
+            </button>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }

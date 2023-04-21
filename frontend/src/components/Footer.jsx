@@ -6,40 +6,31 @@ export default function Footer() {
           <ul className="flex flex-col space-y-4 justify-between">
             <li className="github">
               <a href="https://www.github.com">
-                <img
-                  src="./src/assets/icons/github.svg"
-                  alt="github logo icon"
-                />
+                <img src="./public/icon/github.svg" alt="github logo icon" />
               </a>
             </li>
             <li className="twitter">
               <a href="https://www.twitter.com">
-                <img
-                  src="./src/assets/icons/twitter.svg"
-                  alt="twitter logo icon"
-                />
+                <img src="./public/icon/twitter.svg" alt="twitter logo icon" />
               </a>
             </li>
             <li className="instagram">
               <a href="https://www.instagram.com">
                 <img
-                  src="./src/assets/icons/instagram.svg"
+                  src="./public/icon/instagram.svg"
                   alt="instagram logo icon"
                 />
               </a>
             </li>
             <li className="youtube">
               <a href="https://www.youtube.com">
-                <img
-                  src="./src/assets/icons/youtube.svg"
-                  alt="youtube logo icon"
-                />
+                <img src="./public/icon/youtube.svg" alt="youtube logo icon" />
               </a>
             </li>
           </ul>
         </div>
         <div>
-          <form className="flex flex-col space-y-6 items-end">
+          <form className="flex flex-col space-y-6 items-center">
             <div className="items-start bg-darkmode rounded outline-none w-[500px]">
               <input
                 className="items-start px-5 py-1.5 bg-darkmode rounded outline-none w-full"
