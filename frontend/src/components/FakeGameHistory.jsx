@@ -9,19 +9,23 @@ export default function FakeGameHistory() {
     "Horace Slughorn",
   ];
   const fakeResult = ["won", "lost", "abandonned"];
+  
   const [games, setGames] = useState([]);
   useEffect(() => {
     const newGames = [];
 
     for (let i = 0; i < 4; i += 1) {
+      const random1 = Math.floor(Math.random() * fakeArrayHouse.length)
+      const random2 = Math.floor(Math.random() * fakeArrayHouse.length)
+
       const house =
-        fakeArrayHouse[Math.floor(Math.random() * fakeArrayHouse.length)];
+        fakeArrayHouse[random1];
       const character =
-        fakeArrayAi[Math.floor(Math.random() * fakeArrayHouse.length)];
+        fakeArrayAi[random1];
       const ennemyHouse =
-        fakeArrayHouse[Math.floor(Math.random() * fakeArrayHouse.length)];
+        fakeArrayHouse[random2];
       const ennemyCharacter =
-        fakeArrayAi[Math.floor(Math.random() * fakeArrayHouse.length)];
+        fakeArrayAi[random2];
       const result = fakeResult[Math.floor(Math.random() * fakeResult.length)];
 
       newGames.push({

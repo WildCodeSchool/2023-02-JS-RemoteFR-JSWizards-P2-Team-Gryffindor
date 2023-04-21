@@ -9,7 +9,7 @@ export default function GameHistoryReact() {
         <thead className="text-xs uppercase border-y-2">
           <tr>
             <th className="px-6 py-3">Your House</th>
-            <th className="px-6 py-3">You character</th>
+            <th className="px-6 py-3">Your character</th>
             <th className="px-6 py-3">Enemy's House</th>
             <th className="px-6 py-3">Enemy's character</th>
             <th className="px-6 py-3">Result</th>
