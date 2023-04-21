@@ -12,8 +12,6 @@ function CardLibrary({ cards }) {
           house={card.house}
         />
       ))}
-      <p>test</p>
-      <p>test2</p>
     </div>
   );
 }

@@ -53,7 +53,7 @@ export default function RegisterCard() {
             </div>
           </div>
           <button
-            type="button"
+            type="submit"
             className="text-secondary py-2 px-5 w-full bg-primary hover:bg-secondary hover:text-primary rounded border border-gray-200 duration-300 ease-in-out"
           >
             Create account
