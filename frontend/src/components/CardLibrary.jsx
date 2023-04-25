@@ -7,6 +7,7 @@ function CardLibrary({ cards }) {
       {cards.map((card) => (
         <Card
           key={card.id}
+          idwizard={card.id}
           name={card.name}
           image={card.image}
           house={card.house}
