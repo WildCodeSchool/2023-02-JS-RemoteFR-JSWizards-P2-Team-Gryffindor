@@ -1,18 +1,15 @@
 import Card from "@components/Card";
 import { useEffect, useState } from "react";
+
 function FightStart() {
   // setTimeout(() => {
   //   window.location.href = "./versus";
   // }, 5000);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
-  useEffect(() => {
-    console.log(selectedCharacter);
-  }, [selectedCharacter]);
-
   const fetchData = async () => {
     const localCharacter = localStorage.getItem("selectedCharacterId");
-    let url = `https://hp-api.onrender.com/api/character/${localCharacter}`;
+    const url = `https://hp-api.onrender.com/api/character/${localCharacter}`;
 
     try {
       const response = await fetch(url);

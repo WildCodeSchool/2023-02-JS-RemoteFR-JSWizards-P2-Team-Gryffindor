@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
-import { Link } from "react-router-dom";
 
 export default function CharSelection({ selectedHouse, info }) {
   const [filteredCards, setFilteredCards] = useState([]);
@@ -12,10 +12,8 @@ export default function CharSelection({ selectedHouse, info }) {
   const [selectedCharacterId, setSelectedCharacterId] = useState(null);
 
   useEffect(() => {
-    console.log("j'ai changé", selectedCharacterId)
-    localStorage.setItem("selectedCharacterId", selectedCharacterId)
-
-  }, [selectedCharacterId])
+    localStorage.setItem("selectedCharacterId", selectedCharacterId);
+  }, [selectedCharacterId]);
 
   const fetchData = async () => {
     let url = "https://hp-api.onrender.com/api/characters";
@@ -69,7 +67,7 @@ export default function CharSelection({ selectedHouse, info }) {
         />
       </div>
       <div className="flex justify-end">
-        <Link to={`/fightstart`} >
+        <Link to="/fightstart">
           <button
             type="button"
             className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"

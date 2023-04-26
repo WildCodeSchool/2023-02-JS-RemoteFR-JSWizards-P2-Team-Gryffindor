@@ -5,7 +5,12 @@ function CardLibrary({ cards, setSelectedCharacterId }) {
   return (
     <div className="gallery">
       {cards.map((card) => (
-        <div key={card.id} onClick={() => setSelectedCharacterId(card.id)}>
+        <div
+          role="presentation"
+          key={card.id}
+          onClick={() => setSelectedCharacterId(card.id)}
+          onKeyDown={() => setSelectedCharacterId(card.id)}
+        >
           <Card
             idwizard={card.id}
             name={card.name}
@@ -26,6 +31,7 @@ CardLibrary.propTypes = {
       house: PropTypes.string.isRequired,
     })
   ).isRequired,
+  setSelectedCharacterId: PropTypes.string.isRequired,
 };
 
 export default CardLibrary;
