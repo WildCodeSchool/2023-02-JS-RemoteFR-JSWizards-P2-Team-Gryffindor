@@ -2,7 +2,7 @@ import Card from "../components/Card";
 import AccountBanner from "../components/AccountBanner";
 import GameHistoryReact from "../components/GameHistoryReact";
 
-export default function Account({card}) {
+export default function Account() {
   return (
     <section className="space-y-4">
       <h2 className="text-xl">My account</h2>
@@ -13,10 +13,7 @@ export default function Account({card}) {
         </div>
         <div className="flex justify-around items-center">
           <AccountBanner />
-          <Card //name={card.name}
-          //image={card.image}
-          //house={'Hufflepuff'}
-          />
+          <Card />
         </div>
         <div>
           <GameHistoryReact />

@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import SearchBar from "./SearchBar";
 import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
 
-export default function Inventory({selectedHouse, info}) {
+export default function Inventory({ selectedHouse, info }) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
 
   const fetchData = async () => {
-    let url= "https://hp-api.onrender.com/api/characters"
-    if (selectedHouse){
-        url="https://hp-api.onrender.com/api/characters/house/" +selectedHouse
+    let url = "https://hp-api.onrender.com/api/characters";
+    if (selectedHouse) {
+      url = `https://hp-api.onrender.com/api/characters/house/${selectedHouse}`;
     }
     try {
       const response = await fetch(url);
@@ -50,7 +51,7 @@ export default function Inventory({selectedHouse, info}) {
         <h2 className="text-xl">{info}</h2>
         <div className="flex gap-4">
           <SearchBar handleSearch={handleSearch} />
-          <FilterBtn setFilteredCards={setFilteredCards} cards={cards}/>
+          <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
         </div>
       </div>
       <div>
@@ -59,3 +60,8 @@ export default function Inventory({selectedHouse, info}) {
     </section>
   );
 }
+
+Inventory.propTypes = {
+  selectedHouse: PropTypes.string.isRequired,
+  info: PropTypes.string.isRequired,
+};

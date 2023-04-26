@@ -1,7 +1,5 @@
-import CharSelection from '../components/CharSelection'
+import CharSelection from "../components/CharSelection";
 
 export default function Inventory() {
- return(
-  <CharSelection info={"Card Inventory"}/>
-  );
+  return <CharSelection info="Card Inventory" />;
 }
