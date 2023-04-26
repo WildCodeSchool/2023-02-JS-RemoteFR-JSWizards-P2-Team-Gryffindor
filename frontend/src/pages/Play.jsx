@@ -22,19 +22,18 @@ export default function Play() {
       ) : (
         <HousesCards setSelectedHouse={setSelectedHouse} />
       )}
-      {step === "inventory" ||
-        (step === "stepHouse" && (
-          <div className="flex justify-end w-full">
-            <button
-              onClick={changeStep}
-              type="button"
-              className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark cursor-pointer"
-              disabled={!selectedHouse}
-            >
-              Continue
-            </button>
-          </div>
-        ))}
+      {(step === "inventory" || step === "stepHouse") && (
+        <div className="flex justify-end w-full">
+          <button
+            onClick={changeStep}
+            type="button"
+            className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark cursor-pointer"
+            disabled={!selectedHouse}
+          >
+            Continue
+          </button>
+        </div>
+      )}
     </section>
   );
 }
