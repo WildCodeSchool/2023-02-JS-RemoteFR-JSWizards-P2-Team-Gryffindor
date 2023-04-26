@@ -8,7 +8,6 @@ function Card({ name, image, house, idwizard }) {
   const missingImage = missingImg.filter((img) => img.id === idwizard);
   const defaultImg =
     missingImage[0] !== undefined ? missingImage[0].image : defaultImage;
-    
   switch (house) {
     case "Gryffindor":
       backgroundSrc = "./image/CardGryf.png";
