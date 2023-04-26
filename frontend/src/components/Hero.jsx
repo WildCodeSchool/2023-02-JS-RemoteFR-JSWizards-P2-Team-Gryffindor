@@ -8,7 +8,7 @@ export default function Hero() {
       </h1>
       <img
         className="object-center object-cover max-h-96"
-        src="./public/image/Hogwarts.png"
+        src="./image/Hogwarts.png"
         alt="hogward castle"
       />
     </div>
