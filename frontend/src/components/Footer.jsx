@@ -1,30 +1,27 @@
 export default function Footer() {
   return (
     <>
-      <footer className="flex gap-16 justify-center items-center px-8 bg-dark py-6">
+      <footer className="flex gap-16 justify-center items-start px-8 bg-dark py-6">
         <div>
           <ul className="flex flex-col space-y-4 justify-between">
             <li className="github">
               <a href="https://www.github.com">
-                <img src="./public/icon/github.svg" alt="github logo icon" />
+                <img src="./icon/github.svg" alt="github logo icon" />
               </a>
             </li>
             <li className="twitter">
               <a href="https://www.twitter.com">
-                <img src="./public/icon/twitter.svg" alt="twitter logo icon" />
+                <img src="./icon/twitter.svg" alt="twitter logo icon" />
               </a>
             </li>
             <li className="instagram">
               <a href="https://www.instagram.com">
-                <img
-                  src="./public/icon/instagram.svg"
-                  alt="instagram logo icon"
-                />
+                <img src="./icon/instagram.svg" alt="instagram logo icon" />
               </a>
             </li>
             <li className="youtube">
               <a href="https://www.youtube.com">
-                <img src="./public/icon/youtube.svg" alt="youtube logo icon" />
+                <img src="./icon/youtube.svg" alt="youtube logo icon" />
               </a>
             </li>
           </ul>
