@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function HouseCards({ setSelectedHouse }) {
+export default function HousesCards({ setSelectedHouse }) {
   return (
     <div className="flex flex-col items-center space-y-8">
       <h2 className="text-xl w-full">Choose your house</h2>
@@ -72,6 +72,6 @@ export default function HouseCards({ setSelectedHouse }) {
     </div>
   );
 }
-HouseCards.propTypes = {
-  setSelectedHouse: PropTypes.string.isRequired,
+HousesCards.propTypes = {
+  setSelectedHouse: PropTypes.func.isRequired,
 };
