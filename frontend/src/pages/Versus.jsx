@@ -18,13 +18,13 @@ function Versus() {
       console.error("Error fetching data from API:", error);
     }
     // second step : fetch enemy character
-    const dataEnemy = "https://hp-api.onrender.com/api/characters";
+    const enemyCharacterId = localStorage.getItem("randomCharacterId");
+    const dataEnemy = `https://hp-api.onrender.com/api/character/${enemyCharacterId}`;
 
     try {
       const response = await fetch(dataEnemy);
       const data = await response.json();
-      const randomNumber = Math.floor(Math.random() * data.length - 1);
-      setEnemyCharacter(data[randomNumber]);
+      setEnemyCharacter(data[0]);
     } catch (error) {
       console.error("Error fetching data from API:", error);
     }
