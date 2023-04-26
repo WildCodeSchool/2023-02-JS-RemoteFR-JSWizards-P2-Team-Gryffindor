@@ -1,17 +1,18 @@
 import PropTypes from "prop-types";
 import Card from "./Card";
 
-function CardLibrary({ cards }) {
+function CardLibrary({ cards, setSelectedCharacterId }) {
   return (
     <div className="gallery">
       {cards.map((card) => (
-        <Card
-          key={card.id}
-          idwizard={card.id}
-          name={card.name}
-          image={card.image}
-          house={card.house}
-        />
+        <div key={card.id} onClick={() => setSelectedCharacterId(card.id)}>
+          <Card
+            idwizard={card.id}
+            name={card.name}
+            image={card.image}
+            house={card.house}
+          />
+        </div>
       ))}
     </div>
   );

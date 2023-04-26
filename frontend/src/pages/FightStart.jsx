@@ -1,34 +1,50 @@
+import Card from "@components/Card";
+import { useEffect, useState } from "react";
 function FightStart() {
-  setTimeout(() => {
-    window.location.href = "./versus";
-  }, 3000);
-  return (
-    <div className="fight-container">
-      <div className="cards-container">
-        <div className="card-container">
-          <div className="card">
-            <img
-              src="https://images.indianexpress.com/2020/04/harrypotter-filephoto-759.jpg"
-              alt="left card"
-            />
+  // setTimeout(() => {
+  //   window.location.href = "./versus";
+  // }, 5000);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
 
-            <div className="characteristics">
-              <h2>Harry Potter</h2>
-              <h3>Gryffindor wizard</h3>
-            </div>
+  useEffect(() => {
+    console.log(selectedCharacter);
+  }, [selectedCharacter]);
+
+  const fetchData = async () => {
+    const localCharacter = localStorage.getItem("selectedCharacterId");
+    let url = `https://hp-api.onrender.com/api/character/${localCharacter}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setSelectedCharacter(data[0]);
+    } catch (error) {
+      console.error("Error fetching data from API:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <div className="h-[calc(100vh-125px)] bg-[url('./assets/fight.png')] bg-cover bg-no-repeat flex flex-col justify-around rounded-2xl">
+      <div className="flex justify-evenly">
+        <div className="justify-center items-center space-y-8">
+          <div className="flex justify-around gap-4">
+            {selectedCharacter && (
+              <Card
+                name={selectedCharacter.name}
+                image={selectedCharacter.image}
+                house={selectedCharacter.house}
+                idwizard={selectedCharacter.id}
+              />
+            )}
           </div>
         </div>
-        <div className="card-container">
-          <div className="card">
-            <img
-              src="https://images.indianexpress.com/2020/04/harrypotter-filephoto-759.jpg"
-              alt="right card"
-            />
-
-            <div className="characteristics">
-              <h2>Harry Potter</h2>
-              <h3>Gryffindor wizard</h3>
-            </div>
+        <div className="justify-center items-center space-y-8">
+          <div className="flex justify-around gap-4">
+            <Card />
           </div>
         </div>
       </div>

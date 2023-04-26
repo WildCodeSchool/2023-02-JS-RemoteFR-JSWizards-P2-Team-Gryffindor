@@ -3,11 +3,19 @@ import PropTypes from "prop-types";
 import SearchBar from "./SearchBar";
 import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
+import { Link } from "react-router-dom";
 
-export default function Inventory({ selectedHouse, info }) {
+export default function CharSelection({ selectedHouse, info }) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
+  const [selectedCharacterId, setSelectedCharacterId] = useState(null);
+
+  useEffect(() => {
+    console.log("j'ai changé", selectedCharacterId)
+    localStorage.setItem("selectedCharacterId", selectedCharacterId)
+
+  }, [selectedCharacterId])
 
   const fetchData = async () => {
     let url = "https://hp-api.onrender.com/api/characters";
@@ -55,13 +63,27 @@ export default function Inventory({ selectedHouse, info }) {
         </div>
       </div>
       <div>
-        <CardLibrary cards={filteredCards.length > 0 ? filteredCards : cards} />
+        <CardLibrary
+          setSelectedCharacterId={setSelectedCharacterId}
+          cards={filteredCards.length > 0 ? filteredCards : cards}
+        />
+      </div>
+      <div className="flex justify-end">
+        <Link to={`/fightstart`} >
+          <button
+            type="button"
+            className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+            disabled={!selectedHouse}
+          >
+            Continue
+          </button>
+        </Link>
       </div>
     </section>
   );
 }
 
-Inventory.propTypes = {
+CharSelection.propTypes = {
   selectedHouse: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
 };
