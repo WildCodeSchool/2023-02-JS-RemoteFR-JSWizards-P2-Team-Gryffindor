@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar";
 import FilterBtn from "../components/FilterBtn";
 import CardLibrary from "../components/CardLibrary";
+import ScrollBtn from "../components/ScrollBtn";
 
 export default function Inventory() {
   const [cards, setCards] = useState([]);
@@ -53,6 +54,7 @@ export default function Inventory() {
       <div>
         <CardLibrary cards={cards} />
       </div>
+      <ScrollBtn />
     </section>
   );
 }

@@ -1,8 +1,14 @@
 import PropTypes from "prop-types";
+import defaultImage from "../../public/image/placeholder.jpg";
+import missingImg from "../missingData.json";
 
-function Card({ name, image, house }) {
+function Card({ name, image, house, idwizard }) {
   let backgroundSrc;
   let logoSrc;
+
+  const missingImage = missingImg.filter((img) => img.id === idwizard);
+  const defaultImg =
+    missingImage[0] !== undefined ? missingImage[0].image : defaultImage;
 
   switch (house) {
     case "Gryffindor":
@@ -36,7 +42,7 @@ function Card({ name, image, house }) {
       />
       <img
         className="absolute top-3 left-3 object-cover w-[160px] h-[210px] rounded-t-md"
-        src={image}
+        src={image || defaultImg}
         alt={name}
       />
       <img
@@ -50,6 +56,7 @@ function Card({ name, image, house }) {
 }
 
 Card.propTypes = {
+  idwizard: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   house: PropTypes.string.isRequired,
