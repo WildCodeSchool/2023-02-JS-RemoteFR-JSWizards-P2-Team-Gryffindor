@@ -6,6 +6,7 @@ import CardLibrary from "../components/CardLibrary";
 export default function Inventory() {
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
+  const [filteredCards, setFilteredCards] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -47,11 +48,11 @@ export default function Inventory() {
         <h2 className="text-xl">Card inventory</h2>
         <div className="flex gap-4">
           <SearchBar handleSearch={handleSearch} />
-          <FilterBtn />
+          <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
         </div>
       </div>
       <div>
-        <CardLibrary cards={cards} />
+        <CardLibrary cards={filteredCards.length > 0 ? filteredCards : cards} />
       </div>
     </section>
   );
