@@ -1,29 +1,35 @@
 import PropTypes from "prop-types";
+import defaultImage from "../../public/image/placeholder.jpg";
+import missingImg from "../missingData.json";
 
-function Card({ name, image, house }) {
+function Card({ name, image, house, idwizard }) {
   let backgroundSrc;
   let logoSrc;
 
+  const missingImage = missingImg.filter((img) => img.id === idwizard);
+  const defaultImg =
+    missingImage[0] !== undefined ? missingImage[0].image : defaultImage;
+
   switch (house) {
     case "Gryffindor":
-      backgroundSrc = "./public/image/CardGryf.png";
-      logoSrc = "./public/icon/gryf-logo.svg";
+      backgroundSrc = "./image/CardGryf.png";
+      logoSrc = "./icon/gryf-logo.svg";
       break;
     case "Hufflepuff":
-      backgroundSrc = "./public/image/CardHuff.png";
-      logoSrc = "./public/icon/huff-logo.svg";
+      backgroundSrc = "./image/CardHuff.png";
+      logoSrc = "./icon/huff-logo.svg";
       break;
     case "Ravenclaw":
-      backgroundSrc = "./public/image/CardRav.png";
-      logoSrc = "./public/icon/rav-logo.svg";
+      backgroundSrc = "./image/CardRav.png";
+      logoSrc = "./icon/rav-logo.svg";
       break;
     case "Slytherin":
-      backgroundSrc = "./public/image/CardSly.png";
-      logoSrc = "./public/icon/sly-logo.svg";
+      backgroundSrc = "./image/CardSly.png";
+      logoSrc = "./icon/sly-logo.svg";
       break;
     default:
-      backgroundSrc = "./public/image/CardDefault.png";
-      logoSrc = "./public/image/Hogwarts-icon.png";
+      backgroundSrc = "./image/CardDefault.png";
+      logoSrc = "./image/Hogwarts-icon.png";
       break;
   }
 
@@ -36,7 +42,7 @@ function Card({ name, image, house }) {
       />
       <img
         className="absolute top-3 left-3 object-cover w-[160px] h-[210px] rounded-t-md"
-        src={image}
+        src={image || defaultImg}
         alt={name}
       />
       <img
@@ -50,6 +56,7 @@ function Card({ name, image, house }) {
 }
 
 Card.propTypes = {
+  idwizard: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   house: PropTypes.string.isRequired,

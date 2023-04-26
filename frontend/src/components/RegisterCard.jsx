@@ -32,7 +32,7 @@ export default function RegisterCard() {
               <span className="flex absolute right-3">
                 <img
                   className=""
-                  src="./public/icon/pass-show.svg"
+                  src="./icon/pass-show.svg"
                   alt="show password icon"
                 />
               </span>
@@ -46,7 +46,7 @@ export default function RegisterCard() {
               <span className="flex absolute right-3">
                 <img
                   className=""
-                  src="./public/icon/pass-show.svg"
+                  src="./icon/pass-show.svg"
                   alt="show password icon"
                 />
               </span>
@@ -71,7 +71,7 @@ export default function RegisterCard() {
             type="button"
             className="flex items-center justify-center rounded-3xl px-5 py-2.5 w-20 bg-white ring-1 ring-transparent hover:ring-secondary duration-300 ease-in-out"
           >
-            <img src="./public/icon/google.svg" alt="Google login button" />
+            <img src="./icon/google.svg" alt="Google login button" />
           </button>
         </div>
         <p className="flex justify-center text-xs">Already have an account?</p>
