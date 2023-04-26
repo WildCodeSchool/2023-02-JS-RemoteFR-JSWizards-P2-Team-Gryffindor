@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function HouseCards() {
-  const [selectedHouse, setSelectedHouse] = useState(
-    localStorage.getItem("selectedHouse") || null
-  );
-
-  useEffect(() => {
-    localStorage.setItem("selectedHouse", selectedHouse);
-  }, [selectedHouse]);
+export default function HouseCards({setSelectedHouse}) {
 
   return (
+    <>
+    <h2 className="text-xl">Choose your house</h2>
+      <p className="italic">
+        Select the house you want to be in for your fight, your character will
+        depend of the house you pick
+      </p>
     <div className="space-y-4">
       <div className="flex gap-4 house-intro">
         <div className="house">
@@ -75,19 +74,7 @@ export default function HouseCards() {
           </label>
         </div>
       </div>
-      <div className="flex justify-end">
-        {selectedHouse && (
-          <Link to="/inventory">
-            <button
-              type="button"
-              className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
-              disabled={!selectedHouse}
-            >
-              Continue
-            </button>
-          </Link>
-        )}
-      </div>
     </div>
+    </>
   );
 }

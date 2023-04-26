@@ -1,9 +1,10 @@
-import PropTypes from "prop-types";
+import PropTypes, { func } from "prop-types";
+import { useState } from "react";
 
 function Card({ name, image, house }) {
   let backgroundSrc;
   let logoSrc;
-
+  let favCard = 0;
   switch (house) {
     case "Gryffindor":
       backgroundSrc = "./public/image/CardGryf.png";
@@ -26,6 +27,12 @@ function Card({ name, image, house }) {
       logoSrc = "./public/image/Hogwarts-icon.png";
       break;
   }
+ const [count, setCount] = useState(0);
+
+  
+ function FavCard() {
+  setCount(count+1)
+  }    
 
   return (
     <div className="relative rounded-xl">
