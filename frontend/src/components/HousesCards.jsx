@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 export default function HouseCards({ setSelectedHouse }) {
   return (
-    <section className="flex flex-col items-center space-y-8">
+    <div className="flex flex-col items-center space-y-8">
       <h2 className="text-xl w-full">Choose your house</h2>
       <p className="italic">
         Select the house you want to be in for your fight, your character will
@@ -69,7 +69,7 @@ export default function HouseCards({ setSelectedHouse }) {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 HouseCards.propTypes = {
