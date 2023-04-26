@@ -1,8 +1,36 @@
+import { useEffect, useState } from "react";
+
 export default function ScrollBtn() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const scrollToTop = () => {
+    // Smooth scrolling is not working as attended with Chrome browser
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <button
       type="button"
-      className="fixed bottom-5 right-5 inline-block rounded-full bg-danger p-2 uppercase leading-normal shadow-[0_1px_12px_-4px_#fff4e2] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_1px_10px_1px_#FFD075] focus:bg-secondary focus:shadow-[0_1px_10px_1px_#282E32] focus:outline-none focus:ring-0 active:bg-primary"
+      onClick={scrollToTop}
+      className={`fixed bottom-5 right-5 inline-block rounded-full bg-dark p-3 shadow-[0_1px_12px_-4px_#fff4e2] transition duration-100 ease-in-out hover:shadow-[0_1px_10px_1px_#FFD075] focus:bg-secondary focus:shadow-[0_1px_10px_1px_#282E32] focus:outline-none focus:ring-0 ${
+        isVisible ? "" : "hidden"
+      }`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
