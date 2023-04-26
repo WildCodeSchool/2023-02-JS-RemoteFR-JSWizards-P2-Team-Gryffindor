@@ -7,7 +7,7 @@ export default function FilterBtn() {
         data-toggle="collapse"
         data-target="#filters"
       >
-        <img src="./public/icon/filter.svg" alt="filter button" />
+        <img src="./icon/filter.svg" alt="filter button" />
       </button>
     </div>
   );
