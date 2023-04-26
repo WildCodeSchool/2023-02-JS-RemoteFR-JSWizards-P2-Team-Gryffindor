@@ -5,11 +5,9 @@ import missingImg from "../missingData.json";
 function Card({ name, image, house, idwizard }) {
   let backgroundSrc;
   let logoSrc;
-
   const missingImage = missingImg.filter((img) => img.id === idwizard);
   const defaultImg =
     missingImage[0] !== undefined ? missingImage[0].image : defaultImage;
-
   switch (house) {
     case "Gryffindor":
       backgroundSrc = "./image/CardGryf.png";
@@ -32,7 +30,6 @@ function Card({ name, image, house, idwizard }) {
       logoSrc = "./image/Hogwarts-icon.png";
       break;
   }
-
   return (
     <div className="relative rounded-xl">
       <img
