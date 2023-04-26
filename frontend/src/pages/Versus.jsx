@@ -2,7 +2,7 @@ import Card from "../components/Card";
 
 function Versus() {
   return (
-    <div className="h-[calc(100vh-125px)] bg-[url('./assets/wood.jpg')] flex flex-col justify-around rounded-2xl">
+    <div className="min-h-[calc(100vh-125px)] bg-[url('./assets/wood.jpg')] flex flex-col justify-around rounded-2xl">
       <div className="flex justify-around items-center">
         <div className="justify-center items-center space-y-8">
           <div className="flex justify-around gap-4">

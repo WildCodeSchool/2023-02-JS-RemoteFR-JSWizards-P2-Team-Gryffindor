@@ -34,7 +34,7 @@ export default function LoginCard() {
                   className=""
                   src="./icon/pass-show.svg"
                   alt="show password icon"
-                />{" "}
+                />
               </span>
             </div>
             <label htmlFor="Passchange" className="text-xs">

@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
 
-export default function Inventory({ selectedHouse, info }) {
+export default function Inventory({ selectedHouse, info, description }) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
@@ -46,7 +46,7 @@ export default function Inventory({ selectedHouse, info }) {
   };
 
   return (
-    <section className="flex flex-col items-center space-y-8 ">
+    <section className="flex flex-col items-center space-y-8">
       <div className="flex flex-row justify-between items-center w-full">
         <h2 className="text-xl">{info}</h2>
         <div className="flex gap-4">
@@ -54,6 +54,7 @@ export default function Inventory({ selectedHouse, info }) {
           <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
         </div>
       </div>
+      <p className="italic">{description}</p>
       <div>
         <CardLibrary cards={filteredCards.length > 0 ? filteredCards : cards} />
       </div>
@@ -64,4 +65,5 @@ export default function Inventory({ selectedHouse, info }) {
 Inventory.propTypes = {
   selectedHouse: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
