@@ -4,7 +4,7 @@ import FakeGameHistory from "./FakeGameHistory";
 export default function GameHistoryReact() {
   return (
     <div className="relative overflow-x-auto space-y-4">
-      <h2 className="text-xl">Game's history</h2>
+      <h2 className="text-lg">Game's history</h2>
       <table className="w-full text-sm text-center">
         <thead className="text-xs uppercase border-y-2">
           <tr>
@@ -16,7 +16,7 @@ export default function GameHistoryReact() {
           </tr>
         </thead>
         <GameHistoryMap
-          house="Hufflepuff"
+          house="Gryffindor"
           character="Ginny Weasley"
           ennemyCharacter="Draco Malfoy"
           ennemyHouse="Slytherin"
