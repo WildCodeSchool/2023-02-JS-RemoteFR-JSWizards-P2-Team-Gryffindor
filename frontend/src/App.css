@@ -161,134 +161,29 @@
   }
 
   /* Code for versus */
-  .versus-container {
-    width: 100%;
-    height: 75vh;
-    background-image: url("./assets/wood.jpg");
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-
-  .cards-container {
-    display: flex;
-    align-items: center;
-  }
-
-  .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-  }
-
-  .card-container {
-    margin-left: 2rem;
-    width: 35%;
-    height: 75%;
-  }
-
-  .img-potions {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    position: relative;
-  }
-
-  .potions p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    text-align: center;
-    color: #d3a625;
-    margin-top: 2rem;
-    height: 2.5rem;
-    width: 5rem;
+  .potions button {
+    background-color: theme("colors.dark");
+    color: theme("colors.secondary");
+    padding: 8px 1rem;
     border-radius: 20px;
   }
 
-  .potions-2 {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  .potions p:hover {
-    box-shadow: 0px 0px 12px #d3a625;
-  }
-
-  .card {
-    background-color: #740001;
-    border-radius: 10px;
-    border: #d3a625 solid 1px;
-    height: 20rem;
-    width: 60%;
-  }
-
-  .card img {
-    height: 12rem;
-    width: 150%;
-    border-radius: 10px;
-  }
-
-  .card h3 {
-    color: #d3a625;
-  }
-
-  .spells {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    margin-left: 8rem;
-  }
-
-  .spells p:hover {
-    box-shadow: 0px 0px 12px #e9b527;
-  }
-
-  .spells-2 {
-    margin-right: 16rem;
-  }
-
-  .spells p {
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    text-align: center;
-    color: #d3a625;
-    height: 2.5rem;
-    width: 5rem;
+  .spells button {
+    background-color: theme("colors.dark");
+    color: theme("colors.secondary");
+    padding: 8px 1rem;
     border-radius: 20px;
   }
 
-  .characteristics {
-    margin-top: 1rem;
-    margin-left: 1rem;
+  .potions button:hover {
+    box-shadow: 0px 0px 12px theme("colors.primary");
   }
 
-  .abandon-btn {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .abandon-btn button {
-    height: 2.5rem;
-    width: 6rem;
-    background-color: #d3a625;
-    color: black;
-    margin-bottom: 2rem;
-    border-radius: 20px;
+  .spells button:hover {
+    box-shadow: 0px 0px 12px theme("colors.primary");
   }
 
   .abandon-btn button:hover {
-    box-shadow: 0px 0px 16px #000000;
+    box-shadow: 0px 0px 16px theme("colors.dark");
   }
 }
