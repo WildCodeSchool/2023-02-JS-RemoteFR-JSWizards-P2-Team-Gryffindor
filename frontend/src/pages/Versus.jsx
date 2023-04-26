@@ -1,64 +1,49 @@
+import Card from "../components/Card";
+
 function Versus() {
   return (
-    <div className="versus-container">
-      <div className="cards-container">
-        <div className="card-container">
-          <div className="img-potions">
-            <div className="potions">
-              <p>Potion 1</p>
-              <p>Potion 2</p>
-              <p>Potion 3</p>
+    <div className="h-[calc(100vh-125px)] bg-[url('./assets/wood.jpg')] flex flex-col justify-around rounded-2xl">
+      <div className="flex justify-around items-center">
+        <div className="justify-center items-center space-y-8">
+          <div className="flex justify-around gap-4">
+            <div className="flex flex-col justify-center items-center gap-8 potions">
+              <button type="button">Potion 1</button>
+              <button type="button">Potion 2</button>
+              <button type="button">Potion 3</button>
             </div>
-
-            <div className="card">
-              <img
-                src="https://images.indianexpress.com/2020/04/harrypotter-filephoto-759.jpg"
-                alt="left card"
-              />
-
-              <div className="characteristics">
-                <h2>Harry Potter</h2>
-                <h3>Gryffindor wizard</h3>
-              </div>
-            </div>
+            <Card />
           </div>
-          <div className="spells">
-            <p>spells</p>
-            <p>spells</p>
-            <p>spells</p>
-            <p>spells</p>
+          <div className="flex flex-row gap-4 spells">
+            <button type="button">spells</button>
+            <button type="button">spells</button>
+            <button type="button">spells</button>
+            <button type="button">spells</button>
           </div>
         </div>
-
-        <div className="card-container">
-          <div className="img-potions potions-2">
-            <div className=" potions">
-              <p>Potion 1</p>
-              <p>Potion 2</p>
-              <p>Potion 3</p>
-            </div>
-            <div className="card">
-              <img
-                src="https://images.indianexpress.com/2020/04/harrypotter-filephoto-759.jpg"
-                alt="right card"
-              />
-
-              <div className="characteristics">
-                <h2>Harry Potter</h2>
-                <h3>Gryffindor wizard</h3>
-              </div>
+        <div className="justify-center items-center space-y-8">
+          <div className="flex justify-around gap-4">
+            <Card />
+            <div className="flex flex-col justify-center items-center gap-8 potions">
+              <button type="button">Potion 1</button>
+              <button type="button">Potion 2</button>
+              <button type="button">Potion 3</button>
             </div>
           </div>
-          <div className="spells spells-2">
-            <p>spells</p>
-            <p>spells</p>
-            <p>spells</p>
-            <p>spells</p>
+          <div className="flex flex-row gap-4 spells">
+            <button type="button">spells</button>
+            <button type="button">spells</button>
+            <button type="button">spells</button>
+            <button type="button">spells</button>
           </div>
         </div>
       </div>
-      <div className="abandon-btn">
-        <button type="button">Abandon</button>
+      <div className="flex justify-center abandon-btn">
+        <button
+          type="button"
+          className="text-dark bg-secondary rounded-3xl px-4 py-2"
+        >
+          Abandon
+        </button>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import RegisterCard from "@components/RegisterCard";
+import RegisterCard from "../components/RegisterCard";
 
 export default function Register() {
   return (
