@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+}
+
 @layer utilities {
   /* Code for Footer */
   .github {
