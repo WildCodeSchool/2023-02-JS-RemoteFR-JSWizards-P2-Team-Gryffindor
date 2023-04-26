@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 
 export default function HouseCards({ setSelectedHouse }) {
   return (
-    <>
-      <h2 className="text-xl">Choose your house</h2>
+    <section className="flex flex-col items-center space-y-8">
+      <h2 className="text-xl w-full">Choose your house</h2>
       <p className="italic">
         Select the house you want to be in for your fight, your character will
         depend of the house you pick
@@ -11,7 +11,6 @@ export default function HouseCards({ setSelectedHouse }) {
       <div className="space-y-4">
         <div className="flex gap-4 house-intro">
           <div className="house">
-            {" "}
             <input
               type="radio"
               id="gryffindor"
@@ -26,7 +25,6 @@ export default function HouseCards({ setSelectedHouse }) {
             </label>
           </div>
           <div className="house">
-            {" "}
             <input
               type="radio"
               id="hufflepuff"
@@ -41,7 +39,6 @@ export default function HouseCards({ setSelectedHouse }) {
             </label>
           </div>
           <div className="house">
-            {" "}
             <input
               type="radio"
               id="ravenclaw"
@@ -52,12 +49,11 @@ export default function HouseCards({ setSelectedHouse }) {
               <img src="./public/image/Ravenclaw.png" alt="Ravenclaw" />
               <p className="character">
                 Analytical and logical, love of learning and intellectual
-                curiosity.{" "}
+                curiosity.
               </p>
             </label>
           </div>
           <div className="house">
-            {" "}
             <input
               type="radio"
               id="slytherin"
@@ -73,7 +69,7 @@ export default function HouseCards({ setSelectedHouse }) {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 HouseCards.propTypes = {

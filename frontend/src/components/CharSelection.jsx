@@ -46,7 +46,7 @@ export default function Inventory({ selectedHouse, info, description }) {
   };
 
   return (
-    <section className="flex flex-col items-center space-y-8 ">
+    <section className="flex flex-col items-center space-y-8">
       <div className="flex flex-row justify-between items-center w-full">
         <h2 className="text-xl">{info}</h2>
         <div className="flex gap-4">
