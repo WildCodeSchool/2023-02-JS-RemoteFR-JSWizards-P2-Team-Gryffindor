@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import LoginCard from "@components/LoginCard";
+import LoginCard from "../components/LoginCard";
 
 export default function Login() {
   return (

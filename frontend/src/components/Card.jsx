@@ -12,24 +12,24 @@ function Card({ name, image, house, idwizard }) {
 
   switch (house) {
     case "Gryffindor":
-      backgroundSrc = "./public/image/CardGryf.png";
-      logoSrc = "./public/icon/gryf-logo.svg";
+      backgroundSrc = "./image/CardGryf.png";
+      logoSrc = "./icon/gryf-logo.svg";
       break;
     case "Hufflepuff":
-      backgroundSrc = "./public/image/CardHuff.png";
-      logoSrc = "./public/icon/huff-logo.svg";
+      backgroundSrc = "./image/CardHuff.png";
+      logoSrc = "./icon/huff-logo.svg";
       break;
     case "Ravenclaw":
-      backgroundSrc = "./public/image/CardRav.png";
-      logoSrc = "./public/icon/rav-logo.svg";
+      backgroundSrc = "./image/CardRav.png";
+      logoSrc = "./icon/rav-logo.svg";
       break;
     case "Slytherin":
-      backgroundSrc = "./public/image/CardSly.png";
-      logoSrc = "./public/icon/sly-logo.svg";
+      backgroundSrc = "./image/CardSly.png";
+      logoSrc = "./icon/sly-logo.svg";
       break;
     default:
-      backgroundSrc = "./public/image/CardDefault.png";
-      logoSrc = "./public/image/Hogwarts-icon.png";
+      backgroundSrc = "./image/CardDefault.png";
+      logoSrc = "./image/Hogwarts-icon.png";
       break;
   }
 
