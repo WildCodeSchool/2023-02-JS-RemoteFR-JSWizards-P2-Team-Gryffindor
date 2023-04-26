@@ -11,7 +11,7 @@ export default function Play() {
     }
   }
   return (
-    <section className="flex flex-col items-center space-y-8 h-[calc(100vh-125px)]">
+    <section className="flex flex-col items-center space-y-8 min-h-[calc(100vh-125px)]">
       {step === "inventory" ? (
         <CharSelection
           info="Choose your character"
@@ -27,7 +27,7 @@ export default function Play() {
           <button
             onClick={changeStep}
             type="button"
-            className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark cursor-pointer"
+            className="mt-2 bg-dark py-2 px-4 rounded-3xl hover:bg-secondary hover:text-dark cursor-pointer"
             disabled={!selectedHouse}
           >
             Continue
