@@ -14,7 +14,7 @@ module.exports = {
 
       fontFamily: {
         sans: ['"Poppins"', "sans-serif"],
-        serif: ['"AnimalesFantastic"'],
+        serif: ['"AnimalesFantastic"', "serif"],
       },
 
       fontSize: {
