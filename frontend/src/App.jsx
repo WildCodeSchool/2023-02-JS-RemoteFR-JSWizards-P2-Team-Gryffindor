@@ -26,10 +26,10 @@ const router = createBrowserRouter(
         <Route path="account" element={<Account />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="/" element={<GameLayout />}>
         <Route path="play" element={<Play />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </>
   )
