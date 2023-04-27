@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
 
-export default function Inventory({ selectedHouse, info, description }) {
+export default function CharSelection({ selectedHouse, info, description }) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
