@@ -2,9 +2,6 @@ import Card from "@components/Card";
 import { useEffect, useState } from "react";
 
 function FightStart() {
-  // setTimeout(() => {
-  //   window.location.href = "./versus";
-  // }, 5000);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
   const fetchData = async () => {
