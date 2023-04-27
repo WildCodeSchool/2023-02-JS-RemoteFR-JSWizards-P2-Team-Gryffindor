@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
 
-export default function Inventory({ selectedHouse, info, description }) {
+export default function CharSelection({ selectedHouse, info, description }) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
+  const [selectedCharacterId, setSelectedCharacterId] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem("selectedCharacterId", selectedCharacterId);
+  }, [selectedCharacterId]);
 
   const fetchData = async () => {
     let url = "https://hp-api.onrender.com/api/characters";
@@ -56,13 +62,27 @@ export default function Inventory({ selectedHouse, info, description }) {
       </div>
       <p className="italic">{description}</p>
       <div>
-        <CardLibrary cards={filteredCards.length > 0 ? filteredCards : cards} />
+        <CardLibrary
+          setSelectedCharacterId={setSelectedCharacterId}
+          cards={filteredCards.length > 0 ? filteredCards : cards}
+        />
+      </div>
+      <div className="flex justify-end">
+        <Link to="/fightstart">
+          <button
+            type="button"
+            className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+            disabled={!selectedHouse}
+          >
+            Continue
+          </button>
+        </Link>
       </div>
     </section>
   );
 }
 
-Inventory.propTypes = {
+CharSelection.propTypes = {
   selectedHouse: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

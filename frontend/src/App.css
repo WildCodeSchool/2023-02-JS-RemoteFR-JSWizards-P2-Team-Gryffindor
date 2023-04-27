@@ -150,17 +150,6 @@
     padding: 0 5rem;
   }
 
-  /* Code for FightStart */
-  .fight-container {
-    height: 100vh;
-    width: 180vh;
-    background-image: url("./assets/fight.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: space-around;
-  }
-
   /* Code for versus */
   .potions button {
     background-color: theme("colors.dark");
