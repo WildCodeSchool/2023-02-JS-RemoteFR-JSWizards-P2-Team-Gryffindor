@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
@@ -75,17 +74,6 @@ export default function CharSelection({
             setSelectedCharacterId={setSelectedCharacterId}
             cards={filteredCards.length > 0 ? filteredCards : cards}
           />
-        </div>
-        <div className="flex justify-end">
-          <Link to="/fightstart">
-            <button
-              type="button"
-              className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
-              disabled={!selectedHouse}
-            >
-              Continue
-            </button>
-          </Link>
         </div>
       </div>
     </>
