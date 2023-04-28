@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <>
+    <nav className="sticky bg-dark flex flex-row justify-between items-center px-8 py-2.5">
       <div className="logo-wrapper">
         <NavLink to="/">
           <img
@@ -84,6 +84,6 @@ export default function Navbar() {
           </NavLink>
         </button>
       </div>
-    </>
+    </nav>
   );
 }

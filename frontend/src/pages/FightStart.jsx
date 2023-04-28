@@ -2,16 +2,37 @@ import Card from "@components/Card";
 import { useEffect, useState } from "react";
 
 function FightStart() {
+  setTimeout(() => {
+    window.location.href = "./versus";
+  }, 5000);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [randomCharacter, setRandomCharacter] = useState(null);
+
+  useEffect(() => {
+    if (randomCharacter) {
+      localStorage.setItem("randomCharacterId", randomCharacter.id);
+    }
+  }, [randomCharacter]);
 
   const fetchData = async () => {
-    const localCharacter = localStorage.getItem("selectedCharacterId");
-    const url = `https://hp-api.onrender.com/api/character/${localCharacter}`;
+    const localCharacterId = localStorage.getItem("selectedCharacterId");
+    const characterIdUrl = `https://hp-api.onrender.com/api/character/${localCharacterId}`;
 
     try {
-      const response = await fetch(url);
+      const response = await fetch(characterIdUrl);
       const data = await response.json();
       setSelectedCharacter(data[0]);
+    } catch (error) {
+      console.error("Error fetching data from API:", error);
+    }
+
+    const charactersUrl = "https://hp-api.onrender.com/api/characters";
+
+    try {
+      const response = await fetch(charactersUrl);
+      const data = await response.json();
+      const randomNumber = Math.floor(Math.random() * data.length - 1);
+      setRandomCharacter(data[randomNumber]);
     } catch (error) {
       console.error("Error fetching data from API:", error);
     }
@@ -38,7 +59,14 @@ function FightStart() {
         </div>
         <div className="justify-center items-center space-y-8">
           <div className="flex justify-around gap-4">
-            <Card />
+            {randomCharacter && (
+              <Card
+                name={randomCharacter.name}
+                image={randomCharacter.image}
+                house={randomCharacter.house}
+                idwizard={randomCharacter.id}
+              />
+            )}
           </div>
         </div>
       </div>
