@@ -6,10 +6,10 @@ function CardLibrary({ cards, pickedUpCard, setPickedUpCard, setSelectedCharacte
     <div className="gallery">
       {cards.map((card) => (
       <div
-          role="presentation"
-          key={card.id}
-          onClick={() => setSelectedCharacterId(card.id)}
-          onKeyDown={() => setSelectedCharacterId(card.id)}
+        role="presentation"
+        key={card.id}
+        onClick={() => setSelectedCharacterId(card.id)}
+        onKeyDown={() => setSelectedCharacterId(card.id)}
         >
         <Card
           selected={card.name === pickedUpCard?.name}
@@ -21,9 +21,7 @@ function CardLibrary({ cards, pickedUpCard, setPickedUpCard, setSelectedCharacte
           setPickedUpCard={setPickedUpCard}
           pickedUpCard={pickedUpCard}
         />
-       </div>
-
-
+      </div>
       ))}
     </div>
   );
