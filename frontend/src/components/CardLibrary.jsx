@@ -5,7 +5,7 @@ function CardLibrary({
   cards,
   pickedUpCard,
   setPickedUpCard,
-  setSelectedCharacterId
+  setSelectedCharacterId,
 }) {
   return (
     <div className="gallery">
