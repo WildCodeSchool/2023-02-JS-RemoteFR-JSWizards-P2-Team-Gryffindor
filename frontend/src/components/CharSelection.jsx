@@ -10,7 +10,7 @@ export default function CharSelection({
   info,
   pickedUpCard,
   setPickedUpCard,
-  description 
+  description,
 }) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
@@ -70,8 +70,8 @@ export default function CharSelection({
         <p className="italic">{description}</p>
         <div>
           <CardLibrary
-          setPickedUpCard={setPickedUpCard}
-          pickedUpCard={pickedUpCard}
+            setPickedUpCard={setPickedUpCard}
+            pickedUpCard={pickedUpCard}
             setSelectedCharacterId={setSelectedCharacterId}
             cards={filteredCards.length > 0 ? filteredCards : cards}
           />
