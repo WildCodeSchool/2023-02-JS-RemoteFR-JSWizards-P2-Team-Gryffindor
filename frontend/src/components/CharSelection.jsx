@@ -4,7 +4,12 @@ import SearchBar from "./SearchBar";
 import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
 
-export default function Inventory({ selectedHouse, info }) {
+export default function Inventory({
+  selectedHouse,
+  info,
+  pickedUpCard,
+  setPickedUpCard,
+}) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
@@ -55,7 +60,11 @@ export default function Inventory({ selectedHouse, info }) {
         </div>
       </div>
       <div>
-        <CardLibrary cards={filteredCards.length > 0 ? filteredCards : cards} />
+        <CardLibrary
+          cards={filteredCards.length > 0 ? filteredCards : cards}
+          setPickedUpCard={setPickedUpCard}
+          pickedUpCard={pickedUpCard}
+        />
       </div>
     </section>
   );
@@ -64,4 +73,9 @@ export default function Inventory({ selectedHouse, info }) {
 Inventory.propTypes = {
   selectedHouse: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
+  pickedUpCard: PropTypes.shape({
+    name: PropTypes.string,
+    house: PropTypes.string,
+  }).isRequired,
+  setPickedUpCard: PropTypes.func.isRequired,
 };

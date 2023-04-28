@@ -186,4 +186,16 @@
   .abandon-btn button:hover {
     box-shadow: 0px 0px 16px theme("colors.dark");
   }
+
+  .selectedCard {
+    border: solid 3px black;
+  }
+
+  .divClass:focus {
+    outline: none !important;
+  }
+
+  .divClass:focus-within {
+    outline: none !important;
+  }
 }
