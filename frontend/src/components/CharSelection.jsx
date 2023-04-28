@@ -10,7 +10,7 @@ export default function CharSelection({
   info,
   pickedUpCard,
   setPickedUpCard,
-  description
+  description })
 
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
