@@ -1,10 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Poppins";
+    font-weight: 400;
+    src: url("./fonts/poppins-400.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Poppins";
+    font-weight: 500;
+    src: url("./fonts/poppins-500.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Poppins";
+    font-weight: 600;
+    src: url("./fonts/poppins-600.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Poppins";
+    font-weight: 700;
+    src: url("./fonts/poppins-700.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "AnimalesFantastic";
+    font-weight: 500;
+    src: url("./fonts/AnimalesFantastic.ttf") format("truetype");
+  }
+  *,
   html,
   body {
     scroll-behavior: smooth;
@@ -147,17 +171,6 @@
     gap: 1rem 2rem;
     justify-content: center;
     padding: 0 5rem;
-  }
-
-  /* Code for FightStart */
-  .fight-container {
-    height: 100vh;
-    width: 180vh;
-    background-image: url("./assets/fight.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: space-around;
   }
 
   /* Code for versus */

@@ -7,22 +7,6 @@ module.exports = {
       colors: {
         primary: "#fff4e2",
         secondary: "#FFD075",
-        gryPrimary: "#AE0001",
-        grySecondary: "#740001",
-        gryLight: "#EEBA30",
-        gryDark: "#D3A625",
-        slyPrimary: "#2A623D",
-        slySecondary: "#1A472A",
-        slyLight: "#AAAAAA",
-        slyDark: "#5D5D5D",
-        ravPrimary: "#222F5B",
-        ravSecondary: "#0E1A40",
-        ravLight: "#BEBEBE",
-        ravDark: "#946B2D",
-        hufPrimary: "#F0E75E",
-        hufSecondary: "#EEB939",
-        hufLight: "#726255",
-        hufDark: "#372E29",
         darkmode: "#363F45",
         dark: "#282E32",
         light: "#F5F5F5",
@@ -30,6 +14,7 @@ module.exports = {
 
       fontFamily: {
         sans: ['"Poppins"', "sans-serif"],
+        serif: ['"AnimalesFantastic"', "serif"],
       },
 
       fontSize: {
