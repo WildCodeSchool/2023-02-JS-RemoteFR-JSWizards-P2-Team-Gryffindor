@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import CardLibrary from "./CardLibrary";
 
@@ -50,7 +49,7 @@ export default function CharSelection({ selectedHouse, info, description }) {
   };
 
   return (
-    <section className="flex flex-col items-center space-y-8">
+    <>
       <div className="flex flex-row justify-between items-center w-full">
         <h2 className="text-xl">{info}</h2>
         <div className="flex gap-4">
@@ -75,12 +74,17 @@ export default function CharSelection({ selectedHouse, info, description }) {
           </button>
         </Link>
       </div>
-    </section>
+    </>
   );
 }
 
 CharSelection.propTypes = {
   selectedHouse: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
+  pickedUpCard: PropTypes.shape({
+    name: PropTypes.string,
+    house: PropTypes.string,
+  }).isRequired,
+  setPickedUpCard: PropTypes.func.isRequired,
   description: PropTypes.string.isRequired,
 };
