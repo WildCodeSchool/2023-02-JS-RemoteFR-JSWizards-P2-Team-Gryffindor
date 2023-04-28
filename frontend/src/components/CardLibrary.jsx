@@ -6,6 +6,7 @@ function CardLibrary({
   pickedUpCard,
   setPickedUpCard,
   setSelectedCharacterId,
+  setNext,
 }) {
   return (
     <div className="gallery">
@@ -25,6 +26,7 @@ function CardLibrary({
             house={card.house}
             setPickedUpCard={setPickedUpCard}
             pickedUpCard={pickedUpCard}
+            setNext={setNext}
           />
         </div>
       ))}
@@ -46,6 +48,7 @@ CardLibrary.propTypes = {
   }).isRequired,
   setPickedUpCard: PropTypes.func.isRequired,
   setSelectedCharacterId: PropTypes.string.isRequired,
+  setNext: PropTypes.bool.isRequired,
 };
 
 export default CardLibrary;
