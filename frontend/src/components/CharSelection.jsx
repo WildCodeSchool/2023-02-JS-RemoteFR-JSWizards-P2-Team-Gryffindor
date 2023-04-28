@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
 
 export default function CharSelection({ selectedHouse, info, description }) {
-  const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
   const [selectedCharacterId, setSelectedCharacterId] = useState(null);
@@ -57,14 +55,13 @@ export default function CharSelection({ selectedHouse, info, description }) {
         <h2 className="text-xl">{info}</h2>
         <div className="flex gap-4">
           <SearchBar handleSearch={handleSearch} />
-          <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
         </div>
       </div>
       <p className="italic">{description}</p>
       <div>
         <CardLibrary
           setSelectedCharacterId={setSelectedCharacterId}
-          cards={filteredCards.length > 0 ? filteredCards : cards}
+          cards={cards}
         />
       </div>
       <div className="flex justify-end">
