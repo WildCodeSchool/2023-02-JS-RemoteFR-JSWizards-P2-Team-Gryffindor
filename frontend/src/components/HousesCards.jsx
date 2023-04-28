@@ -18,7 +18,7 @@ export default function HousesCards({ setSelectedHouse }) {
               onChange={() => setSelectedHouse("Gryffindor")}
             />
             <label htmlFor="gryffindor">
-              <img src="./public/image/Gryffindor.png" alt="Gryffindor" />
+              <img src="./image/Gryffindor.png" alt="Gryffindor" />
               <p className="character">
                 Justice, brave, courageous, protector and daring.
               </p>
@@ -32,7 +32,7 @@ export default function HousesCards({ setSelectedHouse }) {
               onChange={() => setSelectedHouse("Hufflepuff")}
             />
             <label htmlFor="hufflepuff">
-              <img src="./public/image/Hufflepuff.png" alt="Hufflepuff" />
+              <img src="./image/Hufflepuff.png" alt="Hufflepuff" />
               <p className="character">
                 Humble, loyal and unassuming, fairness and impartiality.
               </p>
@@ -46,7 +46,7 @@ export default function HousesCards({ setSelectedHouse }) {
               onChange={() => setSelectedHouse("Ravenclaw")}
             />
             <label htmlFor="ravenclaw">
-              <img src="./public/image/Ravenclaw.png" alt="Ravenclaw" />
+              <img src="./image/Ravenclaw.png" alt="Ravenclaw" />
               <p className="character">
                 Analytical and logical, love of learning and intellectual
                 curiosity.
@@ -61,7 +61,7 @@ export default function HousesCards({ setSelectedHouse }) {
               onChange={() => setSelectedHouse("Slytherin")}
             />
             <label htmlFor="slytherin">
-              <img src="./public/image/Slytherin.png" alt="Slytherin" />
+              <img src="./image/Slytherin.png" alt="Slytherin" />
               <p className="character">
                 Strategic, calculating, strong sens of self-preservation.
               </p>
