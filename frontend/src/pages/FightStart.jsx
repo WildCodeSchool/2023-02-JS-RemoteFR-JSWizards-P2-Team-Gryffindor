@@ -15,7 +15,6 @@ function FightStart() {
   }, [randomCharacter]);
 
   const fetchData = async () => {
-    // first step : fetch selected character
     const localCharacterId = localStorage.getItem("selectedCharacterId");
     const characterIdUrl = `https://hp-api.onrender.com/api/character/${localCharacterId}`;
 
@@ -26,7 +25,7 @@ function FightStart() {
     } catch (error) {
       console.error("Error fetching data from API:", error);
     }
-    // second step : fetch random character
+
     const charactersUrl = "https://hp-api.onrender.com/api/characters";
 
     try {
