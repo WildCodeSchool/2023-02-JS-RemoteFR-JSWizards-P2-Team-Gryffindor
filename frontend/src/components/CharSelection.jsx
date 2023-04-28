@@ -5,7 +5,13 @@ import SearchBar from "./SearchBar";
 import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
 
-export default function CharSelection({ selectedHouse, info, description }) {
+export default function CharSelection({
+  selectedHouse,
+  info,
+  pickedUpCard,
+  setPickedUpCard,
+  description,
+}) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
@@ -64,6 +70,8 @@ export default function CharSelection({ selectedHouse, info, description }) {
         <p className="italic">{description}</p>
         <div>
           <CardLibrary
+            setPickedUpCard={setPickedUpCard}
+            pickedUpCard={pickedUpCard}
             setSelectedCharacterId={setSelectedCharacterId}
             cards={filteredCards.length > 0 ? filteredCards : cards}
           />
@@ -87,5 +95,10 @@ export default function CharSelection({ selectedHouse, info, description }) {
 CharSelection.propTypes = {
   selectedHouse: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
+  pickedUpCard: PropTypes.shape({
+    name: PropTypes.string,
+    house: PropTypes.string,
+  }).isRequired,
+  setPickedUpCard: PropTypes.func.isRequired,
   description: PropTypes.string.isRequired,
 };

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import defaultImage from "../../public/image/placeholder.jpg";
 import missingImg from "../missingData.json";
 
-function Card({ name, image, house, idwizard }) {
+function Card({ name, image, house, idwizard, setPickedUpCard, selected }) {
   let backgroundSrc;
   let logoSrc;
   const missingImage = missingImg.filter((img) => img.id === idwizard);
@@ -30,8 +30,20 @@ function Card({ name, image, house, idwizard }) {
       logoSrc = "./image/Hogwarts-icon.png";
       break;
   }
+  function handleClick() {
+    const cardInfo = { name, house, image, idwizard };
+    localStorage.setItem("pickedUpCard", JSON.stringify(cardInfo));
+    setPickedUpCard(cardInfo);
+  }
   return (
-    <div className="relative rounded-xl">
+    <div
+      role="button"
+      tabIndex={0}
+      className="relative rounded-xl"
+      onClick={handleClick}
+      onKeyDown={handleClick}
+      style={{ border: selected && "solid 3px black" }}
+    >
       <img
         className="relative object-cover object-center w-[184px] h-[265px] rounded-xl shadow-sm"
         src={backgroundSrc}
@@ -57,6 +69,8 @@ Card.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   house: PropTypes.string.isRequired,
+  selected: PropTypes.string.isRequired,
+  setPickedUpCard: PropTypes.func.isRequired,
 };
 
 export default Card;
