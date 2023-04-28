@@ -1,5 +1,5 @@
-import Card from "@components/Card";
 import { useEffect, useState } from "react";
+import Card from "../components/Card";
 
 function FightStart() {
   setTimeout(() => {

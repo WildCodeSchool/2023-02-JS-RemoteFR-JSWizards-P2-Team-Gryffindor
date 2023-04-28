@@ -52,7 +52,7 @@ export default function CharSelection({ selectedHouse, info, description }) {
   };
 
   return (
-    <section className="flex flex-col items-center space-y-8">
+    <>
       <div className="flex flex-row justify-between items-center w-full">
         <h2 className="text-xl">{info}</h2>
         <div className="flex gap-4">
@@ -60,25 +60,27 @@ export default function CharSelection({ selectedHouse, info, description }) {
           <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
         </div>
       </div>
-      <p className="italic">{description}</p>
-      <div>
-        <CardLibrary
-          setSelectedCharacterId={setSelectedCharacterId}
-          cards={filteredCards.length > 0 ? filteredCards : cards}
-        />
+      <div className="flex flex-col items-center space-y-8">
+        <p className="italic">{description}</p>
+        <div>
+          <CardLibrary
+            setSelectedCharacterId={setSelectedCharacterId}
+            cards={filteredCards.length > 0 ? filteredCards : cards}
+          />
+        </div>
+        <div className="flex justify-end">
+          <Link to="/fightstart">
+            <button
+              type="button"
+              className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+              disabled={!selectedHouse}
+            >
+              Continue
+            </button>
+          </Link>
+        </div>
       </div>
-      <div className="flex justify-end">
-        <Link to="/fightstart">
-          <button
-            type="button"
-            className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
-            disabled={!selectedHouse}
-          >
-            Continue
-          </button>
-        </Link>
-      </div>
-    </section>
+    </>
   );
 }
 
