@@ -1,7 +1,12 @@
 import PropTypes from "prop-types";
 import Card from "./Card";
 
-function CardLibrary({  cards,  pickedUpCard,  setPickedUpCard,  setSelectedCharacterId  }) {
+function CardLibrary({
+  cards,
+  pickedUpCard,
+  setPickedUpCard,
+  setSelectedCharacterId
+}) {
   return (
     <div className="gallery">
       {cards.map((card) => (
