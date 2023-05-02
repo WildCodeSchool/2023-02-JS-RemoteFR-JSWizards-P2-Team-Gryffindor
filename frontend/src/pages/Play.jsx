@@ -14,7 +14,7 @@ export default function Play() {
     if (step === "FightStart") {
       setTimeout(() => {
         setStep("Versus");
-      }, 5000);
+      }, 1000);
     }
   }, [step]);
 

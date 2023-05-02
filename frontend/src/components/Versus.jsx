@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
+import CharSpells from "./Spells";
 
 function Versus() {
   const [myCharacter, setMyCharacter] = useState(null);
   const [enemyCharacter, setEnemyCharacter] = useState(null);
+  const houseTab = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
+  function randomHouse() {
+    const randomIdx = Math.floor(Math.random() * 3);
+    return houseTab[randomIdx];
+  }
   const fetchData = async () => {
     // first step : fetch my character
     const myCharacterId = localStorage.getItem("selectedCharacterId");
@@ -24,6 +30,7 @@ function Versus() {
     try {
       const response = await fetch(dataEnemy);
       const data = await response.json();
+
       setEnemyCharacter(data[0]);
     } catch (error) {
       console.error("Error fetching data from API:", error);
@@ -33,7 +40,6 @@ function Versus() {
   useEffect(() => {
     fetchData();
   }, []);
-
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-210px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
       <div className="flex justify-around items-center">
@@ -53,11 +59,7 @@ function Versus() {
               />
             )}
           </div>
-          <div className="flex flex-row gap-4 justify-center spells">
-            <button type="button">spells</button>
-            <button type="button">spells</button>
-            <button type="button">spells</button>
-          </div>
+          <CharSpells house={myCharacter?.house} />
         </div>
         <div className="justify-center items-center space-y-24">
           <div className="flex justify-around gap-8">
@@ -75,11 +77,7 @@ function Versus() {
               <button type="button">HP Potion ❤️</button>
             </div>
           </div>
-          <div className="flex flex-row gap-4 justify-center spells">
-            <button type="button">spells</button>
-            <button type="button">spells</button>
-            <button type="button">spells</button>
-          </div>
+          <CharSpells house={randomHouse()} />
         </div>
       </div>
     </div>
