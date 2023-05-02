@@ -97,7 +97,13 @@ export default function FilterBtn({ cards, setFilteredCards }) {
   );
 }
 
+// FilterBtn.defaultProps = {
+//   cards: [],
+// };
+
 FilterBtn.propTypes = {
-  setFilteredCards: PropTypes.string.isRequired,
-  cards: PropTypes.string.isRequired,
+  setFilteredCards: PropTypes.func.isRequired,
+  cards: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+  ).isRequired,
 };
