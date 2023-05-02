@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import defaultImage from "../../public/image/placeholder.jpg";
-import missingImg from "../missingData.json";
+import missingImg from "../db/imgData.json";
 
 function Card({
   name,
