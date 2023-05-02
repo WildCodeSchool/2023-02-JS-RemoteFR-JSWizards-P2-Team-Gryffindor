@@ -35,7 +35,7 @@ function Versus() {
   }, []);
 
   return (
-    <div className="min-h-[calc(100vh-125px)] bg-[url('./assets/wood.jpg')] flex flex-col justify-around rounded-2xl w-full">
+    <div className="flex flex-col justify-around min-h-[calc(100vh-125px)] bg-[url('./image/wood.jpg')] bg-cover rounded-2xl w-full">
       <div className="flex justify-around items-center">
         <div className="justify-center items-center space-y-24">
           <div className="flex justify-around gap-4">
