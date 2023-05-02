@@ -40,7 +40,7 @@ export default function FightStart() {
   }, []);
 
   return (
-    <div className="h-[calc(100vh-125px)] bg-[url('./assets/fight.png')] bg-cover bg-no-repeat flex flex-col justify-around rounded-2xl">
+    <div className="flex flex-col justify-around min-h-[calc(100vh-210px)] bg-[url('./image/fight.png')] bg-cover bg-center rounded-xl w-full">
       <div className="flex justify-evenly">
         <div className="justify-center items-center space-y-8">
           <div className="flex justify-around gap-4">
