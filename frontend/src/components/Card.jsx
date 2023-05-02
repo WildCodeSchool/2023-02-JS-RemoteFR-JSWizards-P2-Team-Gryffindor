@@ -73,14 +73,21 @@ function Card({
   );
 }
 
+Card.defaultProps = {
+  idwizard: "",
+  selected: false,
+  setNext: () => {},
+  setPickedUpCard: () => {},
+};
+
 Card.propTypes = {
-  idwizard: PropTypes.string.isRequired,
+  idwizard: PropTypes.string,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   house: PropTypes.string.isRequired,
-  selected: PropTypes.string.isRequired,
-  setNext: PropTypes.bool.isRequired,
-  setPickedUpCard: PropTypes.func.isRequired,
+  selected: PropTypes.bool,
+  setNext: PropTypes.func,
+  setPickedUpCard: PropTypes.func,
 };
 
 export default Card;
