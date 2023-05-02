@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import FightStart from "@components/FightStart";
 import HousesCards from "../components/HousesCards";
 import CharSelection from "../components/CharSelection";
 import Versus from "../components/Versus";
@@ -7,6 +8,15 @@ export default function Play() {
   const [selectedHouse, setSelectedHouse] = useState(null);
   const [step, setStep] = useState("houseSelection");
   const [pickedUpCard, setPickedUpCard] = useState({});
+  const [next, setNext] = useState(true);
+
+  useEffect(() => {
+    if (step === "FightStart") {
+      setTimeout(() => {
+        setStep("Versus");
+      }, 5000);
+    }
+  }, [step]);
 
   function abandonned() {
     setStep("houseSelection");
@@ -16,7 +26,9 @@ export default function Play() {
     if (step === "houseSelection") {
       setStep("cardSelection");
     } else if (step === "cardSelection") {
-      setStep("versus");
+      setStep("FightStart");
+    } else if (step === "FightStart") {
+      setStep("Versus");
     }
   }
 
@@ -30,15 +42,20 @@ export default function Play() {
             selectedHouse={selectedHouse}
             setPickedUpCard={setPickedUpCard}
             pickedUpCard={pickedUpCard}
+            setNext={setNext}
           />
-        ) : step === "versus" ? (
-          <Versus pickedUpCard={pickedUpCard} />
+        ) : step === "FightStart" ? (
+          <FightStart />
+        ) : step === "Versus" ? (
+          <Versus />
         ) : (
           <HousesCards setSelectedHouse={setSelectedHouse} />
         )
         /* eslint-enable */
       }
-      {(step === "cardSelection" || step === "houseSelection") && (
+      {(step === "cardSelection" ||
+        step === "houseSelection" ||
+        step === "Versus") && (
         <div className="flex justify-between w-full">
           <div>
             {step !== "houseSelection" && (
@@ -52,14 +69,27 @@ export default function Play() {
             )}
           </div>
           <div>
-            <button
-              onClick={changeStep}
-              type="button"
-              className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
-              disabled={!selectedHouse}
-            >
-              Continue
-            </button>
+            {step === "houseSelection" ? (
+              <button
+                onClick={changeStep}
+                type="button"
+                className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+                disabled={!selectedHouse}
+              >
+                Continue
+              </button>
+            ) : (
+              step !== "Versus" && (
+                <button
+                  onClick={changeStep}
+                  type="button"
+                  className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+                  disabled={next}
+                >
+                  Continue
+                </button>
+              )
+            )}
           </div>
         </div>
       )}

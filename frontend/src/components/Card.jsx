@@ -2,7 +2,15 @@ import PropTypes from "prop-types";
 import defaultImage from "../../public/image/placeholder.jpg";
 import missingImg from "../missingData.json";
 
-function Card({ name, image, house, idwizard, setPickedUpCard, selected }) {
+function Card({
+  name,
+  image,
+  house,
+  idwizard,
+  setPickedUpCard,
+  selected,
+  setNext,
+}) {
   let backgroundSrc;
   let logoSrc;
   const missingImage = missingImg.filter((img) => img.id === idwizard);
@@ -34,6 +42,7 @@ function Card({ name, image, house, idwizard, setPickedUpCard, selected }) {
     const cardInfo = { name, house, image, idwizard };
     localStorage.setItem("pickedUpCard", JSON.stringify(cardInfo));
     setPickedUpCard(cardInfo);
+    setNext(false);
   }
   return (
     <div
@@ -70,6 +79,7 @@ Card.propTypes = {
   image: PropTypes.string.isRequired,
   house: PropTypes.string.isRequired,
   selected: PropTypes.string.isRequired,
+  setNext: PropTypes.bool.isRequired,
   setPickedUpCard: PropTypes.func.isRequired,
 };
 

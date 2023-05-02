@@ -10,6 +10,7 @@ export default function CharSelection({
   pickedUpCard,
   setPickedUpCard,
   description,
+  setNext,
 }) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
@@ -73,6 +74,7 @@ export default function CharSelection({
             pickedUpCard={pickedUpCard}
             setSelectedCharacterId={setSelectedCharacterId}
             cards={filteredCards.length > 0 ? filteredCards : cards}
+            setNext={setNext}
           />
         </div>
       </div>
@@ -89,4 +91,5 @@ CharSelection.propTypes = {
   }).isRequired,
   setPickedUpCard: PropTypes.func.isRequired,
   description: PropTypes.string.isRequired,
+  setNext: PropTypes.bool.isRequired,
 };

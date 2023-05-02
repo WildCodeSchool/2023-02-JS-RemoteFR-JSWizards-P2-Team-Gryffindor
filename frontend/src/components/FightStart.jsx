@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
-import Card from "../components/Card";
+import Card from "./Card";
 
-function FightStart() {
-  setTimeout(() => {
-    window.location.href = "./versus";
-  }, 5000);
+export default function FightStart() {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [randomCharacter, setRandomCharacter] = useState(null);
 
@@ -73,5 +70,3 @@ function FightStart() {
     </div>
   );
 }
-
-export default FightStart;
