@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import FilterBtn from "./FilterBtn";
 import CardLibrary from "./CardLibrary";
 
-export default function CharSelection({ selectedHouse, info, description }) {
+export default function CharSelection({
+  selectedHouse,
+  info,
+  pickedUpCard,
+  setPickedUpCard,
+  description,
+  setNext,
+}) {
+  const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [allCards, setAllCards] = useState([]);
   const [selectedCharacterId, setSelectedCharacterId] = useState(null);
@@ -50,37 +58,40 @@ export default function CharSelection({ selectedHouse, info, description }) {
   };
 
   return (
-    <section className="flex flex-col items-center space-y-8">
+    <>
       <div className="flex flex-row justify-between items-center w-full">
         <h2 className="text-xl">{info}</h2>
         <div className="flex gap-4">
           <SearchBar handleSearch={handleSearch} />
+          {!selectedHouse && (
+            <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
+          )}
         </div>
       </div>
-      <p className="italic">{description}</p>
-      <div>
-        <CardLibrary
-          setSelectedCharacterId={setSelectedCharacterId}
-          cards={cards}
-        />
+      <div className="flex flex-col items-center space-y-8">
+        <p className="italic">{description}</p>
+        <div>
+          <CardLibrary
+            setPickedUpCard={setPickedUpCard}
+            pickedUpCard={pickedUpCard}
+            setSelectedCharacterId={setSelectedCharacterId}
+            cards={filteredCards.length > 0 ? filteredCards : cards}
+            setNext={setNext}
+          />
+        </div>
       </div>
-      <div className="flex justify-end">
-        <Link to="/fightstart">
-          <button
-            type="button"
-            className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
-            disabled={!selectedHouse}
-          >
-            Continue
-          </button>
-        </Link>
-      </div>
-    </section>
+    </>
   );
 }
 
 CharSelection.propTypes = {
   selectedHouse: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
+  pickedUpCard: PropTypes.shape({
+    name: PropTypes.string,
+    house: PropTypes.string,
+  }).isRequired,
+  setPickedUpCard: PropTypes.func.isRequired,
   description: PropTypes.string.isRequired,
+  setNext: PropTypes.bool.isRequired,
 };

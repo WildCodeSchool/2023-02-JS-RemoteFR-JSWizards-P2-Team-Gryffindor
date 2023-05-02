@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Card from "../components/Card";
+import Card from "./Card";
 
 function Versus() {
   const [myCharacter, setMyCharacter] = useState(null);
@@ -83,14 +83,6 @@ function Versus() {
             <button type="button">spells</button>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center abandon-btn">
-        <button
-          type="button"
-          className="text-dark bg-secondary rounded-3xl px-4 py-2"
-        >
-          Abandon
-        </button>
       </div>
     </div>
   );

@@ -1,10 +1,7 @@
-import Card from "@components/Card";
 import { useEffect, useState } from "react";
+import Card from "./Card";
 
-function FightStart() {
-  setTimeout(() => {
-    window.location.href = "./versus";
-  }, 5000);
+export default function FightStart() {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [randomCharacter, setRandomCharacter] = useState(null);
 
@@ -15,7 +12,6 @@ function FightStart() {
   }, [randomCharacter]);
 
   const fetchData = async () => {
-    // first step : fetch selected character
     const localCharacterId = localStorage.getItem("selectedCharacterId");
     const characterIdUrl = `https://hp-api.onrender.com/api/character/${localCharacterId}`;
 
@@ -26,7 +22,7 @@ function FightStart() {
     } catch (error) {
       console.error("Error fetching data from API:", error);
     }
-    // second step : fetch random character
+
     const charactersUrl = "https://hp-api.onrender.com/api/characters";
 
     try {
@@ -74,5 +70,3 @@ function FightStart() {
     </div>
   );
 }
-
-export default FightStart;
