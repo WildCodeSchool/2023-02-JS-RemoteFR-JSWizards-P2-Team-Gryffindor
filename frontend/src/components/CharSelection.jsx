@@ -63,7 +63,9 @@ export default function CharSelection({
         <h2 className="text-xl">{info}</h2>
         <div className="flex gap-4">
           <SearchBar handleSearch={handleSearch} />
-          <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
+          {!selectedHouse && (
+            <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
+          )}
         </div>
       </div>
       <div className="flex flex-col items-center space-y-8">
