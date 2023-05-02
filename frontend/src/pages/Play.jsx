@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import FightStart from "@components/FightStart";
+import FightStart from "../components/FightStart";
 import HousesCards from "../components/HousesCards";
 import CharSelection from "../components/CharSelection";
 import Versus from "../components/Versus";
