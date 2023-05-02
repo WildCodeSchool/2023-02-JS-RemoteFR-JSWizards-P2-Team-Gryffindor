@@ -51,7 +51,10 @@ function Card({
       className="relative rounded-xl"
       onClick={handleClick}
       onKeyDown={handleClick}
-      style={{ border: selected && "solid 3px black" }}
+      style={{
+        filter: selected && "drop-shadow(0 2px 8px rgb(255, 244, 226, 0.75))",
+        transform: selected && "scale(1.05)",
+      }}
     >
       <img
         className="relative object-cover object-center w-[184px] h-[265px] rounded-xl shadow-sm"
