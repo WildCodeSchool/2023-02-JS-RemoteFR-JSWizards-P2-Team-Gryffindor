@@ -13,14 +13,20 @@ export default function Home() {
           world of Harry Potter. Select your House and Wizard to take part in an
           epic 1v1 battle.
         </p>
-        <div>
+        <div className="space-y-2">
           <p>
             Step 1: Select the house you want to fight with, the character
             you'll be able to select will depend of your house's choice.
           </p>
-          <p>Step 2: Pick your favorite wizard and be ready to fight !</p>
-          <p>Step 3: test</p>
-          <p>Step 4: test</p>
+          <p>
+            Step 2: Pick your favorite wizard between a selection of hundreds of
+            characters, and be ready to fight !
+          </p>
+          <p>
+            Step 3: Use your spell to attack, defend and heal yourself against
+            your opponent. The first wizard to have his health point to zero
+            will win the fight.
+          </p>
         </div>
       </div>
     </section>
