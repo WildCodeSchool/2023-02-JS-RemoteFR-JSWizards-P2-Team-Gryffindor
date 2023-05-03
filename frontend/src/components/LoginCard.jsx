@@ -1,10 +1,39 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import dataUsers from "../data_users.json";
+
+import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginCard() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const logged = () => {
+    toast.success("Login succeeds", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const wrong = () => {
+    toast.error("Wrong email or password !", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,8 +44,9 @@ export default function LoginCard() {
 
     if (foundUser) {
       window.location.replace("/");
+      logged();
     } else {
-      alert("Identifiants invalides !");
+      wrong();
     }
   };
 
@@ -95,6 +125,7 @@ export default function LoginCard() {
           </p>
         </NavLink>
       </div>
+      <ToastContainer />
     </div>
   );
 }
