@@ -98,6 +98,10 @@
     opacity: 1;
   }
 
+  input[type="radio"]:checked + label p {
+    bottom: 0;
+  }
+
   .houses-intro:hover > .house {
     opacity: 0.5;
   }
@@ -122,6 +126,7 @@
     text-align: center;
     font-style: italic;
   }
+
   label p {
     font-style: italic;
   }
