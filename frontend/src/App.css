@@ -122,12 +122,8 @@
     text-align: center;
     font-style: italic;
   }
-
-  .character {
-    font-size: theme("fontSize.xs");
+  label p {
     font-style: italic;
-    position: relative;
-    overflow: hidden;
   }
 
   .house p {
