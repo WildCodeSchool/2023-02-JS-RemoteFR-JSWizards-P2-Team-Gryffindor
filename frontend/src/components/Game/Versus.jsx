@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import Card from "../Card";
 import CharSpells from "./Spells";
 
@@ -6,6 +8,8 @@ function Versus() {
   const [myCharacter, setMyCharacter] = useState(null);
   const [enemyCharacter, setEnemyCharacter] = useState(null);
   const houseTab = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
+
+  const MySwal = withReactContent(Swal);
 
   function randomHouse() {
     const randomIdx = Math.floor(Math.random() * 3);
@@ -40,15 +44,106 @@ function Versus() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  // Stats
+  const [myCharacterHP, setMyCharacterHP] = useState(200);
+  const [myCharacterDP, setMyCharacterDP] = useState(
+    Math.floor(Math.random() * 30) + 100
+  );
+  const [myCharacterAP, setMyCharacterAP] = useState(
+    Math.floor(Math.random() * 30) + 100
+  );
+  const [enemyCharacterHP, setEnemyCharacterHP] = useState(200);
+  const [enemyCharacterDP, setEnemyCharacterDP] = useState(
+    Math.floor(Math.random() * 30) + 100
+  );
+  const [enemyCharacterAP, setEnemyCharacterAP] = useState(
+    Math.floor(Math.random() * 30) + 100
+  );
+
+  const myDamageSpell = () => {
+    const myDamage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
+    setEnemyCharacterHP(enemyCharacterHP - myDamage);
+    if (enemyCharacterHP - myDamage <= 0) {
+      setEnemyCharacterHP(0);
+      MySwal.fire({
+        title: <strong>YEAH!</strong>,
+        html:
+          `<i>You beat ${enemyCharacter.name}, you won the Triwizard Cup!</i>` +
+          "<br/>" +
+          "<br/>" +
+          "<a href='/' style=color:D3A625>Back to Home</a>",
+        iconHtml: '<img src="/image/cup.png" />',
+        showConfirmButton: false,
+      });
+    }
+  };
+
+  const enemyDamageSpell = () => {
+    const enemyDamage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
+    setMyCharacterHP(myCharacterHP - enemyDamage);
+    if (myCharacterHP - enemyDamage <= 0) {
+      setMyCharacterHP(0);
+      MySwal.fire({
+        title: <strong>Oh no!</strong>,
+        html:
+          `<i>${enemyCharacter.name} have beat you...</i>` +
+          "<br/>" +
+          "<br/>" +
+          "<a href='/' style=color:D3A625>Back to Home</a>",
+        iconHtml: '<img src="/image/scar.png" />',
+        showConfirmButton: false,
+      });
+    }
+  };
+
+  const myHandleAP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setMyCharacterAP(myCharacterAP + points);
+  };
+
+  const myHandleDP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setMyCharacterDP(myCharacterDP + points);
+  };
+
+  const myHandleHP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setMyCharacterHP(myCharacterHP + points);
+  };
+
+  const enemyHandleAP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setEnemyCharacterAP(enemyCharacterAP + points);
+  };
+
+  const enemyHandleDP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setEnemyCharacterDP(enemyCharacterDP + points);
+  };
+
+  const enemyHandleHP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setEnemyCharacterHP(enemyCharacterHP + points);
+  };
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-210px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
       <div className="flex justify-around items-center">
         <div className="justify-center items-center space-y-24">
           <div className="flex justify-around gap-8">
             <div className="flex flex-col justify-center items-center gap-8 potions">
-              <button type="button">AP Potion ⚔️</button>
-              <button type="button">DP Potion 🛡️</button>
-              <button type="button">HP Potion ❤️</button>
+              <button type="button" onClick={myHandleAP}>
+                AP Potion ⚔️
+                {myCharacterAP}
+              </button>
+              <button type="button" onClick={myHandleDP}>
+                DP Potion 🛡️
+                {myCharacterDP}{" "}
+              </button>
+              <button type="button" onClick={myHandleHP}>
+                HP Potion ❤️
+                {myCharacterHP}
+              </button>
             </div>
             {myCharacter && (
               <Card
@@ -56,8 +151,22 @@ function Versus() {
                 image={myCharacter.image}
                 house={myCharacter.house}
                 idwizard={myCharacter.id}
+                HP={myCharacterHP}
+                AP={myCharacterAP}
+                DP={myCharacterDP}
               />
             )}
+          </div>
+          <div className="flex flex-row gap-4 justify-center spells">
+            <button type="button" onClick={myDamageSpell}>
+              spells
+            </button>
+            <button type="button" onClick={myDamageSpell}>
+              spells
+            </button>
+            <button type="button" onClick={myDamageSpell}>
+              spells
+            </button>
           </div>
           <CharSpells house={myCharacter?.house} />
         </div>
@@ -69,13 +178,36 @@ function Versus() {
                 image={enemyCharacter.image}
                 house={enemyCharacter.house}
                 idwizard={enemyCharacter.id}
+                HP={enemyCharacterHP}
+                AP={enemyCharacterAP}
+                DP={enemyCharacterDP}
               />
             )}
             <div className="flex flex-col justify-center items-center gap-8 potions">
-              <button type="button">AP Potion ⚔️</button>
-              <button type="button">DP Potion 🛡️</button>
-              <button type="button">HP Potion ❤️</button>
+              <button type="button" onClick={enemyHandleAP}>
+                AP Potion ⚔️
+                {enemyCharacterAP}
+              </button>
+              <button type="button" onClick={enemyHandleDP}>
+                DP Potion 🛡️
+                {enemyCharacterDP}
+              </button>
+              <button type="button" onClick={enemyHandleHP}>
+                HP Potion ❤️
+                {enemyCharacterHP}
+              </button>
             </div>
+          </div>
+          <div className="flex flex-row gap-4 justify-center spells">
+            <button type="button" onClick={enemyDamageSpell}>
+              spells
+            </button>
+            <button type="button" onClick={enemyDamageSpell}>
+              spells
+            </button>
+            <button type="button" onClick={enemyDamageSpell}>
+              spells
+            </button>
           </div>
           <CharSpells house={randomHouse()} />
         </div>
