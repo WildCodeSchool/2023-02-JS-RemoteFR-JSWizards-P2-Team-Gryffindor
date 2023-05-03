@@ -101,5 +101,5 @@ export default function Play({ setAudioName }) {
   );
 }
 Play.propTypes = {
-  setAudioName: PropTypes.string.isRequired,
+  setAudioName: PropTypes.func.isRequired,
 };

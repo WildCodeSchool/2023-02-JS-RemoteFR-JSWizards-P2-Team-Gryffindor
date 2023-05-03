@@ -41,5 +41,5 @@ export default function Account({ setAudioName }) {
 }
 
 Account.propTypes = {
-  setAudioName: PropTypes.string.isRequired,
+  setAudioName: PropTypes.func.isRequired,
 };
