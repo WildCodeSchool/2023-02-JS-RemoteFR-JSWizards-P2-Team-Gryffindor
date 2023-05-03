@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import Spells from "../db/spells.json";
+import Spells from "../../db/spells.json";
 
 export default function CharSpells({ house }) {
   const pickedHouse = Spells?.[house];

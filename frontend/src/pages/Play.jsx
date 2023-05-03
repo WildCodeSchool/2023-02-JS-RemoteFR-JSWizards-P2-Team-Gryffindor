@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import FightStart from "../components/FightStart";
-import HousesCards from "../components/HousesCards";
-import CharSelection from "../components/CharSelection";
-import Versus from "../components/Versus";
+import FightStart from "../components/Game/FightStart";
+import HousesCards from "../components/Game/HousesCards";
+import CharSelection from "../components/Game/CharSelection";
+import Versus from "../components/Game/Versus";
 
 export default function Play({ setAudioName }) {
   const [selectedHouse, setSelectedHouse] = useState(null);

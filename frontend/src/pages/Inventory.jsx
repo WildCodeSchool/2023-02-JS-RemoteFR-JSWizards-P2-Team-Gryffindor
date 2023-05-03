@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 import ScrollBtn from "../components/ScrollBtn";
-import CharSelection from "../components/CharSelection";
+import CharSelection from "../components/Game/CharSelection";
 
 export default function Inventory({ setAudioName }) {
   useEffect(() => {
