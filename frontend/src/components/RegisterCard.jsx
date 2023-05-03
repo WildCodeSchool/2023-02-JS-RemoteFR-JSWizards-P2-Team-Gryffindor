@@ -1,6 +1,20 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function RegisterCard() {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [passwordConfVisible, setPasswordConfVisible] = useState(false);
+
+  const handlePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+  const handlePassConfVisibility = () => {
+    setPasswordConfVisible(!passwordConfVisible);
+  };
+
+  const passwordType = passwordVisible ? "text" : "password";
+  const passwordConfType = passwordConfVisible ? "text" : "password";
+
   return (
     <div className="text-dark bg-[#ececec]/30 rounded-3xl w-[300px] px-12 py-8">
       <div className="flex-col space-y-2">
@@ -24,32 +38,44 @@ export default function RegisterCard() {
             </label>
             <div className="relative flex items-center">
               <input
-                type="Password"
+                type={passwordType}
                 placeholder="Password"
                 className="placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 pl-3 pr-8 duration-300 ease-in-out"
                 id="password"
               />
+              {/* eslint-disable */}
               <span className="flex absolute right-3">
                 <img
-                  className=""
-                  src="./icon/pass-show.svg"
+                  src={
+                    passwordVisible
+                      ? "./icon/pass-hide.svg"
+                      : "./icon/pass-show.svg"
+                  }
                   alt="show password icon"
+                  onClick={handlePasswordVisibility}
                 />
               </span>
+              {/* eslint-enable */}
             </div>
             <div className="relative flex items-center pt-2">
               <input
-                type="password"
+                type={passwordConfType}
                 placeholder="Confirm password"
                 className="placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 pl-3 pr-8 duration-300 ease-in-out"
               />
+              {/* eslint-disable */}
               <span className="flex absolute right-3">
                 <img
-                  className=""
-                  src="./icon/pass-show.svg"
+                  src={
+                    passwordConfVisible
+                      ? "./icon/pass-hide.svg"
+                      : "./icon/pass-show.svg"
+                  }
                   alt="show password icon"
+                  onClick={handlePassConfVisibility}
                 />
               </span>
+              {/* eslint-enable */}
             </div>
           </div>
           <button
