@@ -7,7 +7,7 @@ export default function Home() {
       <Hero />
       <DisplayHouses />
       <div className="flex flex-col justify-center item-start w-full md:max-w-[1290px] space-y-8">
-        <h2 className="text-xl">How to play the game</h2>
+        <h2 className="text-xl font-serif">How to play the game</h2>
         <p>
           Hogwarts Magic Cards is a strategy turn by turn card game set in the
           world of Harry Potter. Select your House and Wizard to take part in an
@@ -25,7 +25,7 @@ export default function Home() {
           <p>
             Step 3: Use your spells to attack, defend and heal yourself against
             your opponent. The first wizard to have his health points to zero
-            will win the fight.
+            will lose the fight.
           </p>
         </div>
       </div>
