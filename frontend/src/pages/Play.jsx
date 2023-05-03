@@ -37,7 +37,7 @@ export default function Play({ setAudioName }) {
   }
 
   return (
-    <section className="flex flex-col items-center space-y-8 ">
+    <section className="flex flex-col items-center space-y-4 ">
       {
         /* eslint-disable */
         step === "cardSelection" ? (

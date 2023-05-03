@@ -127,7 +127,7 @@ function Versus() {
     setEnemyCharacterHP(enemyCharacterHP + points);
   };
   return (
-    <div className="flex flex-col justify-around min-h-[calc(100vh-210px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
+    <div className="flex flex-col justify-around min-h-[calc(100vh-200px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
       <div className="flex justify-around items-center">
         <div className="justify-center items-center space-y-24">
           <div className="flex justify-around gap-8">
