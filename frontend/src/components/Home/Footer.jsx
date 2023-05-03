@@ -1,11 +1,36 @@
 import { useRef } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import emailjs from "emailjs-com";
 
+import "react-toastify/dist/ReactToastify.css";
+
 export default function Footer() {
-  const form = useRef();
+  const form = useRef(null);
+
+  const notify = (message) => {
+    toast[message]("Success, your email was sent!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    const name = e.target.name.value.trim();
+    const email = e.target.user_email.value.trim();
+    const message = e.target.message.value.trim();
+
+    if (!name || !email || !message) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -17,9 +42,12 @@ export default function Footer() {
       .then(
         (result) => {
           console.info(result.text);
+          notify("success");
+          form.current.reset();
         },
         (error) => {
           console.error(error.text);
+          notify("error", "Oops, something went wrong!");
         }
       );
   };
@@ -86,8 +114,21 @@ export default function Footer() {
               className="bg-darkmode rounded px-5 py-1.5 text-primary cursor-pointer"
               type="submit"
               value="Send"
+              onClick={notify}
             />
           </form>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={3000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </div>
       </footer>
       <div className="flex justify-center bg-darkmode py-1.5 text-xs">
