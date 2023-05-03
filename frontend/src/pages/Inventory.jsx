@@ -1,5 +1,5 @@
 import ScrollBtn from "../components/ScrollBtn";
-import CharSelection from "../components/CharSelection";
+import CharSelection from "../components/Game/CharSelection";
 
 export default function Inventory() {
   return (

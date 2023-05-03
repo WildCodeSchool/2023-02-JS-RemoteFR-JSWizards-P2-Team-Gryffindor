@@ -1,5 +1,5 @@
-import Hero from "../components/Hero";
-import DisplayHouses from "../components/DisplayHouses";
+import Hero from "../components/Home/Hero";
+import DisplayHouses from "../components/Home/DisplayHouses";
 
 export default function Home() {
   return (

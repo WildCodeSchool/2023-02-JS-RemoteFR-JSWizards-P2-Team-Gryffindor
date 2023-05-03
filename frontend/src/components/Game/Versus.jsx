@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Card from "./Card";
+import Card from "../Card";
 import CharSpells from "./Spells";
 
 function Versus() {
