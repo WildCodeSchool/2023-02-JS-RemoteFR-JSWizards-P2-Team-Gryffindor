@@ -83,6 +83,22 @@ export default function Navbar() {
             />
           </NavLink>
         </button>
+        <button type="button" className="hidden" name="Logout">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `navlink ${isActive ? "is-active" : ""}`
+            }
+          >
+            <img
+              className="max-w-md"
+              src="./icon/logout.svg"
+              alt="connect"
+              width="20"
+              height="20"
+            />
+          </NavLink>
+        </button>
       </div>
     </nav>
   );
