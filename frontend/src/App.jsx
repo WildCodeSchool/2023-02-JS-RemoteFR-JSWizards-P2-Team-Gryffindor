@@ -5,11 +5,11 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
-
-// Pages
 import ReactPlayer from "react-player";
 import { useState } from "react";
 import * as Icons from "react-icons/go";
+
+// Pages
 import RootLayout from "./layouts/RootLayout";
 import GameLayout from "./layouts/GameLayout";
 import Home from "./pages/Home";
