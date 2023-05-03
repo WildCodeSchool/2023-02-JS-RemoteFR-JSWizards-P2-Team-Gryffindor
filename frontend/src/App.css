@@ -208,4 +208,15 @@
   .divClass:focus-within {
     outline: none !important;
   }
+
+  .audioIcons {
+    position: fixed;
+    font-size: 20px;
+    color: #fff4e2;
+    display: flex;
+    justify-content: flex-end;
+    left: 20px;
+    bottom: 10px;
+    opacity: 0.7;
+  }
 }

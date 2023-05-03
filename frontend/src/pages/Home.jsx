@@ -1,7 +1,12 @@
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import Hero from "../components/Home/Hero";
 import DisplayHouses from "../components/Home/DisplayHouses";
 
-export default function Home() {
+export default function Home({ setAudioName }) {
+  useEffect(() => {
+    setAudioName("mainmusic");
+  }, []);
   return (
     <section className="flex flex-col items-center space-y-8">
       <Hero />
@@ -32,3 +37,7 @@ export default function Home() {
     </section>
   );
 }
+
+Home.propTypes = {
+  setAudioName: PropTypes.string.isRequired,
+};
