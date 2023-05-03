@@ -1,6 +1,6 @@
 import Card from "../components/Card";
-import AccountBanner from "../components/AccountBanner";
-import GameHistoryReact from "../components/GameHistoryReact";
+import AccountBanner from "../components/Account/AccountBanner";
+import GameHistoryReact from "../components/Account/GameHistoryReact";
 
 export default function Account() {
   let pickedUpCard = localStorage.getItem("pickedUpCard") || null;
