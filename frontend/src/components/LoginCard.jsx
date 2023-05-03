@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import dataUsers from "../data_users.json";
+import dataUsers from "../db/data_users.json";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -102,7 +102,7 @@ export default function LoginCard() {
           </div>
           <button
             type="submit"
-            className="text-secondary py-2 px-5 w-full bg-primary hover:bg-secondary hover:text-primary rounded border border-gray-200 duration-300 ease-in-out"
+            className="text-secondary py-2 px-5 w-full bg-primary hover:bg-secondary hover:text-dark rounded border border-gray-200 duration-300 ease-in-out"
           >
             Sign in
           </button>

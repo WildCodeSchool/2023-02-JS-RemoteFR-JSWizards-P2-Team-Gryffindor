@@ -114,7 +114,7 @@ export default function Footer() {
               />
             </div>
             <input
-              className="bg-darkmode rounded px-5 py-1.5 text-primary"
+              className="bg-darkmode rounded px-5 py-1.5 text-primary hover:bg-secondary hover:text-dark"
               type="submit"
               value="Send"
               onClick={notify}
