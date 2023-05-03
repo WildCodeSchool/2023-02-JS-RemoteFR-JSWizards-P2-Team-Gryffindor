@@ -61,10 +61,13 @@ function Versus() {
       setEnemyCharacterHP(0);
       MySwal.fire({
         title: <strong>YEAH!</strong>,
-        html: <i>You beat {enemyCharacter.name}, you won the Triwizard Cup!</i>,
+        html:
+          `<i>You beat ${enemyCharacter.name}, you won the Triwizard Cup!</i>` +
+          "<br/>" +
+          "<br/>" +
+          "<a href='/' style=color:D3A625>Back to Home</a>",
         iconHtml: '<img src="/image/cup.png" />',
-        confirmButtonColor: "#282E32",
-        confirmButtonText: "Continue",
+        showConfirmButton: false,
       });
     }
   };
@@ -76,10 +79,14 @@ function Versus() {
       setMyCharacterHP(0);
       MySwal.fire({
         title: <strong>Oh no!</strong>,
-        html: <i>{enemyCharacter.name} have beated you...</i>,
+        html:
+          `<i>${enemyCharacter.name} have beat you...</i>` +
+          "<br/>" +
+          "<br/>" +
+          "<a href='/' style=color:D3A625>Back to Home</a>",
         iconHtml: '<img src="/image/scar.png" />',
-        confirmButtonColor: "#282E32",
-        confirmButtonText: "Continue",
+        showConfirmButton: false,
+
       });
     }
   };
