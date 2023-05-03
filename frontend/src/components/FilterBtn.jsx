@@ -97,10 +97,6 @@ export default function FilterBtn({ cards, setFilteredCards }) {
   );
 }
 
-// FilterBtn.defaultProps = {
-//   cards: [],
-// };
-
 FilterBtn.propTypes = {
   setFilteredCards: PropTypes.func.isRequired,
   cards: PropTypes.arrayOf(
