@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import data_users from "../data_users";
+import dataUsers from "../data_users.json";
 
 export default function LoginCard() {
   const [email, setEmail] = useState("");
@@ -9,11 +9,13 @@ export default function LoginCard() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const user = data_users.find((user) => user.email === email && user.password === password);
+    const foundUser = dataUsers.find(
+      (user) => user.email === email && user.password === password
+    );
 
-    if (user) {
+    if (foundUser) {
       window.location.replace("/");
-    } else  {
+    } else {
       alert("Identifiants invalides !");
     }
   };
