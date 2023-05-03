@@ -62,7 +62,7 @@ function Versus() {
       MySwal.fire({
         title: <strong>YEAH!</strong>,
         html: <i>You beat {enemyCharacter.name}, you won the Triwizard Cup!</i>,
-        iconHtml: '<img src="/image/cup.png />',
+        iconHtml: '<img src="/image/cup.png" />',
         confirmButtonColor: "#282E32",
         confirmButtonText: "Continue",
       });
@@ -77,7 +77,7 @@ function Versus() {
       MySwal.fire({
         title: <strong>Oh no!</strong>,
         html: <i>{enemyCharacter.name} have beated you...</i>,
-        iconHtml: '<img src="/image/scar.png />',
+        iconHtml: '<img src="/image/scar.png" />',
         confirmButtonColor: "#282E32",
         confirmButtonText: "Continue",
       });
