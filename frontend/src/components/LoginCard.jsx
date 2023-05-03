@@ -10,6 +10,13 @@ import "react-toastify/dist/ReactToastify.css";
 export default function LoginCard() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const handlePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
+  const passwordType = passwordVisible ? "text" : "password";
 
   const logged = () => {
     toast.success("Login succeeds", {
@@ -98,7 +105,7 @@ export default function LoginCard() {
             </label>
             <div className="flex items-center relative">
               <input
-                type="Password"
+                type={passwordType}
                 placeholder="Password"
                 className="relative placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 pl-3 pr-8 duration-300 ease-in-out"
                 id="password"
@@ -108,13 +115,19 @@ export default function LoginCard() {
                 required
                 title="4 to 12 characters"
               />
+              {/* eslint-disable */}
               <span className="flex absolute right-3">
                 <img
-                  className=""
-                  src="./icon/pass-show.svg"
+                  src={
+                    passwordVisible
+                      ? "./icon/pass-hide.svg"
+                      : "./icon/pass-show.svg"
+                  }
                   alt="show password icon"
+                  onClick={handlePasswordVisibility}
                 />
               </span>
+              {/* eslint-enable */}
             </div>
             <label htmlFor="Passchange" className="text-xs">
               <a href="/ChangePassword">Forgot password?</a>
@@ -123,7 +136,6 @@ export default function LoginCard() {
           <button
             type="submit"
             className="text-secondary py-2 px-5 w-full bg-primary hover:bg-secondary hover:text-dark rounded border border-gray-200 duration-300 ease-in-out"
-            onClick={login}
           >
             Sign in
           </button>
