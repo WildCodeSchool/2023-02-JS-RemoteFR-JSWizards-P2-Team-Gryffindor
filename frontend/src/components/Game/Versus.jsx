@@ -34,11 +34,11 @@ function Versus() {
     try {
       const response = await fetch(dataEnemy);
       const data = await response.json();
-      
-      const enemyCharacter = data[0];
-      enemyCharacter.house = enemyCharacter.house ? enemyCharacter.house : randomHouse();
 
-      setEnemyCharacter(enemyCharacter);
+      const enemyData = data[0];
+      enemyData.house = enemyData.house ? enemyData.house : randomHouse();
+
+      setEnemyCharacter(enemyData);
     } catch (error) {
       console.error("Error fetching data from API:", error);
     }
@@ -194,7 +194,7 @@ function Versus() {
               </button>
             </div>
           </div>
-         <CharSpells
+          <CharSpells
             house={enemyCharacter?.house}
             startDamage={() => startDamage(myCharacter.id)}
           />
