@@ -67,6 +67,9 @@ export default function LoginCard() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              pattern=".{5,25}"
+              required
+              title="5 to 25 characters"
             />
           </div>
           <div>
@@ -81,6 +84,9 @@ export default function LoginCard() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                pattern=".{4,12}"
+                required
+                title="4 to 12 characters"
               />
               <span className="flex absolute right-3">
                 <img
