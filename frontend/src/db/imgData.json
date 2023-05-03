@@ -770,24 +770,14 @@
     "image": "https://static.wikia.nocookie.net/harrypotter/images/d/d3/Zacharias_Smith_OOTPF.jpg"
   },
   {
-    "id": "781f1061-5413-40c7-8a35-b078e2e969b1",
-    "name": "Barnabas the Barmy",
-    "image": ""
-  },
-  {
     "id": "ff0c4625-be03-4815-b7cf-241e496b0593",
     "name": "Karkus",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/4/4c/Giant3_dh.jpg"
   },
   {
     "id": "ab86f41a-3eeb-4586-95d8-b59fbdfc6bb7",
     "name": "Golgomath",
-    "image": ""
-  },
-  {
-    "id": "41a7eedf-f856-48e0-b9fd-69cfccaf8835",
-    "name": "Fridwulfa",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/esharrypotter/images/3/3b/Golgomath.PNG"
   },
   {
     "id": "d9cec110-a1d0-4437-9a55-dced475dfe6d",
@@ -797,47 +787,27 @@
   {
     "id": "b45f28ff-29de-4149-8380-739db0e6855a",
     "name": "Everard",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/5/5a/Everard_1.jpg"
   },
   {
     "id": "4de07608-5dd6-451d-9efc-ccceefb9a2f6",
     "name": "Dilys Derwent",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/9/97/DilysDerwentHM_.png"
   },
   {
     "id": "828aa47a-faa2-4481-b80d-14a4c7dd76ff",
     "name": "Hippocrates Smethwyck",
-    "image": ""
-  },
-  {
-    "id": "8d3fc7e7-c313-4b66-bfd9-f9c8746520e3",
-    "name": "Augustus Pye",
-    "image": ""
-  },
-  {
-    "id": "5d9f5681-8f09-4c69-bc31-44b97b06811e",
-    "name": "Urquhart Rackharrow",
-    "image": ""
+    "image": "https://i.quotev.com/psbq27cxh2da.jpg"
   },
   {
     "id": "d878d27d-eef8-47de-9f01-9260d8c2290b",
     "name": "Willy Widdershins",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/9/9c/WillyWiddershins.png"
   },
   {
     "id": "b1d8360e-333f-43e8-a0bb-b26217a0d91c",
     "name": "Agnes",
-    "image": ""
-  },
-  {
-    "id": "00434cd3-fcc7-44c7-8f98-7368415b4206",
-    "name": "Miriam Strout",
-    "image": ""
-  },
-  {
-    "id": "bc9b5ca3-632f-4fbf-a188-23c5da3cb31c",
-    "name": "Madam Puddifoot",
-    "image": ""
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToa35_zk2q9v9i51DILeZNpQP7TQ1heueVVrnJkTLzBXs-yCvIloXt9n1bnnvLiCLEt3A&usqp=CAU"
   },
   {
     "id": "4a0f4c3b-14dc-4a9e-a2f8-da23734f5d34",
@@ -857,12 +827,12 @@
   {
     "id": "b91bfd22-05cd-4209-970c-dc56c463e9df",
     "name": "Grawp",
-    "image": ""
+    "image": "https://qph.cf2.quoracdn.net/main-qimg-d52225f0a9557e7fba8531416be072e1-pjlq"
   },
   {
     "id": "b04e0987-7e90-4492-a6b4-4974468e3a2e",
     "name": "Griselda Marchbanks",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/alternate-harry-potter/images/3/3e/Griselda-marchbanks-judi-dench_orig.jpg"
   },
   {
     "id": "a3e5ea64-b103-4f47-bc26-dc08b799c668",
@@ -875,44 +845,24 @@
     "image": "https://static.wikia.nocookie.net/harrypotterfanon/images/1/11/Young_Daphne_%28Infinity%29.jpg"
   },
   {
-    "id": "e8066a6a-33f3-4650-a8b1-72d4315989dd",
-    "name": "Tofty",
-    "image": ""
-  },
-  {
     "id": "91097f7f-1dd7-42cb-9f53-003c9c4ea0db",
     "name": "Tiberius Ogden",
-    "image": ""
-  },
-  {
-    "id": "1984a8cd-eeb1-4c2c-b4a0-6574219a1b1f",
-    "name": "Pierre Bonaccord",
-    "image": ""
-  },
-  {
-    "id": "0f3b4e5e-89e4-42f5-ab00-958ec3895965",
-    "name": "Stubby Boardman",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotterfanon/images/2/21/Harrypotter05_1175.jpg"
   },
   {
     "id": "4adb7764-5292-4b1d-988b-45aa2f9aa7bc",
     "name": "Magorian",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/1/12/Magorian.jpg"
   },
   {
     "id": "2cd07351-973b-4feb-8b02-7bfa5b8b63cd",
     "name": "Emmeline Vance",
-    "image": ""
-  },
-  {
-    "id": "c6176f66-ad40-4d0d-9a35-76e2b58c7c23",
-    "name": "Herbert Chorley",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/esharrypotter/images/8/8f/Emmeline_Vance.jpg"
   },
   {
     "id": "2859f35c-8c47-4a8e-8649-61499a9352df",
     "name": "Rufus Scrimgeour",
-    "image": ""
+    "image": "https://qph.cf2.quoracdn.net/main-qimg-ce74cb5f3ab05dbb241f3ffec0170b8b-lq"
   },
   {
     "id": "fed82306-e03c-48ed-b3f5-06de7af38bc8",
@@ -922,7 +872,7 @@
   {
     "id": "f3c96d16-e0de-4417-9052-5259e6a8e781",
     "name": "Fenrir Greyback",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/heroes-and-villain/images/4/4d/Fenrirgreyback.png"
   },
   {
     "id": "1d4c4ebb-84cb-4e32-92d2-28232448675c",
@@ -930,29 +880,14 @@
     "image": "https://static.wikia.nocookie.net/harryalbuspotter/images/b/b4/Cresswell.PNG"
   },
   {
-    "id": "2143bf7c-8f8e-46f1-8860-b9a9558a4f8f",
-    "name": "Barnabas Cuffe",
-    "image": ""
-  },
-  {
     "id": "39357ad1-ae41-4a2c-b24f-77e7296db059",
     "name": "Ambrosius Flume",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2c/Ambrosius_Flume.jpg"
   },
   {
     "id": "3314a65a-47c8-4ae5-8c60-15bfb25a5a0f",
     "name": "Gwenog Jones",
-    "image": ""
-  },
-  {
-    "id": "451602b0-74e6-4481-b7b1-443c9280c82d",
-    "name": "Arkie Philpott",
-    "image": ""
-  },
-  {
-    "id": "46375e59-a782-4e43-bb7f-82560a5dd146",
-    "name": "Verity",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/8/8f/Jones_on_a_broom.jpg"
   },
   {
     "id": "6c4350a9-2356-4bba-96bd-0458c12d99b5",
@@ -968,21 +903,6 @@
     "id": "938559ee-e8e5-4963-8437-e7da04fd1b31",
     "name": "Marcus Belby",
     "image": "https://static.wikia.nocookie.net/harrypotter/images/d/d4/Robert_knox.jpg"
-  },
-  {
-    "id": "af3601a7-61c8-43ba-a685-a9c9d7b76de4",
-    "name": "Damocles Belby",
-    "image": ""
-  },
-  {
-    "id": "b44d83d7-8850-4fe7-b246-2335322a46f1",
-    "name": "Tiberius",
-    "image": ""
-  },
-  {
-    "id": "cbb7e8e0-c8f7-4a3f-befc-b288e1c385d4",
-    "name": "Bertie Higgs",
-    "image": ""
   },
   {
     "id": "3ba97e84-9fbb-49a6-b084-0924e811e712",
@@ -1025,34 +945,9 @@
     "image": "https://static.wikia.nocookie.net/harrypotter/images/5/58/Richie_in_Quidditch.jpg"
   },
   {
-    "id": "9ba0ca6e-4fba-410d-9b5e-e20694dde413",
-    "name": "Melinda Bobbin",
-    "image": ""
-  },
-  {
     "id": "a4cbbe42-e30c-44b6-81c2-4690900a9a91",
     "name": "Leanne",
     "image": "https://i.pinimg.com/600x315/cc/4d/e7/cc4de7be2bcdd87d251bd597fcc5de0d.jpg"
-  },
-  {
-    "id": "e0656ac4-fa6d-419b-a798-ce98ccb1e5dd",
-    "name": "Caractacus Burke",
-    "image": ""
-  },
-  {
-    "id": "345e02fa-cb14-4269-be4b-8c50090f42fb",
-    "name": "Billy Stubbs",
-    "image": ""
-  },
-  {
-    "id": "f4c61a83-8f9a-4e66-873f-2e7375d6d309",
-    "name": "Amy Benson",
-    "image": ""
-  },
-  {
-    "id": "36f0ca66-b700-4ed6-9cc3-884941f3dfab",
-    "name": "Dennis Bishop",
-    "image": ""
   },
   {
     "id": "39c01cd4-c599-4eb2-86be-86c3b5e38aee",
@@ -1070,21 +965,6 @@
     "image": "https://static.wikia.nocookie.net/harrypotter/images/c/c7/Sanguini.png"
   },
   {
-    "id": "cc511b1e-0f11-4b83-80a7-5862cf0ef145",
-    "name": "Gawain Robards",
-    "image": ""
-  },
-  {
-    "id": "0a0dfd61-c500-4a02-ad56-b7ab4f4a9371",
-    "name": "Fergus",
-    "image": ""
-  },
-  {
-    "id": "dfc535e3-c367-4d6c-b026-a3ae450c7c1b",
-    "name": "Wilkie Twycross",
-    "image": ""
-  },
-  {
     "id": "ff9a7a10-34b8-4b62-bab8-66aee1f4141b",
     "name": "Cadwallader",
     "image": "https://static.wikia.nocookie.net/harryalbuspotter/images/9/93/Cadwallader.PNG"
@@ -1092,32 +972,17 @@
   {
     "id": "c4e73590-3ee2-4125-87fb-692dd991819b",
     "name": "Galatea Merrythought",
-    "image": ""
-  },
-  {
-    "id": "92956011-c3f9-4537-80a7-798ec6065f98",
-    "name": "Hepzibah Smith",
-    "image": ""
+    "image": "https://wandw.wdfiles.com/local--files/galatea/Merrythought_01.jpg"
   },
   {
     "id": "096825a1-4e83-4744-8186-a83139d387c1",
     "name": "Hokey",
-    "image": ""
-  },
-  {
-    "id": "9cd332eb-9f6c-4c03-8c66-9dd04bb23dd4",
-    "name": "Octavius Pepper",
-    "image": ""
-  },
-  {
-    "id": "58cfdca2-6068-4474-ad37-5e12a1b50671",
-    "name": "Bertram Aubrey",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/d/d0/Hokey.png"
   },
   {
     "id": "ceb72b66-cef4-4578-a48b-5e613fcbd276",
     "name": "Eileen Prince",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/the-new-au/images/d/d4/Eileen_Prince.png"
   },
   {
     "id": "5d20ece0-e872-453b-8f9a-bee8b704f7c7",
@@ -1132,12 +997,7 @@
   {
     "id": "e12104b2-a1e1-4d62-8c83-9ada5c95eb9f",
     "name": "Gibbon",
-    "image": ""
-  },
-  {
-    "id": "85fc2ddf-c149-4bae-a987-2a6924960ffa",
-    "name": "Tobias Snape",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/esharrypotter/images/7/7d/%C3%8Dndice.jpeg"
   },
   {
     "id": "81ff4efd-b2e3-45db-8be8-08a5bc4f195a",
@@ -1165,29 +1025,19 @@
     "image": "https://static.hitek.fr/img/actualite/2016/11/30/fb_fhd011hpdt-hebe-beardsall-001.jpg"
   },
   {
-    "id": "5cd214c9-7822-47e0-b41d-01939ade77e7",
-    "name": "Betty Braithwaite",
-    "image": ""
-  },
-  {
     "id": "acff45a0-33e5-4d19-ad9b-4e522e5edaab",
     "name": "Apolline Delacour",
-    "image": ""
+    "image": "https://www.postavy.cz/foto/apolline-delacour-foto.jpg"
   },
   {
     "id": "5293240e-c512-4cdb-89b0-cb21ef8b04fb",
     "name": "Gabrielle Delacour",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harry-and-ginny-series/images/b/b2/GabrielleDelacour.jpg"
   },
   {
     "id": "bd9f49ef-452e-4c22-84c8-ab76da9f0003",
     "name": "Monsieur Delacour",
-    "image": ""
-  },
-  {
-    "id": "4848cf4f-27ac-42d3-8e49-f63515c92c37",
-    "name": "Dragomir Gorgovitch",
-    "image": ""
+    "image": "https://www.postavy.cz/foto/monsieur-delacour-foto.jpg"
   },
   {
     "id": "d1e8ddf1-cfc7-404a-bffe-f4ac6c656ead",
@@ -1197,17 +1047,12 @@
   {
     "id": "f7457448-8382-4e5e-b72a-0044fc6f8958",
     "name": "Muriel",
-    "image": ""
-  },
-  {
-    "id": "cf903d42-5d51-44b0-b362-adc57e626885",
-    "name": "Bilius",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/6/61/Muriel.jpg"
   },
   {
     "id": "753ffe5f-19a8-41c9-b264-289766c8a4be",
     "name": "Thorfinn Rowle",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/things-patrick-likes/images/8/81/Thorfinn_Rowle.jpg"
   },
   {
     "id": "d4eee96d-c53f-4e6f-8a95-c97d42343833",
@@ -1217,107 +1062,52 @@
   {
     "id": "22ed3c3e-c30c-4e79-a93d-fdfe470c8090",
     "name": "Albert Runcorn",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/esharrypotter/images/1/11/Albert_Runcorn.png"
   },
   {
     "id": "daea26d1-895d-4c29-8225-4d1ec2607cf0",
     "name": "Arkie Alderton",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/d/da/Alderton.jpg"
   },
   {
     "id": "e96dc731-5217-4c83-b173-248e1c70b5e7",
     "name": "Mary Cattermole",
-    "image": ""
-  },
-  {
-    "id": "5f70c4d0-981e-4dab-993d-5af0aa6bbcd5",
-    "name": "Maisie Cattermole",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/c/c2/Mary_Cattermole_2.jpg"
   },
   {
     "id": "0aabac0a-9212-4cad-9c42-d54886feb351",
     "name": "Ellie Cattermole",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/the-new-au/images/6/63/Screen_Shot_2019-11-29_at_18.44.23.png"
   },
   {
     "id": "064733fb-bd1c-4b15-8fdd-2b3100b34f0b",
     "name": "Alfred Cattermole",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/harryalbuspotter/images/8/89/Alfred.jpg"
   },
   {
     "id": "0f5bc3a8-566d-443e-a49a-8e0616fb8dec",
     "name": "Gornuk",
-    "image": ""
-  },
-  {
-    "id": "ede100e7-c8d8-42bb-8d39-ed41c92979c8",
-    "name": "Bowman Wright",
-    "image": ""
-  },
-  {
-    "id": "151f886b-2fcf-4010-9e6f-8621e616a2c4",
-    "name": "Ivor Dillonsby",
-    "image": ""
-  },
-  {
-    "id": "38aa76a6-d1d9-4ef5-9e67-573fe4fa916e",
-    "name": "Enid Smeek",
-    "image": ""
-  },
-  {
-    "id": "8e0715f3-1b16-44b7-862d-bcdea99e7ba6",
-    "name": "Egbert the Egregious",
-    "image": ""
-  },
-  {
-    "id": "d9175f7a-9e92-45fc-8207-b31b5a69c8e6",
-    "name": "Godelot",
-    "image": ""
-  },
-  {
-    "id": "6af6d07a-692a-42d6-80ab-dec3cef84269",
-    "name": "Hereward",
-    "image": ""
-  },
-  {
-    "id": "63b292fd-d297-4bb3-95d2-51a88a46891b",
-    "name": "Loxias",
-    "image": ""
-  },
-  {
-    "id": "c86e0027-dd93-4ddd-bec3-a1b832fd27f1",
-    "name": "Barnabas Deverill",
-    "image": ""
-  },
-  {
-    "id": "3535214c-9814-42c1-95d1-2e1db92d2a47",
-    "name": "Arcus",
-    "image": ""
-  },
-  {
-    "id": "b336a6be-7954-420e-8e05-95945ad1d727",
-    "name": "Livius",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/esharrypotter/images/d/d2/Gornuk.PNG"
   },
   {
     "id": "14505ff9-e2d8-4a27-bc85-c8d8dfb2ca33",
     "name": "Antioch Peverell",
-    "image": ""
+    "image": "https://cdn.personalitylist.com/avatars/261408.png"
   },
   {
     "id": "9a8b9fcd-6610-4e24-a5c6-bec1aa50fadd",
     "name": "Cadmus Peverell",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/esharrypotter/images/6/60/Cadmus_Peverell_Stone.jpg"
   },
   {
     "id": "461bddf4-cc9d-4737-b1a2-703c06b771a6",
     "name": "Ignotus Peverell",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/esharrypotter/images/1/1c/200px-Ignotus_Cloak.jpg"
   },
   {
     "id": "a8dc2688-e8a2-4d50-ac06-5cd324becb5b",
     "name": "Selwyn",
-    "image": ""
+    "image": "https://static.wikia.nocookie.net/esharrypotter/images/2/23/Selwyn_detiene_el_tren.png"
   },
   {
     "id": "1d6d87f8-6561-4e27-b77d-247067d3a7cc",
@@ -1325,24 +1115,14 @@
     "image": "https://i.pinimg.com/originals/b8/d4/68/b8d468e8e49a9ae8598e540537ecabb2.jpg"
   },
   {
-    "id": "b3c7de0a-fc23-4dd5-94d2-27e906c45fb7",
-    "name": "Ragnuk the First",
-    "image": ""
-  },
-  {
     "id": "7d7968e6-ef05-4192-87d5-99ebd1e54d0b",
     "name": "Ted Lupin",
     "image": "https://pbs.twimg.com/profile_images/464053941999652864/Sz8slTxC_400x400.png"
   },
   {
-    "id": "cae8556b-eea7-4e5a-b6a3-29d685421bfa",
-    "name": "Marius",
-    "image": ""
-  },
-  {
     "id": "a2c4fbb5-af04-45a4-9a1e-b39f9bb479c8",
     "name": "Bogrod",
-    "image": ""
+    "image": "https://wandw.wdfiles.com/local--files/bogrod/Bogrod_01.jpg"
   },
   {
     "id": "6025d951-2638-4827-baff-aa5db5017a4a",
