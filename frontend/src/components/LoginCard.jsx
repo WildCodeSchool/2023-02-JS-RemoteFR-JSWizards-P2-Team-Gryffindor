@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { useGoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 import dataUsers from "../db/data_users.json";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -49,6 +51,24 @@ export default function LoginCard() {
       wrong();
     }
   };
+
+  const login = useGoogleLogin({
+    onSuccess: async (response) => {
+      try {
+        const data = await axios.get(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `Bearer ${response.access_token}`,
+            },
+          }
+        );
+        console.info(data);
+      } catch (err) {
+        console.error(err);
+      }
+    },
+  });
 
   return (
     <div className="text-dark bg-[#ececec]/30 rounded-3xl w-[300px] px-12 py-8">
@@ -118,6 +138,7 @@ export default function LoginCard() {
           <button
             type="button"
             className="flex items-center justify-center rounded-3xl px-5 py-2.5 w-20 bg-white ring-1 ring-transparent hover:ring-secondary duration-300 ease-in-out"
+            onClick={login}
           >
             <img src="./icon/google.svg" alt="Google login button" />
           </button>
