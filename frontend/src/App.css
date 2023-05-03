@@ -34,7 +34,8 @@
     scroll-behavior: smooth;
     cursor: url(./image/pointer.png), auto;
   }
-  button[type="button"] {
+  button[type="button"],
+  button[type="submit"] {
     cursor: url(./image/pointer.png), auto;
   }
 }
