@@ -84,14 +84,22 @@ export default function CharSelection({
   );
 }
 
+CharSelection.defaultProps = {
+  selectedHouse: "",
+  description: "",
+  setNext: () => {},
+  pickedUpCard: { name: "", house: "" },
+  setPickedUpCard: () => {},
+};
+
 CharSelection.propTypes = {
-  selectedHouse: PropTypes.string.isRequired,
+  selectedHouse: PropTypes.string,
   info: PropTypes.string.isRequired,
   pickedUpCard: PropTypes.shape({
     name: PropTypes.string,
     house: PropTypes.string,
-  }).isRequired,
-  setPickedUpCard: PropTypes.func.isRequired,
-  description: PropTypes.string.isRequired,
-  setNext: PropTypes.bool.isRequired,
+  }),
+  setPickedUpCard: PropTypes.func,
+  description: PropTypes.string,
+  setNext: PropTypes.func,
 };
