@@ -61,7 +61,7 @@ export default function Play() {
             {step !== "houseSelection" && (
               <button
                 onClick={abandonned}
-                className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+                className="mt-2 bg-dark py-2 px-4 rounded-3xl hover:bg-secondary hover:text-dark"
                 type="button"
               >
                 Abandon
@@ -73,7 +73,7 @@ export default function Play() {
               <button
                 onClick={changeStep}
                 type="button"
-                className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+                className="mt-2 bg-dark py-2 px-4 rounded-3xl hover:bg-secondary hover:text-dark"
                 disabled={!selectedHouse}
               >
                 Continue
@@ -83,7 +83,7 @@ export default function Play() {
                 <button
                   onClick={changeStep}
                   type="button"
-                  className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+                  className="mt-2 bg-dark py-2 px-4 rounded-3xl hover:bg-secondary hover:text-dark"
                   disabled={next}
                 >
                   Continue
