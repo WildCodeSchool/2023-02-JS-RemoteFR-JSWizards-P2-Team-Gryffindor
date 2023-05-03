@@ -16,15 +16,15 @@ export default function Home() {
         <div className="space-y-2">
           <p>
             Step 1: Select the house you want to fight with, the character
-            you'll be able to select will depend of your house's choice.
+            you'll be able to select after will depend of your house's choice.
           </p>
           <p>
             Step 2: Pick your favorite wizard between a selection of hundreds of
-            characters, and be ready to fight !
+            characters, and be ready to fight!
           </p>
           <p>
-            Step 3: Use your spell to attack, defend and heal yourself against
-            your opponent. The first wizard to have his health point to zero
+            Step 3: Use your spells to attack, defend and heal yourself against
+            your opponent. The first wizard to have his health points to zero
             will win the fight.
           </p>
         </div>
