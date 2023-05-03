@@ -92,6 +92,7 @@ export default function Footer() {
                 placeholder="username"
                 id="text"
                 name="name"
+                required
               />
             </div>
             <div className="items-start bg-darkmode rounded outline-none w-[500px]">
@@ -101,6 +102,7 @@ export default function Footer() {
                 placeholder="email@example.com"
                 id="email"
                 name="user_email"
+                required
               />
             </div>
             <div className="w-[500px]">
@@ -108,6 +110,7 @@ export default function Footer() {
                 className="items-start px-5 py-1.5 bg-darkmode rounded outline-none w-full"
                 placeholder="Type your text here"
                 name="message"
+                required
               />
             </div>
             <input
