@@ -58,7 +58,7 @@ export default function Footer() {
         <div>
           <ul className="flex flex-col space-y-4 justify-between">
             <li className="github">
-              <a href="https://www.github.com">
+              <a href="https://github.com/WildCodeSchool/2023-02-JS-RemoteFR-JSWizards-P2-Team-Gryffindor">
                 <img src="./icon/github.svg" alt="github logo icon" />
               </a>
             </li>
