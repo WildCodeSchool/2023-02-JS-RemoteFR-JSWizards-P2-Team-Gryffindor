@@ -1,9 +1,58 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import dataUsers from "../data_users.json";
+
+import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginCard() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const logged = () => {
+    toast.success("Login succeeds", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const wrong = () => {
+    toast.error("Wrong email or password !", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const foundUser = dataUsers.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (foundUser) {
+      window.location.replace("/");
+      logged();
+    } else {
+      wrong();
+    }
+  };
+
   return (
     <div className="text-dark bg-[#ececec]/30 rounded-3xl w-[300px] px-12 py-8">
-      <div className="flex-col space-y-2">
+      <div className="flex-col space-y-2" onSubmit={handleSubmit}>
         <h2 className="flex justify-center text-xl">Login</h2>
 
         <form className="space-y-2">
@@ -16,6 +65,11 @@ export default function LoginCard() {
               placeholder="username@gmail.com"
               className="placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 px-3 transition-colors duration-300 ease-in-out"
               id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              pattern=".{5,25}"
+              required
+              title="5 to 25 characters"
             />
           </div>
           <div>
@@ -28,6 +82,11 @@ export default function LoginCard() {
                 placeholder="Password"
                 className="relative placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 pl-3 pr-8 duration-300 ease-in-out"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                pattern=".{4,12}"
+                required
+                title="4 to 12 characters"
               />
               <span className="flex absolute right-3">
                 <img
@@ -72,6 +131,7 @@ export default function LoginCard() {
           </p>
         </NavLink>
       </div>
+      <ToastContainer />
     </div>
   );
 }
