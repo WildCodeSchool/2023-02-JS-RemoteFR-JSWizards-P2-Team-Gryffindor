@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import dataUsers from "../data_users.json";
+import dataUsers from "../db/data_users.json";
 
 import "react-toastify/dist/ReactToastify.css";
 
