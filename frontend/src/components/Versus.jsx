@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import cup from "/image/cup.png";
+import scar from "/image/scar.png";
 
 function Versus() {
   const [myCharacter, setMyCharacter] = useState(null);
   const [enemyCharacter, setEnemyCharacter] = useState(null);
+
+  const MySwal = withReactContent(Swal);
 
   const fetchData = async () => {
     // first step : fetch my character
@@ -54,8 +60,15 @@ function Versus() {
     const myDamage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
     setEnemyCharacterHP(enemyCharacterHP - myDamage);
     if (enemyCharacterHP - myDamage <= 0) {
-      alert("You won!");
-      // message de victoire pour mon perso
+      setEnemyCharacterHP(0);
+      MySwal.fire({
+        title: <strong>YEAH!</strong>,
+        html: <i>You beat {enemyCharacter.name}, you won the Triwizard Cup!</i>,
+        iconHtml: `<img src="${cup}" alt="Triwizard Cup">`,
+        confirmButtonColor: "#282E32",
+        confirmButtonText: "Continue",
+
+      });
     }
   };
 
@@ -63,8 +76,14 @@ function Versus() {
     const enemyDamage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
     setMyCharacterHP(myCharacterHP - enemyDamage);
     if (myCharacterHP - enemyDamage <= 0) {
-      alert(`${enemyCharacter.name} won!`);
-      // message de victoire pour l'ennemi
+      setMyCharacterHP(0);
+      MySwal.fire({
+        title: <strong>Oh no!</strong>,
+        html: <i>{enemyCharacter.name} have beated you...</i>,
+        iconHtml: `<img src="${scar}" alt="scar">`,
+        confirmButtonColor: "#282E32",
+        confirmButtonText: "Continue",
+      });
     }
   };
 
