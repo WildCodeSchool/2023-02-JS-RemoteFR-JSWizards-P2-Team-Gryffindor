@@ -1,8 +1,14 @@
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import Card from "../components/Card";
 import AccountBanner from "../components/Account/AccountBanner";
 import GameHistoryReact from "../components/Account/GameHistoryReact";
 
-export default function Account() {
+export default function Account({ setAudioName }) {
+  useEffect(() => {
+    setAudioName("mainmusic");
+  }, []);
+
   let pickedUpCard = localStorage.getItem("pickedUpCard") || null;
   pickedUpCard = pickedUpCard ? JSON.parse(pickedUpCard) : null;
   return (
@@ -29,3 +35,7 @@ export default function Account() {
     </section>
   );
 }
+
+Account.propTypes = {
+  setAudioName: PropTypes.string.isRequired,
+};
