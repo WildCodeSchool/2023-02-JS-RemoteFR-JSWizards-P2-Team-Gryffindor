@@ -1,14 +1,20 @@
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import Card from "./Card";
+import Card from "../Card";
+import CharSpells from "./Spells";
 
 function Versus() {
   const [myCharacter, setMyCharacter] = useState(null);
   const [enemyCharacter, setEnemyCharacter] = useState(null);
+  const houseTab = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
   const MySwal = withReactContent(Swal);
 
+  function randomHouse() {
+    const randomIdx = Math.floor(Math.random() * 3);
+    return houseTab[randomIdx];
+  }
   const fetchData = async () => {
     // first step : fetch my character
     const myCharacterId = localStorage.getItem("selectedCharacterId");
@@ -28,6 +34,7 @@ function Versus() {
     try {
       const response = await fetch(dataEnemy);
       const data = await response.json();
+
       setEnemyCharacter(data[0]);
     } catch (error) {
       console.error("Error fetching data from API:", error);
@@ -86,7 +93,6 @@ function Versus() {
           "<a href='/' style=color:D3A625>Back to Home</a>",
         iconHtml: '<img src="/image/scar.png" />',
         showConfirmButton: false,
-
       });
     }
   };
@@ -162,6 +168,7 @@ function Versus() {
               spells
             </button>
           </div>
+          <CharSpells house={myCharacter?.house} />
         </div>
         <div className="justify-center items-center space-y-24">
           <div className="flex justify-around gap-8">
@@ -202,6 +209,7 @@ function Versus() {
               spells
             </button>
           </div>
+          <CharSpells house={randomHouse()} />
         </div>
       </div>
     </div>

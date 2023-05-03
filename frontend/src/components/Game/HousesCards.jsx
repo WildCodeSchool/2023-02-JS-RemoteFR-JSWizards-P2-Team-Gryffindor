@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 export default function HousesCards({ setSelectedHouse }) {
   return (
     <div className="flex flex-col items-center space-y-8">
-      <h2 className="text-xl w-full">Choose your house</h2>
+      <h2 className="text-xl w-full font-serif">Choose your house</h2>
       <p className="italic">
         Select the house you want to be in for your fight, your character will
         depend of the house you pick

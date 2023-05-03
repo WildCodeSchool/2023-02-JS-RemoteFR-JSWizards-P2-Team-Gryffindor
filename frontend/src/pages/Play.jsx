@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import FightStart from "../components/FightStart";
-import HousesCards from "../components/HousesCards";
-import CharSelection from "../components/CharSelection";
-import Versus from "../components/Versus";
+import FightStart from "../components/Game/FightStart";
+import HousesCards from "../components/Game/HousesCards";
+import CharSelection from "../components/Game/CharSelection";
+import Versus from "../components/Game/Versus";
 
 export default function Play() {
   const [selectedHouse, setSelectedHouse] = useState(null);
@@ -14,7 +14,7 @@ export default function Play() {
     if (step === "FightStart") {
       setTimeout(() => {
         setStep("Versus");
-      }, 5000);
+      }, 1000);
     }
   }, [step]);
 

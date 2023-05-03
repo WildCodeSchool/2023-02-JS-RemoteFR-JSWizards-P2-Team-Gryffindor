@@ -32,6 +32,10 @@
   html,
   body {
     scroll-behavior: smooth;
+    cursor: url(./image/pointer.png), auto;
+  }
+  button[type="button"] {
+    cursor: url(./image/pointer.png), auto;
   }
 }
 
@@ -198,10 +202,6 @@
 
   .abandon-btn button:hover {
     box-shadow: 0px 0px 16px theme("colors.dark");
-  }
-
-  .selectedCard {
-    border: solid 3px black;
   }
 
   .divClass:focus {
