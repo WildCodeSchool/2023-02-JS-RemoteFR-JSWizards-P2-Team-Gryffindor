@@ -114,7 +114,7 @@ export default function Footer() {
               />
             </div>
             <input
-              className="bg-darkmode rounded px-5 py-1.5 text-primary cursor-pointer"
+              className="bg-darkmode rounded px-5 py-1.5 text-primary"
               type="submit"
               value="Send"
               onClick={notify}
