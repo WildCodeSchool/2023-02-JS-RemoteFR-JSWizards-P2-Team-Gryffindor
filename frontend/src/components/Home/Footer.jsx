@@ -1,4 +1,29 @@
+import { useRef } from "react";
+import emailjs from "emailjs-com";
+
 export default function Footer() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_lwojhle",
+        "template_1kgkty5",
+        e.target,
+        "AsJ3rbV5H9oTVu7ox"
+      )
+      .then(
+        (result) => {
+          console.info(result.text);
+        },
+        (error) => {
+          console.error(error.text);
+        }
+      );
+  };
+
   return (
     <>
       <footer className="flex gap-16 justify-center items-start px-8 bg-dark py-6">
@@ -27,13 +52,18 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <form className="flex flex-col space-y-6 items-center">
+          <form
+            className="flex flex-col space-y-6 items-center"
+            ref={form}
+            onSubmit={sendEmail}
+          >
             <div className="items-start bg-darkmode rounded outline-none w-[500px]">
               <input
                 className="items-start px-5 py-1.5 bg-darkmode rounded outline-none w-full"
                 type="text"
                 placeholder="username"
                 id="text"
+                name="name"
               />
             </div>
             <div className="items-start bg-darkmode rounded outline-none w-[500px]">
@@ -42,20 +72,21 @@ export default function Footer() {
                 type="email"
                 placeholder="email@example.com"
                 id="email"
+                name="user_email"
               />
             </div>
             <div className="w-[500px]">
               <textarea
                 className="items-start px-5 py-1.5 bg-darkmode rounded outline-none w-full"
                 placeholder="Type your text here"
+                name="message"
               />
             </div>
-            <button
-              className="bg-darkmode rounded px-5 py-1.5 text-primary"
+            <input
+              className="bg-darkmode rounded px-5 py-1.5 text-primary cursor-pointer"
               type="submit"
-            >
-              Send
-            </button>
+              value="Send"
+            />
           </form>
         </div>
       </footer>
