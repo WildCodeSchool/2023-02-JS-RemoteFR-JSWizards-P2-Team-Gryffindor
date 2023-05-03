@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import FightStart from "../components/FightStart";
 import HousesCards from "../components/HousesCards";
 import CharSelection from "../components/CharSelection";
 import Versus from "../components/Versus";
 
-export default function Play() {
+export default function Play({ setAudioName }) {
   const [selectedHouse, setSelectedHouse] = useState(null);
   const [step, setStep] = useState("houseSelection");
   const [pickedUpCard, setPickedUpCard] = useState({});
   const [next, setNext] = useState(true);
 
   useEffect(() => {
-    if (step === "FightStart") {
+    if (step === "fightStart") {
       setTimeout(() => {
-        setStep("Versus");
-      }, 1000);
+        setStep("versus");
+      }, 5000);
+    } else if (step !== "versus") {
+      setAudioName("mainmusic");
     }
   }, [step]);
 
@@ -26,9 +29,10 @@ export default function Play() {
     if (step === "houseSelection") {
       setStep("cardSelection");
     } else if (step === "cardSelection") {
-      setStep("FightStart");
-    } else if (step === "FightStart") {
-      setStep("Versus");
+      setStep("fightStart");
+      setAudioName("fightmusic");
+    } else if (step === "fightStart") {
+      setStep("versus");
     }
   }
 
@@ -44,9 +48,9 @@ export default function Play() {
             pickedUpCard={pickedUpCard}
             setNext={setNext}
           />
-        ) : step === "FightStart" ? (
+        ) : step === "fightStart" ? (
           <FightStart />
-        ) : step === "Versus" ? (
+        ) : step === "versus" ? (
           <Versus />
         ) : (
           <HousesCards setSelectedHouse={setSelectedHouse} />
@@ -55,7 +59,7 @@ export default function Play() {
       }
       {(step === "cardSelection" ||
         step === "houseSelection" ||
-        step === "Versus") && (
+        step === "versus") && (
         <div className="flex justify-between w-full">
           <div>
             {step !== "houseSelection" && (
@@ -79,7 +83,7 @@ export default function Play() {
                 Continue
               </button>
             ) : (
-              step !== "Versus" && (
+              step !== "versus" && (
                 <button
                   onClick={changeStep}
                   type="button"
@@ -96,3 +100,6 @@ export default function Play() {
     </section>
   );
 }
+Play.propTypes = {
+  setAudioName: PropTypes.string.isRequired,
+};

@@ -1,7 +1,12 @@
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import ScrollBtn from "../components/ScrollBtn";
 import CharSelection from "../components/CharSelection";
 
-export default function Inventory() {
+export default function Inventory({ setAudioName }) {
+  useEffect(() => {
+    setAudioName("mainmusic");
+  }, []);
   return (
     <>
       <CharSelection info="Card Inventory" />
@@ -9,3 +14,7 @@ export default function Inventory() {
     </>
   );
 }
+
+Inventory.propTypes = {
+  setAudioName: PropTypes.string.isRequired,
+};
