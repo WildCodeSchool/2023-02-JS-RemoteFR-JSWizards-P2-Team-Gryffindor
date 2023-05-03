@@ -61,39 +61,39 @@ function Versus() {
     Math.floor(Math.random() * 30) + 100
   );
 
-  const myDamageSpell = () => {
-    const myDamage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
-    setEnemyCharacterHP(enemyCharacterHP - myDamage);
-    if (enemyCharacterHP - myDamage <= 0) {
-      setEnemyCharacterHP(0);
-      MySwal.fire({
-        title: <strong>YEAH!</strong>,
-        html:
-          `<i>You beat ${enemyCharacter.name}, you won the Triwizard Cup!</i>` +
-          "<br/>" +
-          "<br/>" +
-          "<a href='/' style=color:D3A625>Back to Home</a>",
-        iconHtml: '<img src="/image/cup.png" />',
-        showConfirmButton: false,
-      });
+  const startDamage = (enemyId) => {
+    const damage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
+    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
+      setEnemyCharacterHP(enemyCharacterHP - damage);
+      if (enemyCharacterHP - damage <= 0) {
+        setEnemyCharacterHP(0);
+        MySwal.fire({
+          title: <strong>YEAH!</strong>,
+          html:
+            `<i>You beat ${enemyCharacter.name}, you won the Triwizard Cup!</i>` +
+            "<br/>" +
+            "<br/>" +
+            "<a href='/' style=color:D3A625>Back to Home</a>",
+          iconHtml: '<img src="/image/cup.png" />',
+          showConfirmButton: false,
+        });
+      }
     }
-  };
-
-  const enemyDamageSpell = () => {
-    const enemyDamage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
-    setMyCharacterHP(myCharacterHP - enemyDamage);
-    if (myCharacterHP - enemyDamage <= 0) {
-      setMyCharacterHP(0);
-      MySwal.fire({
-        title: <strong>Oh no!</strong>,
-        html:
-          `<i>${enemyCharacter.name} have beat you...</i>` +
-          "<br/>" +
-          "<br/>" +
-          "<a href='/' style=color:D3A625>Back to Home</a>",
-        iconHtml: '<img src="/image/scar.png" />',
-        showConfirmButton: false,
-      });
+    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
+      setMyCharacterHP(myCharacterHP - damage);
+      if (myCharacterHP - damage <= 0) {
+        setMyCharacterHP(0);
+        MySwal.fire({
+          title: <strong>Oh no!</strong>,
+          html:
+            `<i>${enemyCharacter.name} beat you...</i>` +
+            "<br/>" +
+            "<br/>" +
+            "<a href='/' style=color:D3A625>Back to Home</a>",
+          iconHtml: '<img src="/image/scar.png" />',
+          showConfirmButton: false,
+        });
+      }
     }
   };
 
@@ -157,18 +157,11 @@ function Versus() {
               />
             )}
           </div>
-          <div className="flex flex-row gap-4 justify-center spells">
-            <button type="button" onClick={myDamageSpell}>
-              spells
-            </button>
-            <button type="button" onClick={myDamageSpell}>
-              spells
-            </button>
-            <button type="button" onClick={myDamageSpell}>
-              spells
-            </button>
-          </div>
-          <CharSpells house={myCharacter?.house} />
+
+          <CharSpells
+            house={myCharacter?.house}
+            startDamage={() => startDamage(enemyCharacter.id)}
+          />
         </div>
         <div className="justify-center items-center space-y-24">
           <div className="flex justify-around gap-8">
@@ -198,18 +191,12 @@ function Versus() {
               </button>
             </div>
           </div>
-          <div className="flex flex-row gap-4 justify-center spells">
-            <button type="button" onClick={enemyDamageSpell}>
-              spells
-            </button>
-            <button type="button" onClick={enemyDamageSpell}>
-              spells
-            </button>
-            <button type="button" onClick={enemyDamageSpell}>
-              spells
-            </button>
-          </div>
-          <CharSpells house={randomHouse()} />
+          <CharSpells
+            house={
+              enemyCharacter?.house ? enemyCharacter?.house : randomHouse()
+            }
+            startDamage={() => startDamage(myCharacter.id)}
+          />
         </div>
       </div>
     </div>
