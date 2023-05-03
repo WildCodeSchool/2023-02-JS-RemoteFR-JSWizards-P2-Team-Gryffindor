@@ -67,7 +67,7 @@ export default function Navbar() {
           />
         </button>
 
-        <button type="button" className="hidden md:block">
+        <button type="button" className="hidden md:block" name="Login">
           <NavLink
             to="/login"
             className={({ isActive }) =>
