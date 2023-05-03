@@ -43,12 +43,12 @@ CardLibrary.propTypes = {
     })
   ).isRequired,
   pickedUpCard: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    house: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    house: PropTypes.string,
   }).isRequired,
   setPickedUpCard: PropTypes.func.isRequired,
-  setSelectedCharacterId: PropTypes.string.isRequired,
-  setNext: PropTypes.bool.isRequired,
+  setSelectedCharacterId: PropTypes.func.isRequired,
+  setNext: PropTypes.func.isRequired,
 };
 
 export default CardLibrary;
