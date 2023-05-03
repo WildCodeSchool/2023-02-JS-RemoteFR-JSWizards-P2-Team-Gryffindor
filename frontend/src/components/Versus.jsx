@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import Card from "./Card";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import cup from "/image/cup.png";
-import scar from "/image/scar.png";
+import Card from "./Card";
 
 function Versus() {
   const [myCharacter, setMyCharacter] = useState(null);
@@ -64,10 +62,9 @@ function Versus() {
       MySwal.fire({
         title: <strong>YEAH!</strong>,
         html: <i>You beat {enemyCharacter.name}, you won the Triwizard Cup!</i>,
-        iconHtml: `<img src="${cup}" alt="Triwizard Cup">`,
+        iconHtml: '<img src="/image/cup.png />',
         confirmButtonColor: "#282E32",
         confirmButtonText: "Continue",
-
       });
     }
   };
@@ -80,7 +77,7 @@ function Versus() {
       MySwal.fire({
         title: <strong>Oh no!</strong>,
         html: <i>{enemyCharacter.name} have beated you...</i>,
-        iconHtml: `<img src="${scar}" alt="scar">`,
+        iconHtml: '<img src="/image/scar.png />',
         confirmButtonColor: "#282E32",
         confirmButtonText: "Continue",
       });
