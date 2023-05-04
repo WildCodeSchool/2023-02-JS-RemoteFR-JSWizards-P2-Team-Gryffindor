@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2/dist/sweetalert2.all.min";
 import Card from "../Card";
 import CharSpells from "./Spells";
 
@@ -162,7 +162,6 @@ function Versus() {
               />
             )}
           </div>
-
           <CharSpells
             house={myCharacter?.house}
             startDamage={() => startDamage(enemyCharacter.id)}
