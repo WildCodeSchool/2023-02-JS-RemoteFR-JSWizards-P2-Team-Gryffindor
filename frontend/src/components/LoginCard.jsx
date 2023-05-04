@@ -18,29 +18,16 @@ export default function LoginCard() {
 
   const passwordType = passwordVisible ? "text" : "password";
 
-  const logged = () => {
-    toast.success("Login succeeds", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-  };
-
   const wrong = () => {
     toast.error("Wrong email or password !", {
-      position: "bottom-left",
+      position: "bottom-right",
       autoClose: 5000,
-      hideProgressBar: false,
+      hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "colored",
+      theme: "dark",
     });
   };
 
@@ -53,7 +40,6 @@ export default function LoginCard() {
 
     if (foundUser) {
       window.location.replace("/");
-      logged();
     } else {
       wrong();
     }
@@ -70,8 +56,10 @@ export default function LoginCard() {
             },
           }
         );
+        window.location.replace("/");
         console.info(data);
       } catch (err) {
+        wrong();
         console.error(err);
       }
     },
