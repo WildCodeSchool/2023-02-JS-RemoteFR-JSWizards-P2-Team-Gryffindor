@@ -24,6 +24,8 @@ function App() {
   const [audioPlay, setAudioPlay] = useState(false);
   const [audioName, setAudioName] = useState("mainmusic");
   const [muted, setMuted] = useState(false);
+  const AudioIcons = audioPlay && !muted ? Icons.GoUnmute : Icons.GoMute;
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
@@ -50,7 +52,6 @@ function App() {
       </>
     )
   );
-  const AudioIcons = audioPlay && !muted ? Icons.GoUnmute : Icons.GoMute;
   /* eslint-disable */
 
   return (

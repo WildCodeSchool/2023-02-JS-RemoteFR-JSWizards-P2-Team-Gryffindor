@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
+import { useLogout } from "../../Hook";
 
-export default function Navbar() {
+export default function Navbar({ loggedIn }) {
   return (
     <nav className="sticky bg-dark flex flex-row justify-between items-center px-8 py-2.5">
       <div className="logo-wrapper">
@@ -66,40 +68,46 @@ export default function Navbar() {
             height="30"
           />
         </button>
-
-        <button type="button" className="hidden md:block" name="Login">
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              `navlink ${isActive ? "is-active" : ""}`
-            }
-          >
-            <img
-              className="max-w-md"
-              src="./icon/logged.svg"
-              alt="connect"
-              width="20"
-              height="20"
-            />
-          </NavLink>
-        </button>
-        <button type="button" className="hidden" name="Logout">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `navlink ${isActive ? "is-active" : ""}`
-            }
-          >
-            <img
-              className="max-w-md"
-              src="./icon/logout.svg"
-              alt="connect"
-              width="20"
-              height="20"
-            />
-          </NavLink>
-        </button>
+        {loggedIn ? (
+          <button type="button" name="Logout" onClick={useLogout}>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `navlink ${isActive ? "is-active" : ""}`
+              }
+            >
+              <img
+                className="max-w-md"
+                src="./icon/logout.svg"
+                alt="connect"
+                width="20"
+                height="20"
+              />
+            </NavLink>
+          </button>
+        ) : (
+          <button type="button" className="hidden md:block" name="Login">
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                `navlink ${isActive ? "is-active" : ""}`
+              }
+            >
+              <img
+                className="max-w-md"
+                src="./icon/logged.svg"
+                alt="connect"
+                width="20"
+                height="20"
+              />
+            </NavLink>
+          </button>
+        )}
       </div>
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
+};

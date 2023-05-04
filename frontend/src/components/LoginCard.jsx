@@ -3,11 +3,12 @@ import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import PropTypes from "prop-types";
 import dataUsers from "../db/data_users.json";
 
 import "react-toastify/dist/ReactToastify.css";
 
-export default function LoginCard() {
+export default function LoginCard({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -17,47 +18,6 @@ export default function LoginCard() {
   };
 
   const passwordType = passwordVisible ? "text" : "password";
-
-  const logged = () => {
-    toast.success("Login succeeds", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-  };
-
-  const wrong = () => {
-    toast.error("Wrong email or password !", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const foundUser = dataUsers.find(
-      (user) => user.email === email && user.password === password
-    );
-
-    if (foundUser) {
-      window.location.replace("/");
-      logged();
-    } else {
-      wrong();
-    }
-  };
 
   const login = useGoogleLogin({
     onSuccess: async (response) => {
@@ -77,12 +37,55 @@ export default function LoginCard() {
     },
   });
 
+  // const logged = () => {
+  //   toast.success("Login succeeds", {
+  //     position: "bottom-right",
+  //     autoClose: 3000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "colored",
+  //   });
+  // };
+
+  const wrong = () => {
+    toast.error("Wrong email or password !", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const foundUser = dataUsers.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (foundUser) {
+      // logged();
+      onLogin();
+      window.location.replace("/");
+    } else if (login) {
+      window.location.replace("/");
+    } else {
+      wrong();
+    }
+  };
+
   return (
     <div className="text-dark bg-[#ececec]/30 rounded-3xl w-[300px] px-12 py-8">
-      <div className="flex-col space-y-2" onSubmit={handleSubmit}>
+      <div className="flex-col space-y-2">
         <h2 className="flex justify-center text-xl">Login</h2>
-
-        <form className="space-y-2">
+        <form className="space-y-2" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email" className="text-base text-dark">
               Email
@@ -140,13 +143,11 @@ export default function LoginCard() {
             Sign in
           </button>
         </form>
-
         <p className="relative flex justify-center text-xs">
           <span className="line-login-before" />
           Or continue with
           <span className="line-login-after" />
         </p>
-
         <div className="flex justify-center">
           <button
             type="button"
@@ -169,3 +170,7 @@ export default function LoginCard() {
     </div>
   );
 }
+
+LoginCard.propTypes = {
+  onLogin: PropTypes.func.isRequired,
+};
