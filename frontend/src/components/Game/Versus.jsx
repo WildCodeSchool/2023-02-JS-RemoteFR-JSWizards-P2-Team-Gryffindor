@@ -128,14 +128,14 @@ function Versus() {
 
   const addDP = (enemyId) => {
     if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
-      const myDefencePoints = Math.round(myCharacterDP * 1.5);
+      const myDefencePoints = Math.round(myCharacterDP * 0.8);
       setMyCharacterDP(myCharacterDP + myDefencePoints);
       setMyCharacterHasUsedDP(!myCharacterHasUsedDP);
       setHasUsedDP(!hasUsedDP);
       setMyCharacterAP(myCharacterAP);
     }
     if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
-      const enemyDefencePoints = Math.round(enemyCharacterDP * 1.5);
+      const enemyDefencePoints = Math.round(enemyCharacterDP * 0.8);
       setEnemyCharacterDP(enemyCharacterDP + enemyDefencePoints);
       setEnemyHasUsedDP(!enemyHasUsedDP);
       setHasUsedDP(!hasUsedDP);
