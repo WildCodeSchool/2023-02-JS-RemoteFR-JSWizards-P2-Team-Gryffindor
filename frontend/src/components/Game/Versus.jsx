@@ -137,7 +137,8 @@ function Versus() {
           iconHtml: '<img src="/image/scar.png" />',
           showConfirmButton: false,
         });
-      } else if (enemyCharacterHP <= 50 && !enemyHasUsedHP) {
+      }
+      if (enemyCharacterHP <= 50 && !enemyHasUsedHP) {
         enemyHandleHP();
       } else {
         setCurrentTurn("player");
