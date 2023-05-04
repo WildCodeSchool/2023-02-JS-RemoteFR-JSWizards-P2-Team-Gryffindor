@@ -20,7 +20,7 @@ export default function CharSpells({
         <button
           type="button"
           onClick={
-            !hasUsedHP && characterHP <= 35 && characterHP > 0 ? getHP : null
+            !hasUsedHP && characterHP <= 50 && characterHP > 0 ? getHP : null
           }
         >
           {pickedHouse.spell2}
