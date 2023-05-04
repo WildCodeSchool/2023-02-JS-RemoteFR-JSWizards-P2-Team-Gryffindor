@@ -45,6 +45,7 @@ function Versus() {
   // Stats
   const [myCharacterHP, setMyCharacterHP] = useState(200);
   const [hasUsedHP, setHasUsedHP] = useState(false);
+  const [myCharacterHasUsedHP, setMyCharacterHasUsedHP] = useState(false);
   const [myCharacterDP, setMyCharacterDP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
@@ -64,9 +65,7 @@ function Versus() {
     const damage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
     if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
       setEnemyCharacterHP(
-        enemyCharacterHP -
-          (damage +
-            Math.round(myCharacterAP * 0.05))
+        enemyCharacterHP - (damage + Math.round(myCharacterAP * 0.05))
       );
       if (enemyCharacterHP - damage <= 0) {
         setEnemyCharacterHP(0);
@@ -84,9 +83,7 @@ function Versus() {
     }
     if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
       setMyCharacterHP(
-        myCharacterHP -
-          (damage +
-            Math.round(enemyCharacterAP * 0.05))
+        myCharacterHP - (damage + Math.round(enemyCharacterAP * 0.05))
       );
       if (myCharacterHP - damage <= 0) {
         setMyCharacterHP(0);
@@ -104,21 +101,41 @@ function Versus() {
     }
   };
 
-  const myHandleHP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setMyCharacterHP(myCharacterHP + points);
-    setHasUsedHP(true);
-    setMyCharacterAP(myCharacterAP);
-    setMyCharacterDP(myCharacterDP);
+  // FONCTION GETHP
+
+  const getHP = (enemyId) => {
+    const healthPoints = Math.floor(Math.random() * 30) + 10; // HP aléatoires entre 10 et 30
+    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
+      setMyCharacterHP(myCharacterHP + healthPoints);
+      setMyCharacterHasUsedHP(!hasUsedHP);
+      setHasUsedHP(!hasUsedHP);
+      setMyCharacterAP(myCharacterAP);
+      setMyCharacterDP(myCharacterDP);
+    }
+    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
+      setEnemyCharacterHP(enemyCharacterHP + healthPoints);
+      setEnemyHasUsedHP(!hasUsedHP);
+      setHasUsedHP(!hasUsedHP);
+      setEnemyCharacterAP(enemyCharacterAP);
+      setEnemyCharacterDP(enemyCharacterDP);
+    }
   };
 
-  const enemyHandleHP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setEnemyCharacterHP(enemyCharacterHP + points);
-    setEnemyHasUsedHP(true);
-    setEnemyCharacterAP(enemyCharacterAP);
-    setEnemyCharacterDP(enemyCharacterDP);
-  };
+  // const myHandleHP = () => {
+  //   const points = Math.floor(Math.random() * 30) + 10;
+  //   setMyCharacterHP(myCharacterHP + points);
+  //   setHasUsedHP(true);
+  //   setMyCharacterAP(myCharacterAP);
+  //   setMyCharacterDP(myCharacterDP);
+  // };
+
+  // const enemyHandleHP = () => {
+  //   const points = Math.floor(Math.random() * 30) + 10;
+  //   setEnemyCharacterHP(enemyCharacterHP + points);
+  //   setEnemyHasUsedHP(true);
+  //   setEnemyCharacterAP(enemyCharacterAP);
+  //   setEnemyCharacterDP(enemyCharacterDP);
+  // };
 
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-200px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
@@ -135,11 +152,8 @@ function Versus() {
                 {myCharacterDP}{" "}
               </button>
 
-              <button
-                type="button"
-                onClick={!hasUsedHP && myCharacterHP <= 35 ? myHandleHP : null}
-              >
-                HP <i>Potion</i> ❤️
+              <button type="button">
+                HP ❤️
                 {myCharacterHP}
               </button>
             </div>
@@ -158,6 +172,9 @@ function Versus() {
           <CharSpells
             house={myCharacter?.house}
             startDamage={() => startDamage(enemyCharacter.id)}
+            getHP={() => getHP(myCharacter.id)}
+            hasUsedHP={myCharacterHasUsedHP}
+            characterHP={myCharacterHP}
           />
         </div>
         <div className="justify-center items-center space-y-24">
@@ -184,13 +201,13 @@ function Versus() {
               </button>
               <button
                 type="button"
-                onClick={
-                  !enemyHasUsedHP && enemyCharacterHP <= 30
-                    ? enemyHandleHP
-                    : null
-                }
+                // onClick={
+                //   !enemyHasUsedHP && enemyCharacterHP <= 30
+                //     ? getHP
+                //     : null
+                // }
               >
-                HP <i>Potion</i> ❤️
+                HP ❤️
                 {enemyCharacterHP}
               </button>
             </div>
@@ -198,6 +215,9 @@ function Versus() {
           <CharSpells
             house={enemyCharacter?.house}
             startDamage={() => startDamage(myCharacter.id)}
+            getHP={() => getHP(enemyCharacter.id)}
+            hasUsedHP={enemyHasUsedHP}
+            characterHP={enemyCharacterHP}
           />
         </div>
       </div>
