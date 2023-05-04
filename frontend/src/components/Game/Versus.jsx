@@ -72,7 +72,7 @@ function Versus() {
       setEnemyCharacterHP(
         enemyCharacterHP - (damage + Math.round(myCharacterAP * 0.05))
       );
-      if (enemyCharacterHP - damage <= 0) {
+      if ((enemyCharacterHP - damage) <= 0) {
         setEnemyCharacterHP(0);
         MySwal.fire({
           title: <strong>YEAH!</strong>,
@@ -83,6 +83,8 @@ function Versus() {
             "<a href='/' style=color:D3A625>Back to Home</a>",
           iconHtml: '<img src="/image/cup.png" />',
           showConfirmButton: false,
+          allowOutsideClick: false
+
         });
       }
     }
@@ -90,7 +92,7 @@ function Versus() {
       setMyCharacterHP(
         myCharacterHP - (damage + Math.round(enemyCharacterAP * 0.05))
       );
-      if (myCharacterHP - damage <= 0) {
+      if ((myCharacterHP - damage) <= 0) {
         setMyCharacterHP(0);
         MySwal.fire({
           title: <strong>Oh no!</strong>,
@@ -101,6 +103,8 @@ function Versus() {
             "<a href='/' style=color:D3A625>Back to Home</a>",
           iconHtml: '<img src="/image/scar.png" />',
           showConfirmButton: false,
+          allowOutsideClick: false
+
         });
       }
     }
