@@ -34,7 +34,7 @@ export default function FilterBtn({ cards, setFilteredCards }) {
     <div className="relative">
       <button
         type="button"
-        className="text-gray-800 font-semibold py-2 px-4 rounded inline-flex items-center"
+        className="text-gray-800 font-semibold py-1 rounded inline-flex items-center"
         onClick={handleToggle}
       >
         <img src="./icon/filter.svg" alt="filter button" />
@@ -98,6 +98,8 @@ export default function FilterBtn({ cards, setFilteredCards }) {
 }
 
 FilterBtn.propTypes = {
-  setFilteredCards: PropTypes.string.isRequired,
-  cards: PropTypes.string.isRequired,
+  setFilteredCards: PropTypes.func.isRequired,
+  cards: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+  ).isRequired,
 };

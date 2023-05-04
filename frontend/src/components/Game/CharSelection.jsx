@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import SearchBar from "./SearchBar";
-import FilterBtn from "./FilterBtn";
-import CardLibrary from "./CardLibrary";
+import SearchBar from "../SearchBar";
+import FilterBtn from "../FilterBtn";
+import CardLibrary from "../CardLibrary";
 
 export default function CharSelection({
   selectedHouse,
@@ -10,6 +10,7 @@ export default function CharSelection({
   pickedUpCard,
   setPickedUpCard,
   description,
+  setNext,
 }) {
   const [filteredCards, setFilteredCards] = useState([]);
   const [cards, setCards] = useState([]);
@@ -59,10 +60,12 @@ export default function CharSelection({
   return (
     <>
       <div className="flex flex-row justify-between items-center w-full">
-        <h2 className="text-xl">{info}</h2>
-        <div className="flex gap-4">
+        <h2 className="text-xl font-serif">{info}</h2>
+        <div className="flex gap-6 items-center">
           <SearchBar handleSearch={handleSearch} />
-          <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
+          {!selectedHouse && (
+            <FilterBtn setFilteredCards={setFilteredCards} cards={cards} />
+          )}
         </div>
       </div>
       <div className="flex flex-col items-center space-y-8">
@@ -73,6 +76,7 @@ export default function CharSelection({
             pickedUpCard={pickedUpCard}
             setSelectedCharacterId={setSelectedCharacterId}
             cards={filteredCards.length > 0 ? filteredCards : cards}
+            setNext={setNext}
           />
         </div>
       </div>
@@ -80,13 +84,22 @@ export default function CharSelection({
   );
 }
 
+CharSelection.defaultProps = {
+  selectedHouse: "",
+  description: "",
+  setNext: () => {},
+  pickedUpCard: { name: "", house: "" },
+  setPickedUpCard: () => {},
+};
+
 CharSelection.propTypes = {
-  selectedHouse: PropTypes.string.isRequired,
+  selectedHouse: PropTypes.string,
   info: PropTypes.string.isRequired,
   pickedUpCard: PropTypes.shape({
     name: PropTypes.string,
     house: PropTypes.string,
-  }).isRequired,
-  setPickedUpCard: PropTypes.func.isRequired,
-  description: PropTypes.string.isRequired,
+  }),
+  setPickedUpCard: PropTypes.func,
+  description: PropTypes.string,
+  setNext: PropTypes.func,
 };

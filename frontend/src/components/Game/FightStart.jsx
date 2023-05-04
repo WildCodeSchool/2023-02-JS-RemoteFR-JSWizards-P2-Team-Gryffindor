@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
-import Card from "../components/Card";
+import Card from "../Card";
 
-function FightStart() {
-  setTimeout(() => {
-    window.location.href = "./versus";
-  }, 5000);
+export default function FightStart() {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [randomCharacter, setRandomCharacter] = useState(null);
 
   useEffect(() => {
     if (randomCharacter) {
       localStorage.setItem("randomCharacterId", randomCharacter.id);
+      localStorage.setItem("randomCharacter", JSON.stringify(randomCharacter));
     }
   }, [randomCharacter]);
 
@@ -43,7 +41,7 @@ function FightStart() {
   }, []);
 
   return (
-    <div className="h-[calc(100vh-125px)] bg-[url('./assets/fight.png')] bg-cover bg-no-repeat flex flex-col justify-around rounded-2xl">
+    <div className="flex flex-col justify-around min-h-[calc(100vh-150px)] bg-[url('./image/fight.png')] bg-cover bg-center rounded-xl w-full">
       <div className="flex justify-evenly">
         <div className="justify-center items-center space-y-8">
           <div className="flex justify-around gap-4">
@@ -73,5 +71,3 @@ function FightStart() {
     </div>
   );
 }
-
-export default FightStart;

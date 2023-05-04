@@ -1,0 +1,37 @@
+{
+  "Gryffindor": {
+    "house": "Gryffindor",
+    "id": "1",
+    "spell1": "Bombardo",
+    "spell2": "Brackium Emendo",
+    "spell3": "Conjunctivitis Curse"
+  },
+  "Hufflepuff": {
+    "house": "Hufflepuff",
+    "id": "2",
+    "spell1": "Sectumsempra",
+    "spell2": "Episkey",
+    "spell3": "Confundo"
+  },
+  "Ravenclaw": {
+    "house": "Ravenclaw",
+    "id": "3",
+    "spell1": "Ascendio",
+    "spell2": "Reparifors",
+    "spell3": "Protego"
+  },
+  "Slytherin": {
+    "house": "Slytherin",
+    "id": "4",
+    "spell1": "Avada Kedavra",
+    "spell2": "Ferula",
+    "spell3": "Stupefy"
+  },
+  "": {
+    "house": "",
+    "id": "5",
+    "spell1": "Ascendio",
+    "spell2": "Episkey",
+    "spell3": "Stupefy"
+  }
+}

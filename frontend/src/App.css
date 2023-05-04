@@ -31,7 +31,13 @@
   *,
   html,
   body {
+    font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
+    cursor: url(./image/pointer.png), auto;
+  }
+  button[type="button"],
+  button[type="submit"] {
+    cursor: url(./image/pointer.png), auto;
   }
 }
 
@@ -93,6 +99,10 @@
     opacity: 1;
   }
 
+  input[type="radio"]:checked + label p {
+    bottom: 0;
+  }
+
   .houses-intro:hover > .house {
     opacity: 0.5;
   }
@@ -118,11 +128,8 @@
     font-style: italic;
   }
 
-  .character {
-    font-size: theme("fontSize.xs");
+  label p {
     font-style: italic;
-    position: relative;
-    overflow: hidden;
   }
 
   .house p {
@@ -200,15 +207,22 @@
     box-shadow: 0px 0px 16px theme("colors.dark");
   }
 
-  .selectedCard {
-    border: solid 3px black;
-  }
-
   .divClass:focus {
     outline: none !important;
   }
 
   .divClass:focus-within {
     outline: none !important;
+  }
+
+  .audioIcons {
+    position: fixed;
+    font-size: 20px;
+    color: #fff4e2;
+    display: flex;
+    justify-content: flex-end;
+    left: 20px;
+    bottom: 10px;
+    opacity: 0.7;
   }
 }

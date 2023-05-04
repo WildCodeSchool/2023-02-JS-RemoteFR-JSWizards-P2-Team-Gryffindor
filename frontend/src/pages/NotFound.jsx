@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import Lottie from "lottie-react";
 import LottieAnim from "../assets/lotties/404-animation.json";
 
-export default function NotFound() {
+export default function NotFound({ setAudioName }) {
+  useEffect(() => {
+    setAudioName("mainmusic");
+  }, []);
   return (
     <section className="min-h-[calc(100vh-125px)] flex flex-col justify-center items-center space-y-4 text-base text-center">
       <div>
@@ -31,3 +36,11 @@ export default function NotFound() {
     </section>
   );
 }
+
+NotFound.defaultProps = {
+  setAudioName: () => {},
+};
+
+NotFound.propTypes = {
+  setAudioName: PropTypes.func,
+};
