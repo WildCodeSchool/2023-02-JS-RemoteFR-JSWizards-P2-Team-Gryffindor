@@ -102,36 +102,42 @@ function Versus() {
     }
   };
 
-  const myHandleAP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setMyCharacterAP(myCharacterAP + points);
-  };
+  // const myHandleAP = () => {
+  //   const points = Math.floor(Math.random() * 30) + 10;
+  //   setMyCharacterAP(myCharacterAP + points);
+  // };
 
-  const myHandleDP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setMyCharacterDP(myCharacterDP + points);
-  };
+  // const myHandleDP = () => {
+  //   const points = Math.floor(Math.random() * 30) + 10;
+  //   setMyCharacterDP(myCharacterDP + points);
+  // };
 
   const myHandleHP = () => {
     const points = Math.floor(Math.random() * 30) + 10;
     setMyCharacterHP(myCharacterHP + points);
     setHasUsedHP(true);
+    setMyCharacterAP(myCharacterAP);
+    setMyCharacterDP(myCharacterDP);
+
   };
 
-  const enemyHandleAP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setEnemyCharacterAP(enemyCharacterAP + points);
-  };
+  // const enemyHandleAP = () => {
+  //   const points = Math.floor(Math.random() * 30) + 10;
+  //   setEnemyCharacterAP(enemyCharacterAP + points);
+  // };
 
-  const enemyHandleDP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setEnemyCharacterDP(enemyCharacterDP + points);
-  };
+  // const enemyHandleDP = () => {
+  //   const points = Math.floor(Math.random() * 30) + 10;
+  //   setEnemyCharacterDP(enemyCharacterDP + points);
+  // };
 
   const enemyHandleHP = () => {
     const points = Math.floor(Math.random() * 30) + 10;
     setEnemyCharacterHP(enemyCharacterHP + points);
     setEnemyHasUsedHP(true);
+    setEnemyCharacterAP(enemyCharacterAP);
+    setEnemyCharacterDP(enemyCharacterDP);
+
   };
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-210px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
@@ -139,18 +145,24 @@ function Versus() {
         <div className="justify-center items-center space-y-24">
           <div className="flex justify-around gap-8">
             <div className="flex flex-col justify-center items-center gap-8 potions">
-              <button type="button" onClick={myHandleAP}>
+              <button
+                type="button"
+                // onClick={myHandleAP}
+              >
                 AP Potion ⚔️
                 {myCharacterAP}
               </button>
-              <button type="button" onClick={myHandleDP}>
+              <button
+                type="button"
+                // onClick={myHandleDP}
+              >
                 DP Potion 🛡️
                 {myCharacterDP}{" "}
               </button>
 
               <button
                 type="button"
-                onClick={!hasUsedHP && myCharacterHP <= 30 ? myHandleHP : null}
+                onClick={!hasUsedHP && myCharacterHP <= 35 ? myHandleHP : null}
               >
                 HP Potion ❤️
                 {myCharacterHP}
@@ -188,11 +200,17 @@ function Versus() {
               />
             )}
             <div className="flex flex-col justify-center items-center gap-8 potions">
-              <button type="button" onClick={enemyHandleAP}>
+              <button
+                type="button"
+                // onClick={enemyHandleAP}
+              >
                 AP Potion ⚔️
                 {enemyCharacterAP}
               </button>
-              <button type="button" onClick={enemyHandleDP}>
+              <button
+                type="button"
+                // onClick={enemyHandleDP}
+              >
                 DP Potion 🛡️
                 {enemyCharacterDP}
               </button>
