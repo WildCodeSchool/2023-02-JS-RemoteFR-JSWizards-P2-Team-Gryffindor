@@ -15,5 +15,5 @@ export default function Register({ setAudioName }) {
 }
 
 Register.propTypes = {
-  setAudioName: PropTypes.string.isRequired,
+  setAudioName: PropTypes.func.isRequired,
 };

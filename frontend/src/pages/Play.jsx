@@ -37,7 +37,7 @@ export default function Play({ setAudioName }) {
   }
 
   return (
-    <section className="flex flex-col items-center space-y-8 ">
+    <section className="flex flex-col items-center space-y-4 ">
       {
         /* eslint-disable */
         step === "cardSelection" ? (
@@ -65,7 +65,7 @@ export default function Play({ setAudioName }) {
             {step !== "houseSelection" && (
               <button
                 onClick={abandonned}
-                className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+                className="mt-2 bg-dark py-2 px-4 rounded-3xl hover:bg-secondary hover:text-dark"
                 type="button"
               >
                 Abandon
@@ -77,7 +77,7 @@ export default function Play({ setAudioName }) {
               <button
                 onClick={changeStep}
                 type="button"
-                className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+                className="mt-2 bg-dark py-2 px-4 rounded-3xl hover:bg-secondary hover:text-dark"
                 disabled={!selectedHouse}
               >
                 Continue
@@ -87,7 +87,7 @@ export default function Play({ setAudioName }) {
                 <button
                   onClick={changeStep}
                   type="button"
-                  className="mt-2 bg-dark p-2.5 rounded-3xl hover:bg-secondary hover:text-dark"
+                  className="mt-2 bg-dark py-2 px-4 rounded-3xl hover:bg-secondary hover:text-dark"
                   disabled={next}
                 >
                   Continue
@@ -101,5 +101,5 @@ export default function Play({ setAudioName }) {
   );
 }
 Play.propTypes = {
-  setAudioName: PropTypes.string.isRequired,
+  setAudioName: PropTypes.func.isRequired,
 };

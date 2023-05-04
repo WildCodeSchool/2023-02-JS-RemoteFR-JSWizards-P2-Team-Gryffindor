@@ -16,5 +16,5 @@ export default function Inventory({ setAudioName }) {
 }
 
 Inventory.propTypes = {
-  setAudioName: PropTypes.string.isRequired,
+  setAudioName: PropTypes.func.isRequired,
 };

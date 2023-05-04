@@ -98,6 +98,10 @@
     opacity: 1;
   }
 
+  input[type="radio"]:checked + label p {
+    bottom: 0;
+  }
+
   .houses-intro:hover > .house {
     opacity: 0.5;
   }
@@ -123,11 +127,8 @@
     font-style: italic;
   }
 
-  .character {
-    font-size: theme("fontSize.xs");
+  label p {
     font-style: italic;
-    position: relative;
-    overflow: hidden;
   }
 
   .house p {

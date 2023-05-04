@@ -8,13 +8,13 @@ export default function Footer() {
   const form = useRef(null);
 
   const notify = (message) => {
-    toast[message]("Success, your email was sent!", {
+    toast[message]("Success, your message was sent!", {
       position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
-      draggable: true,
+      draggable: false,
       progress: undefined,
       theme: "dark",
     });
@@ -28,7 +28,16 @@ export default function Footer() {
     const message = e.target.message.value.trim();
 
     if (!name || !email || !message) {
-      toast.error("Please fill in all required fields");
+      toast.error("Please fill in all required fields", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "dark",
+      });
       return;
     }
 
@@ -92,7 +101,6 @@ export default function Footer() {
                 placeholder="username"
                 id="text"
                 name="name"
-                required
               />
             </div>
             <div className="items-start bg-darkmode rounded outline-none w-[500px]">
@@ -102,7 +110,6 @@ export default function Footer() {
                 placeholder="email@example.com"
                 id="email"
                 name="user_email"
-                required
               />
             </div>
             <div className="w-[500px]">
@@ -110,7 +117,6 @@ export default function Footer() {
                 className="items-start px-5 py-1.5 bg-darkmode rounded outline-none w-full"
                 placeholder="Type your text here"
                 name="message"
-                required
               />
             </div>
             <input
@@ -120,18 +126,7 @@ export default function Footer() {
               onClick={notify}
             />
           </form>
-          <ToastContainer
-            position="bottom-right"
-            autoClose={3000}
-            hideProgressBar
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="dark"
-          />
+          <ToastContainer />
         </div>
       </footer>
       <div className="flex justify-center bg-darkmode py-1.5 text-xs">

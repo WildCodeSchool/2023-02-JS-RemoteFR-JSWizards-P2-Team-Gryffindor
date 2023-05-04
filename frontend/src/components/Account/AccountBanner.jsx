@@ -7,15 +7,15 @@ export default function AccountBanner() {
       </div>
       <div className="flex flex-col gap-3 items-center">
         <img src="./image/Huff-banner.png" alt="Hyfflepuff banner" />
-        <p>12</p>
+        <p>10</p>
       </div>
       <div className="flex flex-col gap-3 items-center">
         <img src="./image/Raven-banner.png" alt="Ravenclaw banner" />
-        <p>12</p>
+        <p>8</p>
       </div>
       <div className="flex flex-col gap-3 items-center">
         <img src="./image/Slyth-banner.png" alt="Slytherin banner" />
-        <p>12</p>
+        <p>23</p>
       </div>
     </div>
   );
