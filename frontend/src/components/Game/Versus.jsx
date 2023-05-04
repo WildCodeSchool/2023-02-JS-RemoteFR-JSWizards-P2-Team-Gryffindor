@@ -67,9 +67,9 @@ function Versus() {
   );
 
   const startDamage = (enemyId) => {
-    const damage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
+    const damage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30 - DP*0.05
     if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
-      setEnemyCharacterHP(enemyCharacterHP - damage);
+      setEnemyCharacterHP(enemyCharacterHP - (damage - Math.round(enemyCharacterDP*0.05)));
       if (enemyCharacterHP - damage <= 0) {
         setEnemyCharacterHP(0);
         MySwal.fire({
@@ -85,7 +85,7 @@ function Versus() {
       }
     }
     if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
-      setMyCharacterHP(myCharacterHP - damage);
+      setMyCharacterHP(myCharacterHP - damage - Math.round(myCharacterDP*0.05));
       if (myCharacterHP - damage <= 0) {
         setMyCharacterHP(0);
         MySwal.fire({
@@ -118,7 +118,6 @@ function Versus() {
     setHasUsedHP(true);
     setMyCharacterAP(myCharacterAP);
     setMyCharacterDP(myCharacterDP);
-
   };
 
   // const enemyHandleAP = () => {
@@ -137,7 +136,6 @@ function Versus() {
     setEnemyHasUsedHP(true);
     setEnemyCharacterAP(enemyCharacterAP);
     setEnemyCharacterDP(enemyCharacterDP);
-
   };
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-210px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
