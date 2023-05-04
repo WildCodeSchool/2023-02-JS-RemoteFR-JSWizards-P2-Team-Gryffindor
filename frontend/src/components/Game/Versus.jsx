@@ -50,6 +50,7 @@ function Versus() {
 
   // Stats
   const [myCharacterHP, setMyCharacterHP] = useState(200);
+  const [hasUsedHP, setHasUsedHP] = useState(false);
   const [myCharacterDP, setMyCharacterDP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
@@ -57,6 +58,7 @@ function Versus() {
     Math.floor(Math.random() * 30) + 100
   );
   const [enemyCharacterHP, setEnemyCharacterHP] = useState(200);
+  const [enemyHasUsedHP, setEnemyHasUsedHP] = useState(false);
   const [enemyCharacterDP, setEnemyCharacterDP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
@@ -67,7 +69,12 @@ function Versus() {
   const startDamage = (enemyId) => {
     const damage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
     if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
-      setEnemyCharacterHP(enemyCharacterHP - damage);
+      setEnemyCharacterHP(
+        enemyCharacterHP -
+          (damage +
+            Math.round(myCharacterAP * 0.02) -
+            Math.round(enemyCharacterDP * 0.05))
+      );
       if (enemyCharacterHP - damage <= 0) {
         setEnemyCharacterHP(0);
         MySwal.fire({
@@ -83,7 +90,12 @@ function Versus() {
       }
     }
     if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
-      setMyCharacterHP(myCharacterHP - damage);
+      setMyCharacterHP(
+        myCharacterHP -
+          (damage +
+            Math.round(enemyCharacterAP * 0.02) -
+            Math.round(myCharacterDP * 0.05))
+      );
       if (myCharacterHP - damage <= 0) {
         setMyCharacterHP(0);
         MySwal.fire({
@@ -100,34 +112,20 @@ function Versus() {
     }
   };
 
-  const myHandleAP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setMyCharacterAP(myCharacterAP + points);
-  };
-
-  const myHandleDP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setMyCharacterDP(myCharacterDP + points);
-  };
-
   const myHandleHP = () => {
     const points = Math.floor(Math.random() * 30) + 10;
     setMyCharacterHP(myCharacterHP + points);
-  };
-
-  const enemyHandleAP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setEnemyCharacterAP(enemyCharacterAP + points);
-  };
-
-  const enemyHandleDP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setEnemyCharacterDP(enemyCharacterDP + points);
+    setHasUsedHP(true);
+    setMyCharacterAP(myCharacterAP);
+    setMyCharacterDP(myCharacterDP);
   };
 
   const enemyHandleHP = () => {
     const points = Math.floor(Math.random() * 30) + 10;
     setEnemyCharacterHP(enemyCharacterHP + points);
+    setEnemyHasUsedHP(true);
+    setEnemyCharacterAP(enemyCharacterAP);
+    setEnemyCharacterDP(enemyCharacterDP);
   };
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-210px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
@@ -135,16 +133,20 @@ function Versus() {
         <div className="justify-center items-center space-y-24">
           <div className="flex justify-around gap-8">
             <div className="flex flex-col justify-center items-center gap-8 potions">
-              <button type="button" onClick={myHandleAP}>
-                AP Potion ⚔️
+              <button type="button">
+                AP ⚔️
                 {myCharacterAP}
               </button>
-              <button type="button" onClick={myHandleDP}>
-                DP Potion 🛡️
+              <button type="button">
+                DP 🛡️
                 {myCharacterDP}{" "}
               </button>
-              <button type="button" onClick={myHandleHP}>
-                HP Potion ❤️
+
+              <button
+                type="button"
+                onClick={!hasUsedHP && myCharacterHP <= 35 ? myHandleHP : null}
+              >
+                HP <i>Potion</i> ❤️
                 {myCharacterHP}
               </button>
             </div>
@@ -180,16 +182,23 @@ function Versus() {
               />
             )}
             <div className="flex flex-col justify-center items-center gap-8 potions">
-              <button type="button" onClick={enemyHandleAP}>
-                AP Potion ⚔️
+              <button type="button">
+                AP ⚔️
                 {enemyCharacterAP}
               </button>
-              <button type="button" onClick={enemyHandleDP}>
-                DP Potion 🛡️
+              <button type="button">
+                DP 🛡️
                 {enemyCharacterDP}
               </button>
-              <button type="button" onClick={enemyHandleHP}>
-                HP Potion ❤️
+              <button
+                type="button"
+                onClick={
+                  !enemyHasUsedHP && enemyCharacterHP <= 30
+                    ? enemyHandleHP
+                    : null
+                }
+              >
+                HP <i>Potion</i> ❤️
                 {enemyCharacterHP}
               </button>
             </div>
