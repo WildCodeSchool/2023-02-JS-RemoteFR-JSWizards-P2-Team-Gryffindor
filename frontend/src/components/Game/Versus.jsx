@@ -50,6 +50,7 @@ function Versus() {
 
   // Stats
   const [myCharacterHP, setMyCharacterHP] = useState(200);
+  const [hasUsedHP, setHasUsedHP] = useState(false);
   const [myCharacterDP, setMyCharacterDP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
@@ -57,6 +58,7 @@ function Versus() {
     Math.floor(Math.random() * 30) + 100
   );
   const [enemyCharacterHP, setEnemyCharacterHP] = useState(200);
+  const [enemyHasUsedHP, setEnemyHasUsedHP] = useState(false);
   const [enemyCharacterDP, setEnemyCharacterDP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
@@ -113,6 +115,7 @@ function Versus() {
   const myHandleHP = () => {
     const points = Math.floor(Math.random() * 30) + 10;
     setMyCharacterHP(myCharacterHP + points);
+    setHasUsedHP(true);
   };
 
   const enemyHandleAP = () => {
@@ -128,6 +131,7 @@ function Versus() {
   const enemyHandleHP = () => {
     const points = Math.floor(Math.random() * 30) + 10;
     setEnemyCharacterHP(enemyCharacterHP + points);
+    setEnemyHasUsedHP(true);
   };
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-210px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
@@ -143,7 +147,11 @@ function Versus() {
                 DP Potion 🛡️
                 {myCharacterDP}{" "}
               </button>
-              <button type="button" onClick={myHandleHP}>
+
+              <button
+                type="button"
+                onClick={!hasUsedHP && myCharacterHP <= 30 ? myHandleHP : null}
+              >
                 HP Potion ❤️
                 {myCharacterHP}
               </button>
@@ -188,7 +196,14 @@ function Versus() {
                 DP Potion 🛡️
                 {enemyCharacterDP}
               </button>
-              <button type="button" onClick={enemyHandleHP}>
+              <button
+                type="button"
+                onClick={
+                  !enemyHasUsedHP && enemyCharacterHP <= 30
+                    ? enemyHandleHP
+                    : null
+                }
+              >
                 HP Potion ❤️
                 {enemyCharacterHP}
               </button>
