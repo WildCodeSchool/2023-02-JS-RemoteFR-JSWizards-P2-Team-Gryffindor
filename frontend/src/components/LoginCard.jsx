@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { useGoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 import dataUsers from "../db/data_users.json";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -8,6 +10,13 @@ import "react-toastify/dist/ReactToastify.css";
 export default function LoginCard() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const handlePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
+  const passwordType = passwordVisible ? "text" : "password";
 
   const logged = () => {
     toast.success("Login succeeds", {
@@ -50,6 +59,24 @@ export default function LoginCard() {
     }
   };
 
+  const login = useGoogleLogin({
+    onSuccess: async (response) => {
+      try {
+        const data = await axios.get(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `Bearer ${response.access_token}`,
+            },
+          }
+        );
+        console.info(data);
+      } catch (err) {
+        console.error(err);
+      }
+    },
+  });
+
   return (
     <div className="text-dark bg-[#ececec]/30 rounded-3xl w-[300px] px-12 py-8">
       <div className="flex-col space-y-2" onSubmit={handleSubmit}>
@@ -78,7 +105,7 @@ export default function LoginCard() {
             </label>
             <div className="flex items-center relative">
               <input
-                type="Password"
+                type={passwordType}
                 placeholder="Password"
                 className="relative placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 pl-3 pr-8 duration-300 ease-in-out"
                 id="password"
@@ -88,13 +115,19 @@ export default function LoginCard() {
                 required
                 title="4 to 12 characters"
               />
+              {/* eslint-disable */}
               <span className="flex absolute right-3">
                 <img
-                  className=""
-                  src="./icon/pass-show.svg"
+                  src={
+                    passwordVisible
+                      ? "./icon/pass-hide.svg"
+                      : "./icon/pass-show.svg"
+                  }
                   alt="show password icon"
+                  onClick={handlePasswordVisibility}
                 />
               </span>
+              {/* eslint-enable */}
             </div>
             <label htmlFor="Passchange" className="text-xs">
               <a href="/ChangePassword">Forgot password?</a>
@@ -118,6 +151,7 @@ export default function LoginCard() {
           <button
             type="button"
             className="flex items-center justify-center rounded-3xl px-5 py-2.5 w-20 bg-white ring-1 ring-transparent hover:ring-secondary duration-300 ease-in-out"
+            onClick={login}
           >
             <img src="./icon/google.svg" alt="Google login button" />
           </button>
