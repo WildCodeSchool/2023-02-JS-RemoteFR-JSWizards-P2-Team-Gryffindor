@@ -7,6 +7,7 @@ import CharSpells from "./Spells";
 function Versus() {
   const [myCharacter, setMyCharacter] = useState(null);
   const [enemyCharacter, setEnemyCharacter] = useState(null);
+  const [currentTurn, setCurrentTurn] = useState("player"); // "player" or "enemy"
 
   const MySwal = withReactContent(Swal);
 
@@ -42,7 +43,7 @@ function Versus() {
     fetchData();
   }, []);
 
-  // Stats
+  // All Stats
   const [myCharacterHP, setMyCharacterHP] = useState(200);
   const [hasUsedHP, setHasUsedHP] = useState(false);
   const [myCharacterDP, setMyCharacterDP] = useState(
@@ -60,9 +61,35 @@ function Versus() {
     Math.floor(Math.random() * 30) + 100
   );
 
+  // HP Stats
+  const myHandleHP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setMyCharacterHP(myCharacterHP + points);
+    setHasUsedHP(true);
+    setMyCharacterAP(myCharacterAP);
+    setMyCharacterDP(myCharacterDP);
+  };
+
+  const enemyHandleHP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setEnemyCharacterHP(enemyCharacterHP + points);
+    setEnemyHasUsedHP(true);
+    setEnemyCharacterAP(enemyCharacterAP);
+    setEnemyCharacterDP(enemyCharacterDP);
+  };
+
   const startDamage = (enemyId) => {
     const damage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
-    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
+    const enemyTurn = () => {
+      setCurrentTurn("player");
+      startDamage(myCharacter.id);
+    };
+    if (
+      currentTurn === "player" &&
+      myCharacter &&
+      enemyCharacter &&
+      enemyCharacter.id === enemyId
+    ) {
       setEnemyCharacterHP(
         enemyCharacterHP -
           (damage +
@@ -81,9 +108,17 @@ function Versus() {
           iconHtml: '<img src="/image/cup.png" />',
           showConfirmButton: false,
         });
+      } else {
+        setCurrentTurn("enemy");
+        setTimeout(enemyTurn, 1000);
       }
     }
-    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
+    if (
+      currentTurn === "enemy" &&
+      enemyCharacter &&
+      myCharacter &&
+      myCharacter.id === enemyId
+    ) {
       setMyCharacterHP(
         myCharacterHP -
           (damage +
@@ -102,25 +137,19 @@ function Versus() {
           iconHtml: '<img src="/image/scar.png" />',
           showConfirmButton: false,
         });
+      } else if (enemyCharacterHP <= 50 && !enemyHasUsedHP) {
+        enemyHandleHP();
+      } else {
+        setCurrentTurn("player");
       }
     }
   };
 
-  const myHandleHP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setMyCharacterHP(myCharacterHP + points);
-    setHasUsedHP(true);
-    setMyCharacterAP(myCharacterAP);
-    setMyCharacterDP(myCharacterDP);
-  };
-
-  const enemyHandleHP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setEnemyCharacterHP(enemyCharacterHP + points);
-    setEnemyHasUsedHP(true);
-    setEnemyCharacterAP(enemyCharacterAP);
-    setEnemyCharacterDP(enemyCharacterDP);
-  };
+  useEffect(() => {
+    if (currentTurn === "enemy") {
+      setTimeout(() => startDamage(myCharacter.id), 1000);
+    }
+  }, [currentTurn, myCharacter]);
 
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-200px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
@@ -139,7 +168,7 @@ function Versus() {
 
               <button
                 type="button"
-                onClick={!hasUsedHP && myCharacterHP <= 35 ? myHandleHP : null}
+                onClick={!hasUsedHP && myCharacterHP <= 50 ? myHandleHP : null}
               >
                 HP <i>Potion</i> ❤️
                 {myCharacterHP}
@@ -160,6 +189,7 @@ function Versus() {
           <CharSpells
             house={myCharacter?.house}
             startDamage={() => startDamage(enemyCharacter.id)}
+            disabled={currentTurn === "enemy"}
           />
         </div>
         <div className="justify-center items-center space-y-24">
@@ -184,14 +214,7 @@ function Versus() {
                 DP 🛡️
                 {enemyCharacterDP}
               </button>
-              <button
-                type="button"
-                onClick={
-                  !enemyHasUsedHP && enemyCharacterHP <= 30
-                    ? enemyHandleHP
-                    : null
-                }
-              >
+              <button type="button">
                 HP <i>Potion</i> ❤️
                 {enemyCharacterHP}
               </button>
@@ -200,6 +223,7 @@ function Versus() {
           <CharSpells
             house={enemyCharacter?.house}
             startDamage={() => startDamage(myCharacter.id)}
+            disabled={currentTurn === "player"}
           />
         </div>
       </div>
