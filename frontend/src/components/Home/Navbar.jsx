@@ -16,7 +16,7 @@ export default function Navbar() {
       </div>
       <div className="flex gap-[clamp(0.5rem,2vw,2rem)]">
         <ul className="hidden md:flex items-center gap-[clamp(0.5rem,2vw,2rem)] text-primary text-base">
-          <li>
+          <li className="link">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -26,7 +26,7 @@ export default function Navbar() {
               Home
             </NavLink>
           </li>
-          <li>
+          <li className="link">
             <NavLink
               to="/play"
               className={({ isActive }) =>
@@ -36,7 +36,7 @@ export default function Navbar() {
               Play
             </NavLink>
           </li>
-          <li>
+          <li className="link">
             <NavLink
               to="/inventory"
               className={({ isActive }) =>
@@ -46,7 +46,7 @@ export default function Navbar() {
               Inventory
             </NavLink>
           </li>
-          <li>
+          <li className="link">
             <NavLink
               to="/account"
               className={({ isActive }) =>
