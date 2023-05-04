@@ -20,7 +20,11 @@ export default function CharSpells({ house, startDamage }) {
   );
 }
 
+CharSpells.defaultProps = {
+  house: "",
+};
+
 CharSpells.propTypes = {
-  house: PropTypes.string.isRequired,
+  house: PropTypes.string,
   startDamage: PropTypes.func.isRequired,
 };
