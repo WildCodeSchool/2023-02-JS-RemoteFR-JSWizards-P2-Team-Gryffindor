@@ -2,32 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: url("./fonts/poppins-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: url("./fonts/poppins-500.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("./fonts/poppins-600.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  src: url("./fonts/poppins-700.ttf") format("truetype");
+}
+@font-face {
+  font-family: "AnimalesFantastic";
+  font-weight: 500;
+  src: url("./fonts/AnimalesFantastic.ttf") format("truetype");
+}
+
 @layer base {
-  @font-face {
-    font-family: "Poppins";
-    font-weight: 400;
-    src: url("./fonts/poppins-400.ttf") format("truetype");
-  }
-  @font-face {
-    font-family: "Poppins";
-    font-weight: 500;
-    src: url("./fonts/poppins-500.ttf") format("truetype");
-  }
-  @font-face {
-    font-family: "Poppins";
-    font-weight: 600;
-    src: url("./fonts/poppins-600.ttf") format("truetype");
-  }
-  @font-face {
-    font-family: "Poppins";
-    font-weight: 700;
-    src: url("./fonts/poppins-700.ttf") format("truetype");
-  }
-  @font-face {
-    font-family: "AnimalesFantastic";
-    font-weight: 500;
-    src: url("./fonts/AnimalesFantastic.ttf") format("truetype");
-  }
   *,
   html,
   body {
