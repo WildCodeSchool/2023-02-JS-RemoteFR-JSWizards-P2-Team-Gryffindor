@@ -8,7 +8,6 @@ export default function GameHistoryMap(props) {
     const newGames = [];
 
     const { house, character, ennemyCharacter, ennemyHouse, result } = props;
-
     newGames.push({
       house,
       character,
