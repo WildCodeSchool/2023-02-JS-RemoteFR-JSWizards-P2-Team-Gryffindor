@@ -63,6 +63,8 @@ function Versus() {
   const [enemyCharacterAP, setEnemyCharacterAP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
+  const [result, setResult] = useState("Abandonned");
+  localStorage.setItem("result", result);
 
   const startDamage = (enemyId) => {
     const damage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
@@ -70,6 +72,7 @@ function Versus() {
       setEnemyCharacterHP(enemyCharacterHP - damage);
       if (enemyCharacterHP - damage <= 0) {
         setEnemyCharacterHP(0);
+        setResult("Won");
         MySwal.fire({
           title: <strong>YEAH!</strong>,
           html:
@@ -86,6 +89,7 @@ function Versus() {
       setMyCharacterHP(myCharacterHP - damage);
       if (myCharacterHP - damage <= 0) {
         setMyCharacterHP(0);
+        setResult("Lost");
         MySwal.fire({
           title: <strong>Oh no!</strong>,
           html:

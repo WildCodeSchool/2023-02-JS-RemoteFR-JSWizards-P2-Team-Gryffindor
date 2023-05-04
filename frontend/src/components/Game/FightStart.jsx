@@ -8,6 +8,7 @@ export default function FightStart() {
   useEffect(() => {
     if (randomCharacter) {
       localStorage.setItem("randomCharacterId", randomCharacter.id);
+      localStorage.setItem("randomCharacter", JSON.stringify(randomCharacter));
     }
   }, [randomCharacter]);
 
