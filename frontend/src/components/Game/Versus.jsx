@@ -7,6 +7,7 @@ import CharSpells from "./Spells";
 function Versus() {
   const [myCharacter, setMyCharacter] = useState(null);
   const [enemyCharacter, setEnemyCharacter] = useState(null);
+  const [currentTurn, setCurrentTurn] = useState("player"); // "player" or "enemy"
 
   const MySwal = withReactContent(Swal);
 
@@ -42,7 +43,7 @@ function Versus() {
     fetchData();
   }, []);
 
-  // Stats
+  // All Stats
   const [myCharacterHP, setMyCharacterHP] = useState(200);
   const [hasUsedHP, setHasUsedHP] = useState(false);
   const [myCharacterHasUsedHP, setMyCharacterHasUsedHP] = useState(false);
@@ -65,15 +66,44 @@ function Versus() {
   const [enemyCharacterAP, setEnemyCharacterAP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
+  const [result, setResult] = useState("Abandonned");
+  localStorage.setItem("result", result);
+
+  // HP Stats
+  const myHandleHP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setMyCharacterHP(myCharacterHP + points);
+    setHasUsedHP(true);
+    setMyCharacterAP(myCharacterAP);
+    setMyCharacterDP(myCharacterDP);
+  };
+
+  const enemyHandleHP = () => {
+    const points = Math.floor(Math.random() * 30) + 10;
+    setEnemyCharacterHP(enemyCharacterHP + points);
+    setEnemyHasUsedHP(true);
+    setEnemyCharacterAP(enemyCharacterAP);
+    setEnemyCharacterDP(enemyCharacterDP);
+  };
 
   const startDamage = (enemyId) => {
     const damage = Math.floor(Math.random() * 30) + 10; // dégâts aléatoires entre 10 et 30
-    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
+    const enemyTurn = () => {
+      setCurrentTurn("player");
+      startDamage(myCharacter.id);
+    };
+    if (
+      currentTurn === "player" &&
+      myCharacter &&
+      enemyCharacter &&
+      enemyCharacter.id === enemyId
+    ) {
       setEnemyCharacterHP(
         enemyCharacterHP - (damage + Math.round(myCharacterAP * 0.05))
       );
       if (enemyCharacterHP - damage <= 0) {
         setEnemyCharacterHP(0);
+        setResult("Won");
         MySwal.fire({
           title: <strong>YEAH!</strong>,
           html:
@@ -85,14 +115,23 @@ function Versus() {
           showConfirmButton: false,
           allowOutsideClick: false,
         });
+      } else {
+        setCurrentTurn("enemy");
+        setTimeout(enemyTurn, 1000);
       }
     }
-    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
+    if (
+      currentTurn === "enemy" &&
+      enemyCharacter &&
+      myCharacter &&
+      myCharacter.id === enemyId
+    ) {
       setMyCharacterHP(
         myCharacterHP - (damage + Math.round(enemyCharacterAP * 0.05))
       );
       if (myCharacterHP - damage <= 0) {
         setMyCharacterHP(0);
+        setResult("Lost");
         MySwal.fire({
           title: <strong>Oh no!</strong>,
           html:
@@ -105,8 +144,14 @@ function Versus() {
           allowOutsideClick: false,
         });
       }
+      if (enemyCharacterHP <= 50 && !enemyHasUsedHP) {
+        enemyHandleHP();
+      } else {
+        setCurrentTurn("player");
+      }
     }
   };
+
 
   const getHP = (enemyId) => {
     const healthPoints = Math.floor(Math.random() * 30) + 10; // HP aléatoires entre 10 et 30
@@ -142,6 +187,11 @@ function Versus() {
       setEnemyCharacterAP(enemyCharacterAP);
     }
   };
+  useEffect(() => {
+    if (currentTurn === "enemy") {
+      setTimeout(() => startDamage(myCharacter.id), 1000);
+    }
+  }, [currentTurn, myCharacter]);
 
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-200px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
@@ -183,6 +233,7 @@ function Versus() {
             characterHP={myCharacterHP}
             addDP={() => addDP(myCharacter.id)}
             hasUsedDP={myCharacterHasUsedDP}
+            disabled={currentTurn === "enemy"}
           />
         </div>
         <div className="justify-center items-center space-y-24">
@@ -221,6 +272,7 @@ function Versus() {
             characterHP={enemyCharacterHP}
             addDP={() => addDP(enemyCharacter.id)}
             hasUsedDP={enemyHasUsedDP}
+            disabled={currentTurn === "player"}
           />
         </div>
       </div>
