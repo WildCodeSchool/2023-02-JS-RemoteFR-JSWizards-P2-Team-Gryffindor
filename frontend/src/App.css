@@ -31,6 +31,7 @@
   *,
   html,
   body {
+    font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
     cursor: url(./image/pointer.png), auto;
   }
