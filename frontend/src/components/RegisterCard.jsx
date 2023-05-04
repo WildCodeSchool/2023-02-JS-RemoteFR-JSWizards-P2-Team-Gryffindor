@@ -29,7 +29,7 @@ export default function RegisterCard() {
               type="email"
               placeholder="username@gmail.com"
               className="placeholder:font-light w-full bg-white border rounded-md border-gray-300 focus:border-secondary text-xs outline-none text-dark leading-5 py-1 px-3 transition-colors duration-300 ease-in-out"
-              id="email"
+              id="email-register"
             />
           </div>
           <div>

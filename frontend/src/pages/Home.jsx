@@ -39,5 +39,5 @@ export default function Home({ setAudioName }) {
 }
 
 Home.propTypes = {
-  setAudioName: PropTypes.string.isRequired,
+  setAudioName: PropTypes.func.isRequired,
 };

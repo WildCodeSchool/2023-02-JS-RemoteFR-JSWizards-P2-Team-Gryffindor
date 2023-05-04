@@ -20,7 +20,8 @@ export default function HousesCards({ setSelectedHouse }) {
             <label htmlFor="gryffindor">
               <img src="./image/Gryffindor.png" alt="Gryffindor" />
               <p className="character">
-                Justice, brave, courageous, protector and daring.
+                Justice, brave, courageous, helping others, protector and
+                daring.
               </p>
             </label>
           </div>

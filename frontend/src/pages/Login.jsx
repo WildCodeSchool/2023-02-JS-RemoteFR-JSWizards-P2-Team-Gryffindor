@@ -15,5 +15,5 @@ export default function Login({ setAudioName }) {
 }
 
 Login.propTypes = {
-  setAudioName: PropTypes.string.isRequired,
+  setAudioName: PropTypes.func.isRequired,
 };

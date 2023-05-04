@@ -26,5 +26,12 @@
     "spell1": "Avada Kedavra",
     "spell2": "Ferula",
     "spell3": "Stupefy"
+  },
+  "": {
+    "house": "",
+    "id": "5",
+    "spell1": "Ascendio",
+    "spell2": "Episkey",
+    "spell3": "Stupefy"
   }
 }
