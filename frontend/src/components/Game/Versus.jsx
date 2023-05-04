@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2/dist/sweetalert2.all.min";
 import Card from "../Card";
 import CharSpells from "./Spells";
-import Swal from "sweetalert2/dist/sweetalert2.all.min.js";
 
 function Versus() {
   const [myCharacter, setMyCharacter] = useState(null);
