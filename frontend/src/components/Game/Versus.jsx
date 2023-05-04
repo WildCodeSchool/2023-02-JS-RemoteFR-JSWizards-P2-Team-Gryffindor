@@ -15,6 +15,7 @@ function Versus() {
     const randomIdx = Math.floor(Math.random() * 3);
     return houseTab[randomIdx];
   }
+
   const fetchData = async () => {
     // first step : fetch my character
     const myCharacterId = localStorage.getItem("selectedCharacterId");
@@ -129,6 +130,7 @@ function Versus() {
     const points = Math.floor(Math.random() * 30) + 10;
     setEnemyCharacterHP(enemyCharacterHP + points);
   };
+
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-200px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
       <div className="flex justify-around items-center">
