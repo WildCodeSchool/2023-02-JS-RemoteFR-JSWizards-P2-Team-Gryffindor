@@ -9,10 +9,14 @@ export default function CharSpells({ house, startDamage }) {
         <button type="button" onClick={startDamage}>
           {pickedHouse.spell1}
         </button>
-        <button type="button" onClick={startDamage}>
+        <button type="button" 
+        // onClick={startDamage}
+        >
           {pickedHouse.spell2}
         </button>
-        <button type="button" onClick={startDamage}>
+        <button type="button" 
+        // onClick={startDamage}
+        >
           {pickedHouse.spell3}
         </button>
       </div>

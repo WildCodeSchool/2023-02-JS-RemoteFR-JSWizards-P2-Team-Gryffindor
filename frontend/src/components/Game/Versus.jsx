@@ -66,8 +66,7 @@ function Versus() {
       setEnemyCharacterHP(
         enemyCharacterHP -
           (damage +
-            Math.round(myCharacterAP * 0.02) -
-            Math.round(enemyCharacterDP * 0.05))
+            Math.round(myCharacterAP * 0.05))
       );
       if (enemyCharacterHP - damage <= 0) {
         setEnemyCharacterHP(0);
@@ -87,8 +86,7 @@ function Versus() {
       setMyCharacterHP(
         myCharacterHP -
           (damage +
-            Math.round(enemyCharacterAP * 0.02) -
-            Math.round(myCharacterDP * 0.05))
+            Math.round(enemyCharacterAP * 0.05))
       );
       if (myCharacterHP - damage <= 0) {
         setMyCharacterHP(0);
