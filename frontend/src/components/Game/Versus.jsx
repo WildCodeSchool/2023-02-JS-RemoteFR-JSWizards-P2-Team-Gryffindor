@@ -49,6 +49,9 @@ function Versus() {
   const [myCharacterDP, setMyCharacterDP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
+  const [hasUsedDP, setHasUsedDP] = useState(false);
+  const [myCharacterHasUsedDP, setMyCharacterHasUsedDP] = useState(false);
+
   const [myCharacterAP, setMyCharacterAP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
@@ -57,6 +60,8 @@ function Versus() {
   const [enemyCharacterDP, setEnemyCharacterDP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
+  const [enemyHasUsedDP, setEnemyHasUsedDP] = useState(false);
+
   const [enemyCharacterAP, setEnemyCharacterAP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
@@ -121,6 +126,29 @@ function Versus() {
     }
   };
 
+  // FONCTION ADD DEFENCE POINTS
+
+  const addDP = (enemyId) => {
+    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
+      const myDefencePoints = Math.round(myCharacterDP * 1.5);
+      setMyCharacterDP(myCharacterDP + myDefencePoints);
+      setMyCharacterHasUsedDP(!myCharacterHasUsedDP);
+      setHasUsedDP(!hasUsedDP);
+      setMyCharacterAP(myCharacterAP);
+      // setMyCharacterDP(myCharacterDP);
+    }
+    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
+      const enemyDefencePoints = Math.round(enemyCharacterDP * 1.5);
+      setEnemyCharacterDP(enemyCharacterDP + enemyDefencePoints);
+      setEnemyHasUsedDP(!enemyHasUsedDP);
+      setHasUsedDP(!hasUsedDP);
+      setEnemyCharacterAP(enemyCharacterAP);
+      // setEnemyCharacterDP(enemyCharacterDP);
+    }
+  };
+
+  // FONCTION ADD DP
+
   // const myHandleHP = () => {
   //   const points = Math.floor(Math.random() * 30) + 10;
   //   setMyCharacterHP(myCharacterHP + points);
@@ -175,6 +203,8 @@ function Versus() {
             getHP={() => getHP(myCharacter.id)}
             hasUsedHP={myCharacterHasUsedHP}
             characterHP={myCharacterHP}
+            addDP={() => addDP(myCharacter.id)}
+            hasUsedDP={myCharacterHasUsedDP}
           />
         </div>
         <div className="justify-center items-center space-y-24">
@@ -218,6 +248,8 @@ function Versus() {
             getHP={() => getHP(enemyCharacter.id)}
             hasUsedHP={enemyHasUsedHP}
             characterHP={enemyCharacterHP}
+            addDP={() => addDP(enemyCharacter.id)}
+            hasUsedDP={enemyHasUsedDP}
           />
         </div>
       </div>

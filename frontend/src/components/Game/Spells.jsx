@@ -7,6 +7,8 @@ export default function CharSpells({
   getHP,
   hasUsedHP,
   characterHP,
+  hasUsedDP,
+  addDP,
 }) {
   const pickedHouse = Spells?.[house];
   return (
@@ -23,10 +25,7 @@ export default function CharSpells({
         >
           {pickedHouse.spell2}
         </button>
-        <button
-          type="button"
-          // onClick={startDamage}
-        >
+        <button type="button" onClick={!hasUsedDP ? addDP : null}>
           {pickedHouse.spell3}
         </button>
       </div>
@@ -43,5 +42,7 @@ CharSpells.propTypes = {
   characterHP: PropTypes.string.isRequired,
   hasUsedHP: PropTypes.string.isRequired,
   getHP: PropTypes.func.isRequired,
+  hasUsedDP: PropTypes.string.isRequired,
+  addDP: PropTypes.func.isRequired,
   startDamage: PropTypes.func.isRequired,
 };
