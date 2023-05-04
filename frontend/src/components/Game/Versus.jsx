@@ -70,20 +70,40 @@ function Versus() {
   localStorage.setItem("result", result);
 
   // HP Stats
-  const myHandleHP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setMyCharacterHP(myCharacterHP + points);
-    setHasUsedHP(true);
-    setMyCharacterAP(myCharacterAP);
-    setMyCharacterDP(myCharacterDP);
+  const getHP = (enemyId) => {
+    const healthPoints = Math.floor(Math.random() * 30) + 10; // HP aléatoires entre 10 et 30
+    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
+      setMyCharacterHP(myCharacterHP + healthPoints);
+      setMyCharacterHasUsedHP(!hasUsedHP);
+      setHasUsedHP(!hasUsedHP);
+      setMyCharacterAP(myCharacterAP);
+      setMyCharacterDP(myCharacterDP);
+    }
+    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
+      setEnemyCharacterHP(enemyCharacterHP + healthPoints);
+      setEnemyHasUsedHP(!hasUsedHP);
+      setHasUsedHP(!hasUsedHP);
+      setEnemyCharacterAP(enemyCharacterAP);
+      setEnemyCharacterDP(enemyCharacterDP);
+    }
   };
 
-  const enemyHandleHP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setEnemyCharacterHP(enemyCharacterHP + points);
-    setEnemyHasUsedHP(true);
-    setEnemyCharacterAP(enemyCharacterAP);
-    setEnemyCharacterDP(enemyCharacterDP);
+  // DP Stats
+  const addDP = (enemyId) => {
+    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
+      const myDefencePoints = Math.round(myCharacterDP * 0.8);
+      setMyCharacterDP(myCharacterDP + myDefencePoints);
+      setMyCharacterHasUsedDP(!myCharacterHasUsedDP);
+      setHasUsedDP(!hasUsedDP);
+      setMyCharacterAP(myCharacterAP);
+    }
+    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
+      const enemyDefencePoints = Math.round(enemyCharacterDP * 0.8);
+      setEnemyCharacterDP(enemyCharacterDP + enemyDefencePoints);
+      setEnemyHasUsedDP(!enemyHasUsedDP);
+      setHasUsedDP(!hasUsedDP);
+      setEnemyCharacterAP(enemyCharacterAP);
+    }
   };
 
   const startDamage = (enemyId) => {
@@ -145,48 +165,14 @@ function Versus() {
         });
       }
       if (enemyCharacterHP <= 50 && !enemyHasUsedHP) {
-        enemyHandleHP();
+        getHP(enemyCharacter.id);
+        addDP(enemyCharacter.id);
       } else {
         setCurrentTurn("player");
       }
     }
   };
 
-
-  const getHP = (enemyId) => {
-    const healthPoints = Math.floor(Math.random() * 30) + 10; // HP aléatoires entre 10 et 30
-    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
-      setMyCharacterHP(myCharacterHP + healthPoints);
-      setMyCharacterHasUsedHP(!hasUsedHP);
-      setHasUsedHP(!hasUsedHP);
-      setMyCharacterAP(myCharacterAP);
-      setMyCharacterDP(myCharacterDP);
-    }
-    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
-      setEnemyCharacterHP(enemyCharacterHP + healthPoints);
-      setEnemyHasUsedHP(!hasUsedHP);
-      setHasUsedHP(!hasUsedHP);
-      setEnemyCharacterAP(enemyCharacterAP);
-      setEnemyCharacterDP(enemyCharacterDP);
-    }
-  };
-
-  const addDP = (enemyId) => {
-    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
-      const myDefencePoints = Math.round(myCharacterDP * 0.8);
-      setMyCharacterDP(myCharacterDP + myDefencePoints);
-      setMyCharacterHasUsedDP(!myCharacterHasUsedDP);
-      setHasUsedDP(!hasUsedDP);
-      setMyCharacterAP(myCharacterAP);
-    }
-    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
-      const enemyDefencePoints = Math.round(enemyCharacterDP * 0.8);
-      setEnemyCharacterDP(enemyCharacterDP + enemyDefencePoints);
-      setEnemyHasUsedDP(!enemyHasUsedDP);
-      setHasUsedDP(!hasUsedDP);
-      setEnemyCharacterAP(enemyCharacterAP);
-    }
-  };
   useEffect(() => {
     if (currentTurn === "enemy") {
       setTimeout(() => startDamage(myCharacter.id), 1000);
@@ -205,9 +191,8 @@ function Versus() {
               </button>
               <button type="button">
                 DP 🛡️
-                {myCharacterDP}{" "}
+                {myCharacterDP}
               </button>
-
               <button type="button">
                 HP ❤️
                 {myCharacterHP}
@@ -267,11 +252,6 @@ function Versus() {
           <CharSpells
             house={enemyCharacter?.house}
             startDamage={() => startDamage(myCharacter.id)}
-            getHP={() => getHP(enemyCharacter.id)}
-            hasUsedHP={enemyHasUsedHP}
-            characterHP={enemyCharacterHP}
-            addDP={() => addDP(enemyCharacter.id)}
-            hasUsedDP={enemyHasUsedDP}
             disabled={currentTurn === "player"}
           />
         </div>
