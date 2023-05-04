@@ -106,8 +106,6 @@ function Versus() {
     }
   };
 
-  // FONCTION GETHP
-
   const getHP = (enemyId) => {
     const healthPoints = Math.floor(Math.random() * 30) + 10; // HP aléatoires entre 10 et 30
     if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
@@ -126,8 +124,6 @@ function Versus() {
     }
   };
 
-  // FONCTION ADD DEFENCE POINTS
-
   const addDP = (enemyId) => {
     if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
       const myDefencePoints = Math.round(myCharacterDP * 1.5);
@@ -135,7 +131,6 @@ function Versus() {
       setMyCharacterHasUsedDP(!myCharacterHasUsedDP);
       setHasUsedDP(!hasUsedDP);
       setMyCharacterAP(myCharacterAP);
-      // setMyCharacterDP(myCharacterDP);
     }
     if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
       const enemyDefencePoints = Math.round(enemyCharacterDP * 1.5);
@@ -143,27 +138,8 @@ function Versus() {
       setEnemyHasUsedDP(!enemyHasUsedDP);
       setHasUsedDP(!hasUsedDP);
       setEnemyCharacterAP(enemyCharacterAP);
-      // setEnemyCharacterDP(enemyCharacterDP);
     }
   };
-
-  // FONCTION ADD DP
-
-  // const myHandleHP = () => {
-  //   const points = Math.floor(Math.random() * 30) + 10;
-  //   setMyCharacterHP(myCharacterHP + points);
-  //   setHasUsedHP(true);
-  //   setMyCharacterAP(myCharacterAP);
-  //   setMyCharacterDP(myCharacterDP);
-  // };
-
-  // const enemyHandleHP = () => {
-  //   const points = Math.floor(Math.random() * 30) + 10;
-  //   setEnemyCharacterHP(enemyCharacterHP + points);
-  //   setEnemyHasUsedHP(true);
-  //   setEnemyCharacterAP(enemyCharacterAP);
-  //   setEnemyCharacterDP(enemyCharacterDP);
-  // };
 
   return (
     <div className="flex flex-col justify-around min-h-[calc(100vh-200px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
@@ -229,14 +205,7 @@ function Versus() {
                 DP 🛡️
                 {enemyCharacterDP}
               </button>
-              <button
-                type="button"
-                // onClick={
-                //   !enemyHasUsedHP && enemyCharacterHP <= 30
-                //     ? getHP
-                //     : null
-                // }
-              >
+              <button type="button">
                 HP ❤️
                 {enemyCharacterHP}
               </button>
