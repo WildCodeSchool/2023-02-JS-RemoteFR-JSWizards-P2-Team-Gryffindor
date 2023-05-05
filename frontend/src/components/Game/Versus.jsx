@@ -39,6 +39,12 @@ function Versus() {
     }
   };
 
+  const setGameResult = (result) => {
+    const gameHistory = JSON.parse(localStorage.getItem("gameHistory"));
+    gameHistory[gameHistory.length - 1].result = result;
+    localStorage.setItem("gameHistory", JSON.stringify(gameHistory));
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -66,9 +72,6 @@ function Versus() {
   const [enemyCharacterAP, setEnemyCharacterAP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
-  const [result, setResult] = useState("Abandonned");
-  localStorage.setItem("result", result);
-
   // HP Stats
   const getHP = (enemyId) => {
     const healthPoints = Math.floor(Math.random() * 30) + 10; // HP aléatoires entre 10 et 30
@@ -123,7 +126,7 @@ function Versus() {
       );
       if (enemyCharacterHP - damage <= 0) {
         setEnemyCharacterHP(0);
-        setResult("Won");
+        setGameResult("Won");
         MySwal.fire({
           title: <strong>YEAH!</strong>,
           html:
@@ -151,7 +154,7 @@ function Versus() {
       );
       if (myCharacterHP - damage <= 0) {
         setMyCharacterHP(0);
-        setResult("Lost");
+        setGameResult("Lost");
         MySwal.fire({
           title: <strong>Oh no!</strong>,
           html:
