@@ -46,9 +46,13 @@ function Versus() {
   // All Stats
   const [myCharacterHP, setMyCharacterHP] = useState(200);
   const [hasUsedHP, setHasUsedHP] = useState(false);
+  const [myCharacterHasUsedHP, setMyCharacterHasUsedHP] = useState(false);
   const [myCharacterDP, setMyCharacterDP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
+  const [hasUsedDP, setHasUsedDP] = useState(false);
+  const [myCharacterHasUsedDP, setMyCharacterHasUsedDP] = useState(false);
+
   const [myCharacterAP, setMyCharacterAP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
@@ -57,6 +61,8 @@ function Versus() {
   const [enemyCharacterDP, setEnemyCharacterDP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
+  const [enemyHasUsedDP, setEnemyHasUsedDP] = useState(false);
+
   const [enemyCharacterAP, setEnemyCharacterAP] = useState(
     Math.floor(Math.random() * 30) + 100
   );
@@ -64,20 +70,40 @@ function Versus() {
   localStorage.setItem("result", result);
 
   // HP Stats
-  const myHandleHP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setMyCharacterHP(myCharacterHP + points);
-    setHasUsedHP(true);
-    setMyCharacterAP(myCharacterAP);
-    setMyCharacterDP(myCharacterDP);
+  const getHP = (enemyId) => {
+    const healthPoints = Math.floor(Math.random() * 30) + 10; // HP aléatoires entre 10 et 30
+    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
+      setMyCharacterHP(myCharacterHP + healthPoints);
+      setMyCharacterHasUsedHP(!hasUsedHP);
+      setHasUsedHP(!hasUsedHP);
+      setMyCharacterAP(myCharacterAP);
+      setMyCharacterDP(myCharacterDP);
+    }
+    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
+      setEnemyCharacterHP(enemyCharacterHP + healthPoints);
+      setEnemyHasUsedHP(!hasUsedHP);
+      setHasUsedHP(!hasUsedHP);
+      setEnemyCharacterAP(enemyCharacterAP);
+      setEnemyCharacterDP(enemyCharacterDP);
+    }
   };
 
-  const enemyHandleHP = () => {
-    const points = Math.floor(Math.random() * 30) + 10;
-    setEnemyCharacterHP(enemyCharacterHP + points);
-    setEnemyHasUsedHP(true);
-    setEnemyCharacterAP(enemyCharacterAP);
-    setEnemyCharacterDP(enemyCharacterDP);
+  // DP Stats
+  const addDP = (enemyId) => {
+    if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
+      const myDefencePoints = Math.round(myCharacterDP * 0.8);
+      setMyCharacterDP(myCharacterDP + myDefencePoints);
+      setMyCharacterHasUsedDP(!myCharacterHasUsedDP);
+      setHasUsedDP(!hasUsedDP);
+      setMyCharacterAP(myCharacterAP);
+    }
+    if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
+      const enemyDefencePoints = Math.round(enemyCharacterDP * 0.8);
+      setEnemyCharacterDP(enemyCharacterDP + enemyDefencePoints);
+      setEnemyHasUsedDP(!enemyHasUsedDP);
+      setHasUsedDP(!hasUsedDP);
+      setEnemyCharacterAP(enemyCharacterAP);
+    }
   };
 
   const startDamage = (enemyId) => {
@@ -93,10 +119,7 @@ function Versus() {
       enemyCharacter.id === enemyId
     ) {
       setEnemyCharacterHP(
-        enemyCharacterHP -
-          (damage +
-            Math.round(myCharacterAP * 0.02) -
-            Math.round(enemyCharacterDP * 0.05))
+        enemyCharacterHP - (damage + Math.round(myCharacterAP * 0.05))
       );
       if (enemyCharacterHP - damage <= 0) {
         setEnemyCharacterHP(0);
@@ -110,6 +133,7 @@ function Versus() {
             "<a href='/' style=color:D3A625>Back to Home</a>",
           iconHtml: '<img src="/image/cup.png" />',
           showConfirmButton: false,
+          allowOutsideClick: false,
         });
       } else {
         setCurrentTurn("enemy");
@@ -123,10 +147,7 @@ function Versus() {
       myCharacter.id === enemyId
     ) {
       setMyCharacterHP(
-        myCharacterHP -
-          (damage +
-            Math.round(enemyCharacterAP * 0.02) -
-            Math.round(myCharacterDP * 0.05))
+        myCharacterHP - (damage + Math.round(enemyCharacterAP * 0.05))
       );
       if (myCharacterHP - damage <= 0) {
         setMyCharacterHP(0);
@@ -140,10 +161,12 @@ function Versus() {
             "<a href='/' style=color:D3A625>Back to Home</a>",
           iconHtml: '<img src="/image/scar.png" />',
           showConfirmButton: false,
+          allowOutsideClick: false,
         });
       }
       if (enemyCharacterHP <= 50 && !enemyHasUsedHP) {
-        enemyHandleHP();
+        getHP(enemyCharacter.id);
+        addDP(enemyCharacter.id);
       } else {
         setCurrentTurn("player");
       }
@@ -168,14 +191,10 @@ function Versus() {
               </button>
               <button type="button">
                 DP 🛡️
-                {myCharacterDP}{" "}
+                {myCharacterDP}
               </button>
-
-              <button
-                type="button"
-                onClick={!hasUsedHP && myCharacterHP <= 50 ? myHandleHP : null}
-              >
-                HP <i>Potion</i> ❤️
+              <button type="button">
+                HP ❤️
                 {myCharacterHP}
               </button>
             </div>
@@ -194,6 +213,11 @@ function Versus() {
           <CharSpells
             house={myCharacter?.house}
             startDamage={() => startDamage(enemyCharacter.id)}
+            getHP={() => getHP(myCharacter.id)}
+            hasUsedHP={myCharacterHasUsedHP}
+            characterHP={myCharacterHP}
+            addDP={() => addDP(myCharacter.id)}
+            hasUsedDP={myCharacterHasUsedDP}
             disabled={currentTurn === "enemy"}
           />
         </div>
@@ -220,7 +244,7 @@ function Versus() {
                 {enemyCharacterDP}
               </button>
               <button type="button">
-                HP <i>Potion</i> ❤️
+                HP ❤️
                 {enemyCharacterHP}
               </button>
             </div>
