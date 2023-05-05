@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import defaultImage from "../../public/image/placeholder.jpg";
+import defaultImage from "../../public/assets/image/placeholder.jpg";
 import missingImg from "../db/imgData.json";
 
 function Card({
@@ -10,6 +10,7 @@ function Card({
   setPickedUpCard,
   selected,
   setNext,
+  isMyTurn,
 }) {
   let backgroundSrc;
   let logoSrc;
@@ -18,24 +19,24 @@ function Card({
     missingImage[0] !== undefined ? missingImage[0].image : defaultImage;
   switch (house) {
     case "Gryffindor":
-      backgroundSrc = "./image/CardGryf.png";
-      logoSrc = "./icon/gryf-logo.svg";
+      backgroundSrc = "./assets/image/CardGryf.png";
+      logoSrc = "./assets/icon/gryf-logo.svg";
       break;
     case "Hufflepuff":
-      backgroundSrc = "./image/CardHuff.png";
-      logoSrc = "./icon/huff-logo.svg";
+      backgroundSrc = "./assets/image/CardHuff.png";
+      logoSrc = "./assets/icon/huff-logo.svg";
       break;
     case "Ravenclaw":
-      backgroundSrc = "./image/CardRav.png";
-      logoSrc = "./icon/rav-logo.svg";
+      backgroundSrc = "./assets/image/CardRav.png";
+      logoSrc = "./assets/icon/rav-logo.svg";
       break;
     case "Slytherin":
-      backgroundSrc = "./image/CardSly.png";
-      logoSrc = "./icon/sly-logo.svg";
+      backgroundSrc = "./assets/image/CardSly.png";
+      logoSrc = "./assets/icon/sly-logo.svg";
       break;
     default:
-      backgroundSrc = "./image/CardDefault.png";
-      logoSrc = "./image/Hogwarts-icon.png";
+      backgroundSrc = "./assets/image/CardDefault.png";
+      logoSrc = "./assets/image/Hogwarts-icon.png";
       break;
   }
   function handleClick() {
@@ -48,7 +49,7 @@ function Card({
     <div
       role="button"
       tabIndex={0}
-      className="relative rounded-xl"
+      className={`relative rounded-xl card ${isMyTurn ? "my-turn" : ""}`}
       onClick={handleClick}
       onKeyDown={handleClick}
       style={{
@@ -81,6 +82,7 @@ Card.defaultProps = {
   selected: false,
   setNext: () => {},
   setPickedUpCard: () => {},
+  isMyTurn: false,
 };
 
 Card.propTypes = {
@@ -91,6 +93,7 @@ Card.propTypes = {
   selected: PropTypes.bool,
   setNext: PropTypes.func,
   setPickedUpCard: PropTypes.func,
+  isMyTurn: PropTypes.bool,
 };
 
 export default Card;

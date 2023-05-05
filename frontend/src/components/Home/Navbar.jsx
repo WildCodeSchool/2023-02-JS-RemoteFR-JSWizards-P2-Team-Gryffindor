@@ -7,7 +7,7 @@ export default function Navbar() {
         <NavLink to="/">
           <img
             className="max-w-md"
-            src="./icon/logo.svg"
+            src="./assets/icon/logo.svg"
             alt="Logo"
             width="55"
             height="40"
@@ -16,7 +16,7 @@ export default function Navbar() {
       </div>
       <div className="flex gap-[clamp(0.5rem,2vw,2rem)]">
         <ul className="hidden md:flex items-center gap-[clamp(0.5rem,2vw,2rem)] text-primary text-base">
-          <li>
+          <li className="link">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -26,7 +26,7 @@ export default function Navbar() {
               Home
             </NavLink>
           </li>
-          <li>
+          <li className="link">
             <NavLink
               to="/play"
               className={({ isActive }) =>
@@ -36,7 +36,7 @@ export default function Navbar() {
               Play
             </NavLink>
           </li>
-          <li>
+          <li className="link">
             <NavLink
               to="/inventory"
               className={({ isActive }) =>
@@ -46,7 +46,7 @@ export default function Navbar() {
               Inventory
             </NavLink>
           </li>
-          <li>
+          <li className="link">
             <NavLink
               to="/account"
               className={({ isActive }) =>
@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* Mobile menu */}
         <button type="button" className="md:hidden">
           <img
-            src="./icon/mobile-menu.svg"
+            src="./assets/icon/mobile-menu.svg"
             alt="mobile-menu"
             width="38"
             height="30"
@@ -76,7 +76,7 @@ export default function Navbar() {
           >
             <img
               className="max-w-md"
-              src="./icon/logged.svg"
+              src="./assets/icon/logged.svg"
               alt="connect"
               width="20"
               height="20"

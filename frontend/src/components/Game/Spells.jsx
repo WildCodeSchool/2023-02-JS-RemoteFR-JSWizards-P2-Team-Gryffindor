@@ -1,7 +1,15 @@
 import PropTypes from "prop-types";
 import Spells from "../../db/spells.json";
 
-export default function CharSpells({ house, startDamage }) {
+export default function CharSpells({
+  house,
+  startDamage,
+  getHP,
+  hasUsedHP,
+  characterHP,
+  hasUsedDP,
+  addDP,
+}) {
   const pickedHouse = Spells?.[house];
   return (
     pickedHouse && (
@@ -9,10 +17,15 @@ export default function CharSpells({ house, startDamage }) {
         <button type="button" onClick={startDamage}>
           {pickedHouse.spell1}
         </button>
-        <button type="button" onClick={startDamage}>
+        <button
+          type="button"
+          onClick={
+            !hasUsedHP && characterHP <= 50 && characterHP > 0 ? getHP : null
+          }
+        >
           {pickedHouse.spell2}
         </button>
-        <button type="button" onClick={startDamage}>
+        <button type="button" onClick={!hasUsedDP ? addDP : null}>
           {pickedHouse.spell3}
         </button>
       </div>
@@ -22,9 +35,19 @@ export default function CharSpells({ house, startDamage }) {
 
 CharSpells.defaultProps = {
   house: "",
+  characterHP: 0,
+  hasUsedHP: false,
+  getHP: () => {},
+  hasUsedDP: false,
+  addDP: () => {},
 };
 
 CharSpells.propTypes = {
   house: PropTypes.string,
+  characterHP: PropTypes.number,
+  hasUsedHP: PropTypes.bool,
+  getHP: PropTypes.func,
+  hasUsedDP: PropTypes.bool,
+  addDP: PropTypes.func,
   startDamage: PropTypes.func.isRequired,
 };

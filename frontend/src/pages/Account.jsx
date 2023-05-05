@@ -9,8 +9,8 @@ export default function Account({ setAudioName }) {
     setAudioName("mainmusic");
   }, []);
 
-  let pickedUpCard = localStorage.getItem("pickedUpCard") || null;
-  pickedUpCard = pickedUpCard ? JSON.parse(pickedUpCard) : null;
+  let selectedCharacter = localStorage.getItem("selectedCharacter") || null;
+  selectedCharacter = selectedCharacter ? JSON.parse(selectedCharacter) : null;
   return (
     <section className="space-y-4">
       <h2 className="text-xl font-serif">My account</h2>
@@ -20,14 +20,14 @@ export default function Account({ setAudioName }) {
             <h2 className="text-lg">Games played per house</h2>
             <AccountBanner />
           </div>
-          <div className="flex flex-col space-y-8 text-center items-center relative">
+          <div className="flex flex-col space-y-8 text-center items-center relative min-w-[186px]">
             <h2 className="text-lg">Latest card played</h2>
             <div className="absolute top-28">
               <Card
-                idwizard={pickedUpCard?.id}
-                name={pickedUpCard?.name}
-                image={pickedUpCard?.image}
-                house={pickedUpCard?.house}
+                idwizard={selectedCharacter?.id}
+                name={selectedCharacter?.name}
+                image={selectedCharacter?.image}
+                house={selectedCharacter?.house}
               />
             </div>
           </div>
