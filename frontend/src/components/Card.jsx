@@ -82,6 +82,7 @@ Card.defaultProps = {
   selected: false,
   setNext: () => {},
   setPickedUpCard: () => {},
+  isMyTurn: false,
 };
 
 Card.propTypes = {
@@ -92,7 +93,7 @@ Card.propTypes = {
   selected: PropTypes.bool,
   setNext: PropTypes.func,
   setPickedUpCard: PropTypes.func,
-  isMyTurn: PropTypes.bool.isRequired,
+  isMyTurn: PropTypes.bool,
 };
 
 export default Card;
