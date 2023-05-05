@@ -68,25 +68,25 @@ export default function Footer() {
           <ul className="flex flex-col space-y-4 justify-between">
             <li className="github">
               <a href="https://github.com/WildCodeSchool/2023-02-JS-RemoteFR-JSWizards-P2-Team-Gryffindor">
-                <img src="./assets/icon/github.svg" alt="github logo icon" />
+                <img src="../assets/icon/github.svg" alt="github logo icon" />
               </a>
             </li>
             <li className="twitter">
               <a href="https://www.twitter.com">
-                <img src="./assets/icon/twitter.svg" alt="twitter logo icon" />
+                <img src="../assets/icon/twitter.svg" alt="twitter logo icon" />
               </a>
             </li>
             <li className="instagram">
               <a href="https://www.instagram.com">
                 <img
-                  src="./assets/icon/instagram.svg"
+                  src="../assets/icon/instagram.svg"
                   alt="instagram logo icon"
                 />
               </a>
             </li>
             <li className="youtube">
               <a href="https://www.youtube.com">
-                <img src="./assets/icon/youtube.svg" alt="youtube logo icon" />
+                <img src="../assets/icon/youtube.svg" alt="youtube logo icon" />
               </a>
             </li>
           </ul>

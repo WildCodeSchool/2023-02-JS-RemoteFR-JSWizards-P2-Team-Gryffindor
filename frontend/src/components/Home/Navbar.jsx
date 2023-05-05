@@ -7,7 +7,7 @@ export default function Navbar() {
         <NavLink to="/">
           <img
             className="max-w-md"
-            src="./assets/icon/logo.svg"
+            src="../assets/icon/logo.svg"
             alt="Logo"
             width="55"
             height="40"
@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* Mobile menu */}
         <button type="button" className="md:hidden">
           <img
-            src="./assets/icon/mobile-menu.svg"
+            src="../assets/icon/mobile-menu.svg"
             alt="mobile-menu"
             width="38"
             height="30"
@@ -76,7 +76,7 @@ export default function Navbar() {
           >
             <img
               className="max-w-md"
-              src="./assets/icon/logged.svg"
+              src="../assets/icon/logged.svg"
               alt="connect"
               width="20"
               height="20"
