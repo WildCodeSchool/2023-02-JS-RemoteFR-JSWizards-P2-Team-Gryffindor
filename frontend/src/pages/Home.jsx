@@ -28,9 +28,13 @@ export default function Home({ setAudioName }) {
             characters, and be ready to fight!
           </p>
           <p>
-            Step 3: Use your spells to attack, defend and heal yourself against
-            your opponent. The first wizard to have his health points to zero
-            will lose the fight.
+            Step 3: You'll be granted 3 spells in total, one to attack, one to
+            heal yourself and one spell to increase your defense points.
+          </p>
+          <p>
+            Step 4: Use your spells against your opponent and try to defeat him.
+            The first wizard to have his health points to zero will lose the
+            fight.
           </p>
         </div>
       </div>
