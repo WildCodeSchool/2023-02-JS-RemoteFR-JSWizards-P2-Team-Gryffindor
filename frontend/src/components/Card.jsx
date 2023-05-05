@@ -10,6 +10,7 @@ function Card({
   setPickedUpCard,
   selected,
   setNext,
+  isMyTurn,
 }) {
   let backgroundSrc;
   let logoSrc;
@@ -48,7 +49,7 @@ function Card({
     <div
       role="button"
       tabIndex={0}
-      className="relative rounded-xl"
+      className={`relative rounded-xl card ${isMyTurn ? "my-turn" : ""}`}
       onClick={handleClick}
       onKeyDown={handleClick}
       style={{
@@ -91,6 +92,7 @@ Card.propTypes = {
   selected: PropTypes.bool,
   setNext: PropTypes.func,
   setPickedUpCard: PropTypes.func,
+  isMyTurn: PropTypes.bool.isRequired,
 };
 
 export default Card;
