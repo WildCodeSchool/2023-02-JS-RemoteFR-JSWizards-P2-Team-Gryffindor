@@ -68,8 +68,8 @@ export default function RegisterCard() {
                 <img
                   src={
                     passwordConfVisible
-                      ? "../assets/assets/icon/pass-hide.svg"
-                      : "../assets/assets/icon/pass-show.svg"
+                      ? "../assets/icon/pass-hide.svg"
+                      : "../assets/icon/pass-show.svg"
                   }
                   alt="show password icon"
                   onClick={handlePassConfVisibility}
