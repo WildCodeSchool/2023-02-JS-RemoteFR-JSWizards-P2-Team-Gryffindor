@@ -34,11 +34,11 @@
   body {
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
-    cursor: url(./assets/image/pointer.png), auto;
+    cursor: url(../assets/image/pointer.png), auto;
   }
   button[type="button"],
   button[type="submit"] {
-    cursor: url(./assets/image/pointer.png), auto;
+    cursor: url(../assets/image/pointer.png), auto;
   }
 }
 

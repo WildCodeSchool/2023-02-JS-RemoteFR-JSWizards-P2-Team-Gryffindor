@@ -108,8 +108,8 @@ export default function LoginCard() {
                 <img
                   src={
                     passwordVisible
-                      ? "./assets/icon/pass-hide.svg"
-                      : "./assets/icon/pass-show.svg"
+                      ? "../assets/icon/pass-hide.svg"
+                      : "../assets/icon/pass-show.svg"
                   }
                   alt="show password icon"
                   onClick={handlePasswordVisibility}
@@ -141,7 +141,7 @@ export default function LoginCard() {
             className="flex items-center justify-center rounded-3xl px-5 py-2.5 w-20 bg-white ring-1 ring-transparent hover:ring-secondary duration-300 ease-in-out"
             onClick={login}
           >
-            <img src="./assets/icon/google.svg" alt="Google login button" />
+            <img src="../assets/icon/google.svg" alt="Google login button" />
           </button>
         </div>
         <p className="flex justify-center text-xs">
