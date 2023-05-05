@@ -37,7 +37,7 @@ export default function FilterBtn({ cards, setFilteredCards }) {
         className="text-gray-800 font-semibold py-1 rounded inline-flex items-center"
         onClick={handleToggle}
       >
-        <img src="./icon/filter.svg" alt="filter button" />
+        <img src="./assets/icon/filter.svg" alt="filter button" />
       </button>
       <ul
         className={`${
