@@ -74,14 +74,14 @@ function Versus() {
     const healthPoints = Math.floor(Math.random() * 30) + 10; // HP aléatoires entre 10 et 30
     if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
       setMyCharacterHP(myCharacterHP + healthPoints);
-      setMyCharacterHasUsedHP(!hasUsedHP);
+      setMyCharacterHasUsedHP(true);
       setHasUsedHP(!hasUsedHP);
       setMyCharacterAP(myCharacterAP);
       setMyCharacterDP(myCharacterDP);
     }
     if (myCharacter && enemyCharacter && enemyCharacter.id === enemyId) {
       setEnemyCharacterHP(enemyCharacterHP + healthPoints);
-      setEnemyHasUsedHP(!hasUsedHP);
+      setEnemyHasUsedHP(true);
       setHasUsedHP(!hasUsedHP);
       setEnemyCharacterAP(enemyCharacterAP);
       setEnemyCharacterDP(enemyCharacterDP);
@@ -93,7 +93,7 @@ function Versus() {
     if (enemyCharacter && myCharacter && myCharacter.id === enemyId) {
       const myDefencePoints = Math.round(myCharacterDP * 0.8);
       setMyCharacterDP(myCharacterDP + myDefencePoints);
-      setMyCharacterHasUsedDP(!myCharacterHasUsedDP);
+      setMyCharacterHasUsedDP(true);
       setHasUsedDP(!hasUsedDP);
       setMyCharacterAP(myCharacterAP);
     }
@@ -119,7 +119,10 @@ function Versus() {
       enemyCharacter.id === enemyId
     ) {
       setEnemyCharacterHP(
-        enemyCharacterHP - (damage + Math.round(myCharacterAP * 0.05))
+        enemyCharacterHP -
+          (damage +
+            Math.round(myCharacterAP * 0.02) -
+            Math.round(enemyCharacterDP * 0.05))
       );
       if (enemyCharacterHP - damage <= 0) {
         setEnemyCharacterHP(0);
@@ -131,7 +134,7 @@ function Versus() {
             "<br/>" +
             "<br/>" +
             "<a href='/' style=color:D3A625>Back to Home</a>",
-          iconHtml: '<img src="/image/cup.png" />',
+          iconHtml: '<img src="./assets/image/cup.png" />',
           showConfirmButton: false,
           allowOutsideClick: false,
         });
@@ -147,7 +150,10 @@ function Versus() {
       myCharacter.id === enemyId
     ) {
       setMyCharacterHP(
-        myCharacterHP - (damage + Math.round(enemyCharacterAP * 0.05))
+        myCharacterHP -
+          (damage +
+            Math.round(enemyCharacterAP * 0.02) -
+            Math.round(myCharacterDP * 0.05))
       );
       if (myCharacterHP - damage <= 0) {
         setMyCharacterHP(0);
@@ -159,7 +165,7 @@ function Versus() {
             "<br/>" +
             "<br/>" +
             "<a href='/' style=color:D3A625>Back to Home</a>",
-          iconHtml: '<img src="/image/scar.png" />',
+          iconHtml: '<img src="./assets/image/scar.png" />',
           showConfirmButton: false,
           allowOutsideClick: false,
         });
@@ -180,7 +186,7 @@ function Versus() {
   }, [currentTurn, myCharacter]);
 
   return (
-    <div className="flex flex-col justify-around min-h-[calc(100vh-200px)] bg-[url('./image/wood.jpg')] bg-cover rounded-xl w-full">
+    <div className="flex flex-col justify-around min-h-[calc(100vh-200px)] bg-[url('./assets/image/wood.jpg')] bg-cover rounded-xl w-full">
       <div className="flex justify-around items-center">
         <div className="justify-center items-center space-y-24">
           <div className="flex justify-around gap-8">
@@ -207,6 +213,7 @@ function Versus() {
                 HP={myCharacterHP}
                 AP={myCharacterAP}
                 DP={myCharacterDP}
+                isMyTurn={currentTurn === "player"}
               />
             )}
           </div>
@@ -232,6 +239,7 @@ function Versus() {
                 HP={enemyCharacterHP}
                 AP={enemyCharacterAP}
                 DP={enemyCharacterDP}
+                isMyTurn={currentTurn === "enemy"}
               />
             )}
             <div className="flex flex-col justify-center items-center gap-8 potions">

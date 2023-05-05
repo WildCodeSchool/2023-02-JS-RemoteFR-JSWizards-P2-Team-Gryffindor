@@ -28,9 +28,17 @@ export default function Home({ setAudioName }) {
             characters, and be ready to fight!
           </p>
           <p>
-            Step 3: Use your spells to attack, defend and heal yourself against
-            your opponent. The first wizard to have his health points to zero
-            will lose the fight.
+            Step 3: You'll be granted 3 spells in total, one to attack, one to
+            heal yourself and one spell to increase your defense points. You can
+            use attacks at any time, as well as defense spell but this one can
+            be used only once per fight. As for your health spell, you'll be
+            able to regenerate a bit of health when your HP goes to 50 and
+            bellow, it's also a one time use.
+          </p>
+          <p>
+            Step 4: Use your spells against your opponent and try to defeat him.
+            The first wizard to have his health points to zero will lose the
+            fight.
           </p>
         </div>
       </div>

@@ -9,7 +9,11 @@ function SearchBar({ handleSearch }) {
         placeholder="Search.."
         className="outline-none py-2 pl-9 pr-4 rounded-md w-80 bg-dark"
       />
-      <img src="./icon/Glass.svg" className="pl-2 absolute" alt="loupe" />
+      <img
+        src="./assets/icon/Glass.svg"
+        className="pl-2 absolute"
+        alt="loupe"
+      />
     </div>
   );
 }

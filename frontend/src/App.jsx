@@ -59,7 +59,7 @@ function App() {
         volume={0.1}
         loop
         playing={audioPlay}
-        url={`/audio/${audioName}.mp3`}
+        url={`/assets/audio/${audioName}.mp3`}
         style={{ display: "none" }}
         muted={muted}
       />

@@ -20,7 +20,7 @@ export default function Account({ setAudioName }) {
             <h2 className="text-lg">Games played per house</h2>
             <AccountBanner />
           </div>
-          <div className="flex flex-col space-y-8 text-center items-center relative">
+          <div className="flex flex-col space-y-8 text-center items-center relative min-w-[186px]">
             <h2 className="text-lg">Latest card played</h2>
             <div className="absolute top-28">
               <Card

@@ -5,27 +5,27 @@
 @font-face {
   font-family: "Poppins";
   font-weight: 400;
-  src: url("./fonts/poppins-400.ttf") format("truetype");
+  src: url("./assets/fonts/poppins-400.ttf") format("truetype");
 }
 @font-face {
   font-family: "Poppins";
   font-weight: 500;
-  src: url("./fonts/poppins-500.ttf") format("truetype");
+  src: url("./assets/fonts/poppins-500.ttf") format("truetype");
 }
 @font-face {
   font-family: "Poppins";
   font-weight: 600;
-  src: url("./fonts/poppins-600.ttf") format("truetype");
+  src: url("./assets/fonts/poppins-600.ttf") format("truetype");
 }
 @font-face {
   font-family: "Poppins";
   font-weight: 700;
-  src: url("./fonts/poppins-700.ttf") format("truetype");
+  src: url("./assets/fonts/poppins-700.ttf") format("truetype");
 }
 @font-face {
   font-family: "AnimalesFantastic";
   font-weight: 500;
-  src: url("./fonts/AnimalesFantastic.ttf") format("truetype");
+  src: url("./assets/fonts/AnimalesFantastic.ttf") format("truetype");
 }
 
 @layer base {
@@ -34,11 +34,11 @@
   body {
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
-    cursor: url(./image/pointer.png), auto;
+    cursor: url(./assets/image/pointer.png), auto;
   }
   button[type="button"],
   button[type="submit"] {
-    cursor: url(./image/pointer.png), auto;
+    cursor: url(./assets/image/pointer.png), auto;
   }
 }
 
@@ -248,5 +248,9 @@
     left: 20px;
     bottom: 10px;
     opacity: 0.7;
+  }
+
+  .my-turn {
+    box-shadow: 0px 0px 20px theme("colors.primary");
   }
 }

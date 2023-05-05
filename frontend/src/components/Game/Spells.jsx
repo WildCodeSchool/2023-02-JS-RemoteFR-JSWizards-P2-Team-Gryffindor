@@ -35,14 +35,19 @@ export default function CharSpells({
 
 CharSpells.defaultProps = {
   house: "",
+  characterHP: 0,
+  hasUsedHP: false,
+  getHP: () => {},
+  hasUsedDP: false,
+  addDP: () => {},
 };
 
 CharSpells.propTypes = {
   house: PropTypes.string,
-  characterHP: PropTypes.string.isRequired,
-  hasUsedHP: PropTypes.string.isRequired,
-  getHP: PropTypes.func.isRequired,
-  hasUsedDP: PropTypes.string.isRequired,
-  addDP: PropTypes.func.isRequired,
+  characterHP: PropTypes.number,
+  hasUsedHP: PropTypes.bool,
+  getHP: PropTypes.func,
+  hasUsedDP: PropTypes.bool,
+  addDP: PropTypes.func,
   startDamage: PropTypes.func.isRequired,
 };
