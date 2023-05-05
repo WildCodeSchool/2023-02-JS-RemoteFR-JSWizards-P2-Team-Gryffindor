@@ -5,27 +5,27 @@
 @font-face {
   font-family: "Poppins";
   font-weight: 400;
-  src: url("./assets/fonts/poppins-400.ttf") format("truetype");
+  src: url("../assets/fonts/poppins-400.ttf") format("truetype");
 }
 @font-face {
   font-family: "Poppins";
   font-weight: 500;
-  src: url("./assets/fonts/poppins-500.ttf") format("truetype");
+  src: url("../assets/fonts/poppins-500.ttf") format("truetype");
 }
 @font-face {
   font-family: "Poppins";
   font-weight: 600;
-  src: url("./assets/fonts/poppins-600.ttf") format("truetype");
+  src: url("../assets/fonts/poppins-600.ttf") format("truetype");
 }
 @font-face {
   font-family: "Poppins";
   font-weight: 700;
-  src: url("./assets/fonts/poppins-700.ttf") format("truetype");
+  src: url("../assets/fonts/poppins-700.ttf") format("truetype");
 }
 @font-face {
   font-family: "AnimalesFantastic";
   font-weight: 500;
-  src: url("./assets/fonts/AnimalesFantastic.ttf") format("truetype");
+  src: url("../assets/fonts/AnimalesFantastic.ttf") format("truetype");
 }
 
 @layer base {
