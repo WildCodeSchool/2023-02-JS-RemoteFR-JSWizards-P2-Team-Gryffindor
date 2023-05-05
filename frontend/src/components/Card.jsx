@@ -19,24 +19,24 @@ function Card({
     missingImage[0] !== undefined ? missingImage[0].image : defaultImage;
   switch (house) {
     case "Gryffindor":
-      backgroundSrc = "./assets/image/CardGryf.png";
-      logoSrc = "./assets/icon/gryf-logo.svg";
+      backgroundSrc = "../assets/image/CardGryf.png";
+      logoSrc = "../assets/icon/gryf-logo.svg";
       break;
     case "Hufflepuff":
-      backgroundSrc = "./assets/image/CardHuff.png";
-      logoSrc = "./assets/icon/huff-logo.svg";
+      backgroundSrc = "../assets/image/CardHuff.png";
+      logoSrc = "../assets/icon/huff-logo.svg";
       break;
     case "Ravenclaw":
-      backgroundSrc = "./assets/image/CardRav.png";
-      logoSrc = "./assets/icon/rav-logo.svg";
+      backgroundSrc = "../assets/image/CardRav.png";
+      logoSrc = "../assets/icon/rav-logo.svg";
       break;
     case "Slytherin":
-      backgroundSrc = "./assets/image/CardSly.png";
-      logoSrc = "./assets/icon/sly-logo.svg";
+      backgroundSrc = "../assets/image/CardSly.png";
+      logoSrc = "../assets/icon/sly-logo.svg";
       break;
     default:
-      backgroundSrc = "./assets/image/CardDefault.png";
-      logoSrc = "./assets/image/Hogwarts-icon.png";
+      backgroundSrc = "../assets/image/CardDefault.png";
+      logoSrc = "../assets/image/Hogwarts-icon.png";
       break;
   }
   function handleClick() {
