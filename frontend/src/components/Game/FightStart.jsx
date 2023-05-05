@@ -41,7 +41,7 @@ export default function FightStart() {
   }, []);
   localStorage.setItem("selectedCharacter", JSON.stringify(selectedCharacter));
   return (
-    <div className="flex flex-col justify-around min-h-[calc(100vh-150px)] bg-[url('./assets/image/fight.png')] bg-cover bg-center rounded-xl w-full">
+    <div className="flex flex-col justify-around min-h-[calc(100vh-150px)] bg-[url('../assets/image/fight.png')] bg-cover bg-center rounded-xl w-full">
       <div className="flex justify-evenly">
         <div className="justify-center items-center space-y-8">
           <div className="flex justify-around gap-4 scale-125">
